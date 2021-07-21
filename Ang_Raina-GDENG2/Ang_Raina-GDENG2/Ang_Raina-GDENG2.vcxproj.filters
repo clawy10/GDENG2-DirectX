@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{ed8a05a6-7f22-405d-bc20-a9ec1d84a0cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine">
+      <UniqueIdentifier>{382d31a6-7fa1-40a5-af84-aeaa3ea88a27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine">
+      <UniqueIdentifier>{eb90df8b-502a-4559-a788-7efae0c5604f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Constant Buffer">
+      <UniqueIdentifier>{3576ac7f-0b7a-4e77-a744-753f41e2160a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Depth Buffer">
+      <UniqueIdentifier>{8e40f38c-684e-481b-9d0f-db94bf69581e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Device Context">
+      <UniqueIdentifier>{7d4a826f-a078-4aba-ae58-4b74e5ae3d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Index Buffer">
+      <UniqueIdentifier>{c1fd232f-6095-4b97-9357-88b6aea198f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Swap Chain">
+      <UniqueIdentifier>{92c2aa9c-bc7b-4f57-81b9-1f71b1953bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Vertex Shader">
+      <UniqueIdentifier>{174b0cc3-3428-4799-8d76-31f4a422e276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Pixel Shader">
+      <UniqueIdentifier>{90e2575f-fdc7-4689-b1d1-b7212b9e7e90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Vertex Buffer">
+      <UniqueIdentifier>{904715b4-121a-431b-b6bf-ffc738fa8492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Windowing System">
+      <UniqueIdentifier>{2b9ad1e6-2b5d-47bf-a660-3c22ddfcafd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Objects">
+      <UniqueIdentifier>{1fe9556b-b6f2-40bb-a72c-547a63f20a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Objects\Cube">
+      <UniqueIdentifier>{6a62200b-7005-44fa-8c9e-83ed072675fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Objects\Quad">
+      <UniqueIdentifier>{52010711-9851-4d60-9fd6-769289a6fab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{f88385bc-54ba-4a0e-be3b-85e1cb671693}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppWindow.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsEngine.cpp">
+      <Filter>Game Engine\Graphics Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>Game Engine\Graphics Engine\Constant Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthBuffer.cpp">
+      <Filter>Game Engine\Graphics Engine\Depth Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceContext.cpp">
+      <Filter>Game Engine\Graphics Engine\Device Context</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>Game Engine\Graphics Engine\Index Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Game Engine\Graphics Engine\Vertex Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShader.cpp">
+      <Filter>Game Engine\Graphics Engine\Pixel Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexShader.cpp">
+      <Filter>Game Engine\Graphics Engine\Vertex Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>Game Engine\Graphics Engine\Swap Chain</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Game Engine\Windowing System</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeObject.cpp">
+      <Filter>Game Objects\Cube</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadObject.cpp">
+      <Filter>Game Objects\Quad</Filter>
+    </ClCompile>
+    <ClCompile Include="AGameObject.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppWindow.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsEngine.h">
+      <Filter>Game Engine\Graphics Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>Game Engine\Graphics Engine\Constant Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthBuffer.h">
+      <Filter>Game Engine\Graphics Engine\Depth Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceContext.h">
+      <Filter>Game Engine\Graphics Engine\Device Context</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>Game Engine\Graphics Engine\Index Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Game Engine\Graphics Engine\Vertex Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShader.h">
+      <Filter>Game Engine\Graphics Engine\Pixel Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexShader.h">
+      <Filter>Game Engine\Graphics Engine\Vertex Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SwapChain.h">
+      <Filter>Game Engine\Graphics Engine\Swap Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Game Engine\Windowing System</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeObject.h">
+      <Filter>Game Objects\Cube</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadObject.h">
+      <Filter>Game Objects\Quad</Filter>
+    </ClInclude>
+    <ClInclude Include="AGameObject.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4x4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="PixelShader.hlsl">
+      <Filter>App</Filter>
+    </FxCompile>
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>App</Filter>
+    </FxCompile>
+    <FxCompile Include="shader.fx" />
+  </ItemGroup>
+</Project>
