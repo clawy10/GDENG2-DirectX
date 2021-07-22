@@ -12,12 +12,10 @@ public:
 	~QuadObject();
 
 private:
-	float speed = 2.5f;
-	float speedMultiplier = 5.0f; 
+	float speed = 5.0f;
 	bool isSpeedUp = true; // is speeding up
-	float SPEEDTIME = 3.0f; // time before animation speeds or slows down
 	float MAX_SPEED = 10.0f;
-	float MIN_SPEED = 2.5f;
+	float MIN_SPEED = 2.0f;
 
 	float ticks = 0.0f;
 };

@@ -1,4 +1,6 @@
-﻿  QuadObject.cpp
+﻿  AppWindow.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\AppWindow.cpp(99,81): warning C4305: 'argument': truncation from 'double' to 'float'
+  QuadObject.cpp
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(39,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(40,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -12,6 +14,5 @@ F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GD
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\QuadObject.cpp(46,34): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\QuadObject.cpp(58,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\QuadObject.cpp(62,37): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   Ang_Raina-GDENG2.vcxproj -> F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Debug\Ang_Raina-GDENG2.exe
