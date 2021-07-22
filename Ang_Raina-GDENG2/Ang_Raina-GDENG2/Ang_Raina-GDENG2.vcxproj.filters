@@ -41,17 +41,20 @@
     <Filter Include="Game Engine\Windowing System">
       <UniqueIdentifier>{2b9ad1e6-2b5d-47bf-a660-3c22ddfcafd5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Objects">
-      <UniqueIdentifier>{1fe9556b-b6f2-40bb-a72c-547a63f20a91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Objects\Cube">
-      <UniqueIdentifier>{6a62200b-7005-44fa-8c9e-83ed072675fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Objects\Quad">
-      <UniqueIdentifier>{52010711-9851-4d60-9fd6-769289a6fab8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{f88385bc-54ba-4a0e-be3b-85e1cb671693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Game Objects">
+      <UniqueIdentifier>{1fe9556b-b6f2-40bb-a72c-547a63f20a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Game Objects\Cube">
+      <UniqueIdentifier>{6a62200b-7005-44fa-8c9e-83ed072675fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Game Objects\Quad">
+      <UniqueIdentifier>{52010711-9851-4d60-9fd6-769289a6fab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Engine Time">
+      <UniqueIdentifier>{aa46c0c6-a925-4a48-9ba2-497dc0b9fc55}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -92,16 +95,19 @@
       <Filter>Game Engine\Windowing System</Filter>
     </ClCompile>
     <ClCompile Include="CubeObject.cpp">
-      <Filter>Game Objects\Cube</Filter>
+      <Filter>Game Engine\Game Objects\Cube</Filter>
     </ClCompile>
     <ClCompile Include="QuadObject.cpp">
-      <Filter>Game Objects\Quad</Filter>
+      <Filter>Game Engine\Game Objects\Quad</Filter>
     </ClCompile>
     <ClCompile Include="AGameObject.cpp">
-      <Filter>Game Objects</Filter>
+      <Filter>Game Engine\Game Objects</Filter>
     </ClCompile>
     <ClCompile Include="GameObjectManager.cpp">
-      <Filter>Game Objects</Filter>
+      <Filter>Game Engine\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineTime.cpp">
+      <Filter>Game Engine\Engine Time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,22 +145,25 @@
       <Filter>Game Engine\Windowing System</Filter>
     </ClInclude>
     <ClInclude Include="CubeObject.h">
-      <Filter>Game Objects\Cube</Filter>
+      <Filter>Game Engine\Game Objects\Cube</Filter>
     </ClInclude>
     <ClInclude Include="QuadObject.h">
-      <Filter>Game Objects\Quad</Filter>
+      <Filter>Game Engine\Game Objects\Quad</Filter>
     </ClInclude>
     <ClInclude Include="AGameObject.h">
-      <Filter>Game Objects</Filter>
+      <Filter>Game Engine\Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="GameObjectManager.h">
-      <Filter>Game Objects</Filter>
+      <Filter>Game Engine\Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="Matrix4x4.h">
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="Vector3D.h">
       <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineTime.h">
+      <Filter>Game Engine\Engine Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

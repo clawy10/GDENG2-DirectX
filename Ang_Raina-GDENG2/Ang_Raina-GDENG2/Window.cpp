@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "EngineTime.h"
 
 Window* window = nullptr; 
 
@@ -78,15 +79,16 @@ bool Window::init()
 
 	// set flag to true to indicate window is initialized and running
 	this->m_is_run = true;
+	EngineTime::initialize();
 	
 	return true;
 }
 
 bool Window::broadcast()
 {
+	EngineTime::LogFrameStart();
+	this->OnUpdate();
 	MSG msg;
-
-	window->OnUpdate();
 	
 	while (::PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) > 0)
 	{
@@ -94,8 +96,9 @@ bool Window::broadcast()
 		DispatchMessage(&msg);
 	}
 
-	Sleep(0);
-
+	Sleep(1);
+	EngineTime::LogFrameEnd();
+	
 	return true;
 }
 
