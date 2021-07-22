@@ -55,7 +55,7 @@ void GameObjectManager::DeleteAllObjects()
 	}
 }
 
-void GameObjectManager::UpdateObjects(float deltaTime)
+void GameObjectManager::UpdateObjects(double deltaTime)
 {
 	for (int i = 0 ; i < this->objectList.size(); i++)
 	{

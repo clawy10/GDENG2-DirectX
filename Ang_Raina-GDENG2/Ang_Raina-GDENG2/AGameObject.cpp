@@ -30,8 +30,9 @@ void AGameObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 	
 }
 
-void AGameObject::Update(float deltaTime)
+void AGameObject::Update(double deltaTime)
 {
+	
 }
 
 void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
@@ -64,6 +65,8 @@ void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelS
 
 	cc.m_view.SetIdentity();
 	cc.m_projection.SetOrthoLH(width / 400.0f, height / 400.0f, -4.0f, 4.0f);
+
+	cc.m_angle = this->m_angle;
 
 	this->cb->update(GraphicsEngine::getInstance()->GetImmediateDeviceContext(), &cc);
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(vertexShader, this->cb);

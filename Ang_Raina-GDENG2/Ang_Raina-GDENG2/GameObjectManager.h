@@ -10,7 +10,7 @@ public:
 	static void destroy();
 
 	void AddObject(AGameObject* object, Vector3D color);
-	void UpdateObjects(float deltaTime);
+	void UpdateObjects(double deltaTime);
 	void DrawObjects(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader);
 
 	void DeleteObject(AGameObject* object);

@@ -6,6 +6,7 @@
 #include "GameObjectManager.h"
 #include "QuadObject.h"
 #include "CubeObject.h"
+#include "EngineTime.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -66,7 +67,7 @@ void AppWindow::OnUpdate()
 
 	m_delta_time = (m_old_delta) ? ((m_new_delta - m_old_delta) / 1000.0f) : 0;
 
-	GameObjectManager::getInstance()->UpdateObjects(m_delta_time);
+	GameObjectManager::getInstance()->UpdateObjects(EngineTime::GetDeltaTime());
 	GameObjectManager::getInstance()->DrawObjects(width, height, this->m_vertex_shader, this->m_pixel_shader);
 	
 	this->m_swap_chain->present(true);
@@ -95,18 +96,18 @@ void AppWindow::CreateGraphicsWindow()
 	// insert objects to draw here
 
 	QuadObject* quad_object = new QuadObject("Quad1"); // orange
-	//GameObjectManager::getInstance()->AddObject(quad_object, Vector3D(1, 0.38, 0.38));
+	GameObjectManager::getInstance()->AddObject(quad_object, Vector3D(1, 0.38, 0.38));
 
 	QuadObject* quad_object2 = new QuadObject("Quad2"); // yellow
-	quad_object2->SetPosition(0.5, 0, 1.0);
+	//quad_object2->SetPosition(0.5, 0, 1.0);
 	//GameObjectManager::getInstance()->AddObject(quad_object2, Vector3D(1, 1, 0.38));
 
-	CubeObject* cube_object = new CubeObject("Cube1");
-	GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
+	//CubeObject* cube_object = new CubeObject("Cube1");
+	//GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
 
-	CubeObject* cube_object2 = new CubeObject("Cube2");
-	cube_object2->SetPosition(0.5, 0, 1.0);
-	GameObjectManager::getInstance()->AddObject(cube_object2, Vector3D(1, 1, 0.38));
+	//CubeObject* cube_object2 = new CubeObject("Cube2");
+	//cube_object2->SetPosition(0.5, 0, 1.0);
+	//GameObjectManager::getInstance()->AddObject(cube_object2, Vector3D(1, 1, 0.38));
 	
 	
 	// end of objects to draw

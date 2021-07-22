@@ -14,7 +14,9 @@
 struct vertex
 {
 	Vector3D position;
+	Vector3D position1;
 	Vector3D color;
+	Vector3D color1; 
 };
 
 __declspec(align(16))
@@ -24,7 +26,8 @@ struct constant
 	Matrix4x4 m_view;
 	Matrix4x4 m_projection;
 
-	unsigned int m_time;
+	//unsigned int m_time;
+	float m_angle;
 };
 
 class AGameObject
@@ -39,7 +42,7 @@ public:
 	std::string GetName();
 
 	virtual void Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color);
-	virtual void Update(float deltaTime);
+	virtual void Update(double deltaTime);
 	void Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader);
 
 	void release();
@@ -56,6 +59,7 @@ protected:
 	VertexBuffer* vb;
 	IndexBuffer* ib;
 	ConstantBuffer* cb;
-	
+
+	float m_angle; 
 };
 

@@ -56,12 +56,13 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 
 
 	constant cc;
-	cc.m_time = 0;
+	//cc.m_time = 0;
+	cc.m_angle = 0;
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 }
 
-void CubeObject::Update(float deltaTime)
+void CubeObject::Update(double deltaTime)
 {
 	AGameObject::Update(deltaTime);
 	
