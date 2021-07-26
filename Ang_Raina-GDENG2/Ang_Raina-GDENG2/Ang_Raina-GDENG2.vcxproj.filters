@@ -56,6 +56,12 @@
     <Filter Include="Game Engine\Engine Time">
       <UniqueIdentifier>{aa46c0c6-a925-4a48-9ba2-497dc0b9fc55}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Input System">
+      <UniqueIdentifier>{e08c982f-25dc-4eda-aa29-b13d671ef4a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Game Objects\Plane">
+      <UniqueIdentifier>{d02edc78-8aac-42ce-a869-ef835fbcbe6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -108,6 +114,12 @@
     </ClCompile>
     <ClCompile Include="EngineTime.cpp">
       <Filter>Game Engine\Engine Time</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>Game Engine\Input System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneObject.cpp">
+      <Filter>Game Engine\Game Objects\Plane</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +176,18 @@
     </ClInclude>
     <ClInclude Include="EngineTime.h">
       <Filter>Game Engine\Engine Time</Filter>
+    </ClInclude>
+    <ClInclude Include="InputListener.h">
+      <Filter>Game Engine\Input System</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>Game Engine\Input System</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneObject.h">
+      <Filter>Game Engine\Game Objects\Plane</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

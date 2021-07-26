@@ -150,8 +150,10 @@
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="GraphicsEngine.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
+    <ClCompile Include="InputSystem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PixelShader.cpp" />
+    <ClCompile Include="PlaneObject.cpp" />
     <ClCompile Include="QuadObject.cpp" />
     <ClCompile Include="SwapChain.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
@@ -169,8 +171,12 @@
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GraphicsEngine.h" />
     <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="InputListener.h" />
+    <ClInclude Include="InputSystem.h" />
     <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="PixelShader.h" />
+    <ClInclude Include="PlaneObject.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="QuadObject.h" />
     <ClInclude Include="SwapChain.h" />
     <ClInclude Include="Vector3D.h" />

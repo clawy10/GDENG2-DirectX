@@ -16,7 +16,7 @@ void GameObjectManager::initialize(void* shaderByteCode, size_t size)
 
 void GameObjectManager::destroy()
 {
-	if (sharedInstance != NULL)
+	if (sharedInstance != nullptr)
 	{
 		sharedInstance->DeleteAllObjects();
 	}

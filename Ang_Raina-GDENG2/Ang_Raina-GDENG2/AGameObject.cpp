@@ -55,7 +55,7 @@ void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelS
 	cc.m_world *= temp;
 
 	temp.SetIdentity();
-	temp.SetRotationX(this->rotation.z);
+	temp.SetRotationX(this->rotation.x);
 	cc.m_world *= temp;
 
 	// translate

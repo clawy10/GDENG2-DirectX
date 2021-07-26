@@ -6,7 +6,9 @@
 #include "GameObjectManager.h"
 #include "QuadObject.h"
 #include "CubeObject.h"
+#include "PlaneObject.h"
 #include "EngineTime.h"
+#include "InputSystem.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -46,12 +48,14 @@ void AppWindow::OnDestroy()
 	this->m_vertex_shader->release();
 	this->m_pixel_shader->release();
 	GraphicsEngine::getInstance()->release();
+	InputSystem::getInstance()->destroy();
 }
 
 void AppWindow::OnUpdate()
 {
 	Window::OnUpdate();
-
+	InputSystem::getInstance()->Update();
+	
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetVertexShader(this->m_vertex_shader);
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetPixelShader(this->m_pixel_shader);
 
@@ -73,6 +77,44 @@ void AppWindow::OnUpdate()
 	this->m_swap_chain->present(true);
 }
 
+void AppWindow::OnFocus()
+{
+	InputSystem::getInstance()->AddListener(this);
+}
+
+void AppWindow::OnKillFocus()
+{
+	InputSystem::getInstance()->RemoveListener(this);
+}
+
+void AppWindow::OnKeyDown(int key)
+{
+}
+
+void AppWindow::OnKeyUp(int key)
+{
+}
+
+void AppWindow::OnMouseMove(const Point& deltaMousePos)
+{
+}
+
+void AppWindow::OnLeftMouseDown(const Point& deltaMousePos)
+{
+}
+
+void AppWindow::OnLeftMouseUp(const Point& deltaMousePos)
+{
+}
+
+void AppWindow::OnRightMouseDown(const Point& deltaMousePos)
+{
+}
+
+void AppWindow::OnRightMouseUp(const Point& deltaMousePos)
+{
+}
+
 float RandomNumber(float min, float max)
 {
 	float random = ((float)rand()) / (float)RAND_MAX;
@@ -84,6 +126,8 @@ float RandomNumber(float min, float max)
 void AppWindow::CreateGraphicsWindow()
 {
 	GraphicsEngine::initialize();
+	InputSystem::initialize();
+	InputSystem::getInstance()->AddListener(this);
 	this->m_swap_chain = GraphicsEngine::getInstance()->CreateSwapChain();
 
 	RECT rc = this->GetClientWindowRect();
@@ -106,27 +150,16 @@ void AppWindow::CreateGraphicsWindow()
 	// insert objects to draw here
 
 	QuadObject* quad_object = new QuadObject("Quad1"); // orange
+	//quad_object->SetRotation(0, 0, 0);
 	//GameObjectManager::getInstance()->AddObject(quad_object, Vector3D(1, 0.38, 0.38));
 
 	QuadObject* quad_object2 = new QuadObject("Quad2"); // yellow
 	//quad_object2->SetPosition(0.5, 0, 1.0);
 	//GameObjectManager::getInstance()->AddObject(quad_object2, Vector3D(1, 1, 0.38));
 
-	//CubeObject* cube_object = new CubeObject("Cube1");
-	//GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
-
-	//CubeObject* cube_object2 = new CubeObject("Cube2");
-	//cube_object2->SetPosition(0.5, 0, 1.0);
-	//GameObjectManager::getInstance()->AddObject(cube_object2, Vector3D(1, 1, 0.38));
-
-	for (int i = 0; i < 100; i++)
-	{
-		CubeObject* cube_object = new CubeObject("Cube" + std::to_string(i));
-		cube_object->SetScale(0.25, 0.25, 0.25);
-		cube_object->SetPosition(RandomNumber(-1, 1), RandomNumber(-1, 1), 0);
-		cube_object->SetAnimationSpeed(RandomNumber(0, 1));
-		GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
-	}
+	PlaneObject* plane_object = new PlaneObject("Plane1");
+	//plane_object->SetPosition(0.0, 0, 0);
+	GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 0.38));
 	
 	// end of objects to draw
 	

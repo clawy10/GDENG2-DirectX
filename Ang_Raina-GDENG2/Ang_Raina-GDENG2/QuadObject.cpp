@@ -12,10 +12,10 @@ void QuadObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 	vertex list[] =
 	{
 		//X - Y - Z
-		{Vector3D(-0.7f,-0.5f,0.0f),   Vector3D(0,0,0),  Vector3D(0,1,0) }, // POS1
-		{Vector3D(-0.5f,0.65f,0.0f),   Vector3D(1,1,0),  Vector3D(0,1,1) }, // POS2
-		{ Vector3D(0.2f,0.4f,0.0f),	 Vector3D(0,0,1),  Vector3D(1,0,0) },// POS2
-		{ Vector3D(0.3f,-0.5f,0.0f),   Vector3D(1,1,1),  Vector3D(0,0,1) }
+		{Vector3D(-0.5f,-0.5f,0.0f),   Vector3D(0,0,0),  Vector3D(0,1,0) }, // POS1
+		{Vector3D(-0.5f,0.5f,0.0f),   Vector3D(1,1,0),  Vector3D(0,1,1) }, // POS2
+		{ Vector3D(0.5f,0.5f,0.0f),	 Vector3D(0,0,1),  Vector3D(1,0,0) },// POS2
+		{ Vector3D(0.5f,-0.5f,0.0f),   Vector3D(1,1,1),  Vector3D(0,0,1) }
 	};
 	
 	UINT size_list = ARRAYSIZE(list);
