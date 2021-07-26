@@ -12,16 +12,16 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 	vertex list[] =
 	{
 		//FRONT FACE
-		{Vector3D(-0.5f,-0.5f,-0.5f),		color},
-		{Vector3D(-0.5f,0.5f,-0.5f),		color},
-		{ Vector3D(0.5f,0.5f,-0.5f),		color},
-		{ Vector3D(0.5f,-0.5f,-0.5f),     color},
+		{Vector3D(-0.5f,-0.5f,-0.5f),    Vector3D(1,0,0),  Vector3D(0.2f,0,0) },
+		{Vector3D(-0.5f,0.5f,-0.5f),    Vector3D(1,1,0), Vector3D(0.2f,0.2f,0) },
+		{ Vector3D(0.5f,0.5f,-0.5f),   Vector3D(1,1,0),  Vector3D(0.2f,0.2f,0) },
+		{ Vector3D(0.5f,-0.5f,-0.5f),     Vector3D(1,0,0), Vector3D(0.2f,0,0) },
 
 		//BACK FACE
-		{ Vector3D(0.5f,-0.5f,0.5f),		color},
-		{ Vector3D(0.5f,0.5f,0.5f),		color},
-		{ Vector3D(-0.5f,0.5f,0.5f),		color},
-		{ Vector3D(-0.5f,-0.5f,0.5f),     color}
+		{ Vector3D(0.5f,-0.5f,0.5f),    Vector3D(0,1,0), Vector3D(0,0.2f,0) },
+		{ Vector3D(0.5f,0.5f,0.5f),    Vector3D(0,1,1), Vector3D(0,0.2f,0.2f) },
+		{ Vector3D(-0.5f,0.5f,0.5f),   Vector3D(0,1,1),  Vector3D(0,0.2f,0.2f) },
+		{ Vector3D(-0.5f,-0.5f,0.5f),     Vector3D(0,1,0), Vector3D(0,0.2f,0) }
 	};
 	
 	UINT size_list = ARRAYSIZE(list);
@@ -68,7 +68,12 @@ void CubeObject::Update(double deltaTime)
 	
 	//this->rotation.x += deltaTime / 0.55f;
 	//this->rotation.y += deltaTime / 0.55f;
-	this->rotation.z += deltaTime / 0.55f;
+	this->rotation.z += deltaTime * this->SPEED;
+}
+
+void CubeObject::SetAnimationSpeed(float speed)
+{
+	this->SPEED = speed;
 }
 
 CubeObject::~CubeObject()

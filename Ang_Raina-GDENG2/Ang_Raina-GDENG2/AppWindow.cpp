@@ -73,6 +73,14 @@ void AppWindow::OnUpdate()
 	this->m_swap_chain->present(true);
 }
 
+float RandomNumber(float min, float max)
+{
+	float random = ((float)rand()) / (float)RAND_MAX;
+	float diff = max - min;
+	float r = random * diff;
+	return min + r;
+}
+
 void AppWindow::CreateGraphicsWindow()
 {
 	GraphicsEngine::initialize();
@@ -92,11 +100,13 @@ void AppWindow::CreateGraphicsWindow()
 	this->m_vertex_shader = GraphicsEngine::getInstance()->CreateVertexShader(shader_byte_code, sizeShader);
 
 	GameObjectManager::initialize(shader_byte_code, sizeShader);
+
+	srand((unsigned)time(NULL));
 	
 	// insert objects to draw here
 
 	QuadObject* quad_object = new QuadObject("Quad1"); // orange
-	GameObjectManager::getInstance()->AddObject(quad_object, Vector3D(1, 0.38, 0.38));
+	//GameObjectManager::getInstance()->AddObject(quad_object, Vector3D(1, 0.38, 0.38));
 
 	QuadObject* quad_object2 = new QuadObject("Quad2"); // yellow
 	//quad_object2->SetPosition(0.5, 0, 1.0);
@@ -108,7 +118,15 @@ void AppWindow::CreateGraphicsWindow()
 	//CubeObject* cube_object2 = new CubeObject("Cube2");
 	//cube_object2->SetPosition(0.5, 0, 1.0);
 	//GameObjectManager::getInstance()->AddObject(cube_object2, Vector3D(1, 1, 0.38));
-	
+
+	for (int i = 0; i < 100; i++)
+	{
+		CubeObject* cube_object = new CubeObject("Cube" + std::to_string(i));
+		cube_object->SetScale(0.25, 0.25, 0.25);
+		cube_object->SetPosition(RandomNumber(-1, 1), RandomNumber(-1, 1), 0);
+		cube_object->SetAnimationSpeed(RandomNumber(0, 1));
+		GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
+	}
 	
 	// end of objects to draw
 	
