@@ -56,7 +56,7 @@ void InputSystem::Update()
 		std::unordered_set<InputListener*>::iterator it = m_set_listeners.begin();
 		while (it != m_set_listeners.end())
 		{
-			(*it)->OnMouseMove(Point(currentMousePos.x - this->oldMousePos.x, currentMousePos.y - this->oldMousePos.y));
+			(*it)->OnMouseMove(Point(currentMousePos.x, currentMousePos.y));
 			it++;
 		}
 	}
@@ -126,4 +126,14 @@ void InputSystem::Update()
 		// store current key states
 		::memcpy(oldKeysState, keysState, sizeof(unsigned char) * 256);
 	}
+}
+
+void InputSystem::SetCursorPosition(const Point& pos)
+{
+	::SetCursorPos(pos.x, pos.y);
+}
+
+void InputSystem::ShowCursor(bool flag)
+{
+	::ShowCursor(flag);
 }

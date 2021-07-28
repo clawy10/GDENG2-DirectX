@@ -62,6 +62,9 @@
     <Filter Include="Game Engine\Game Objects\Plane">
       <UniqueIdentifier>{d02edc78-8aac-42ce-a869-ef835fbcbe6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Camera">
+      <UniqueIdentifier>{0133d7b7-88ab-4dfb-a175-e6580ae6fc83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -120,6 +123,12 @@
     </ClCompile>
     <ClCompile Include="PlaneObject.cpp">
       <Filter>Game Engine\Game Objects\Plane</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Game Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>Game Engine\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +197,15 @@
     </ClInclude>
     <ClInclude Include="PlaneObject.h">
       <Filter>Game Engine\Game Objects\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Game Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Game Engine\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,9 @@ public:
 
 	void Update();
 
+	void SetCursorPosition(const Point& pos);
+	void ShowCursor(bool flag);
+
 private:
 	InputSystem();
 	~InputSystem();

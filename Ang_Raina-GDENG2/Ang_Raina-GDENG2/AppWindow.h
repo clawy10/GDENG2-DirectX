@@ -31,7 +31,7 @@ public:
 	void OnKeyDown(int key) override;
 	void OnKeyUp(int key) override;
 	
-	void OnMouseMove(const Point& deltaMousePos) override;
+	void OnMouseMove(const Point& mousePos) override;
 	void OnLeftMouseDown(const Point& deltaMousePos) override;
 	void OnLeftMouseUp(const Point& deltaMousePos) override;
 	void OnRightMouseDown(const Point& deltaMousePos) override;

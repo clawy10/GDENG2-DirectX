@@ -142,6 +142,8 @@
   <ItemGroup>
     <ClCompile Include="AGameObject.cpp" />
     <ClCompile Include="AppWindow.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="ConstantBuffer.cpp" />
     <ClCompile Include="CubeObject.cpp" />
     <ClCompile Include="DepthBuffer.cpp" />
@@ -163,6 +165,8 @@
   <ItemGroup>
     <ClInclude Include="AGameObject.h" />
     <ClInclude Include="AppWindow.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraManager.h" />
     <ClInclude Include="ConstantBuffer.h" />
     <ClInclude Include="CubeObject.h" />
     <ClInclude Include="DepthBuffer.h" />
@@ -180,6 +184,7 @@
     <ClInclude Include="QuadObject.h" />
     <ClInclude Include="SwapChain.h" />
     <ClInclude Include="Vector3D.h" />
+    <ClInclude Include="Vector4D.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexShader.h" />
     <ClInclude Include="Window.h" />

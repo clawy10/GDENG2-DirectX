@@ -1,4 +1,5 @@
 #include "AGameObject.h"
+#include "CameraManager.h"
 
 AGameObject::AGameObject(std::string name)
 {
@@ -39,9 +40,9 @@ void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelS
 {
 	//std::cout << "Drawing " << this->name << std::endl;
 	constant cc;
-
+	
 	Matrix4x4 temp;
-
+	
 	//scale
 	cc.m_world.SetScale(this->scale);
 
@@ -63,9 +64,8 @@ void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelS
 	temp.SetTranslation(this->position);
 	cc.m_world *= temp;
 
-	cc.m_view.SetIdentity();
-	cc.m_projection.SetOrthoLH(width / 400.0f, height / 400.0f, -4.0f, 4.0f);
-
+	cc.m_view = CameraManager::getInstance()->GetMainCamera()->GetCameraMatrix();
+	cc.m_projection.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
 	cc.m_angle = this->m_angle;
 
 	this->cb->update(GraphicsEngine::getInstance()->GetImmediateDeviceContext(), &cc);
