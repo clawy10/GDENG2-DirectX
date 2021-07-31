@@ -5,7 +5,7 @@
 Camera::Camera(std::string name) : AGameObject(name)
 {
 	InputSystem::getInstance()->AddListener(this);
-	this->position = Vector3D(0, 0, -4);
+	this->position = Vector3D(0, 0, -2);
 	this->UpdateCameraMatrix();
 }
 
@@ -17,12 +17,14 @@ void Camera::Update(double deltaTime)
 
 	if (this->isForward)
 	{
+		y += (float)deltaTime * this->CAMERA_MOVE_SPEED;
 		z += (float) deltaTime * this->CAMERA_MOVE_SPEED;
 		this->SetPosition(x, y, z);
 		this->UpdateCameraMatrix();
 	}
 	else if (this->isBackward)
 	{
+		y -= (float)deltaTime * this->CAMERA_MOVE_SPEED;
 		z -= (float) deltaTime * this->CAMERA_MOVE_SPEED;
 		this->SetPosition(x, y, z);
 		this->UpdateCameraMatrix();
@@ -45,32 +47,25 @@ void Camera::OnKeyDown(int key)
 {
 	if (key == 'W')
 	{
-		this->forward = 1.0f;
 		this->isForward = true;
 	}
 	else if (key == 'S')
 	{
-		this->forward = -1.0f;
 		this->isBackward = true;
 	}
 
 	if (key == 'A')
 	{
-		this->rightward = -1.0f;
 		this->isLeft = true;
 	}
 	else if (key == 'D')
 	{
-		this->rightward = 1.0f;
 		this->isRight = true;
 	}
 }
 
 void Camera::OnKeyUp(int key)
 {
-	this->forward = 0.0f;
-	this->rightward = 0.0f;
-
 	if (key == 'W')
 	{
 		this->isForward = false;
@@ -135,16 +130,14 @@ void Camera::UpdateCameraMatrix()
 	Matrix4x4 world_cam;
 	world_cam.SetIdentity();
 
-	//temp.SetIdentity();
+	temp.SetIdentity();
 	temp.SetRotationX(this->rotation.x);
 	world_cam *= temp;
 
-	//temp.SetIdentity();
+	temp.SetIdentity();
 	temp.SetRotationY(this->rotation.y);
 	world_cam *= temp;
 
-	//Vector3D new_pos = m_cam.getTranslation() + world_cam.getZDirection() * (m_forward * 0.1f);
-	//new_pos = new_pos + world_cam.getXDirection() * (m_rightward * 0.1f);
 	temp.SetTranslation(this->position);
 	world_cam *= temp;
 	
