@@ -93,7 +93,6 @@ void AppWindow::CreateGraphicsWindow()
 {
 	GraphicsEngine::initialize();
 	InputSystem::initialize();
-	CameraManager::initialize();
 
 	InputSystem::getInstance()->AddListener(this);
 	InputSystem::getInstance()->ShowCursor(false);
@@ -114,7 +113,8 @@ void AppWindow::CreateGraphicsWindow()
 	this->m_vertex_shader = GraphicsEngine::getInstance()->CreateVertexShader(shader_byte_code, sizeShader);
 
 	GameObjectManager::initialize(shader_byte_code, sizeShader);
-
+	CameraManager::initialize();
+	
 	// insert objects to draw here
 
 	QuadObject* quad_object = new QuadObject("Quad1"); // orange

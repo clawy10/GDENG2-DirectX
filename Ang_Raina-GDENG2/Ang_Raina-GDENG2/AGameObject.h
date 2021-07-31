@@ -41,7 +41,7 @@ public:
 
 	virtual void Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color);
 	virtual void Update(double deltaTime);
-	virtual void Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader) = 0;
+	virtual void Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader);
 
 	void release();
 	

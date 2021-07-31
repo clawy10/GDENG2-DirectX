@@ -66,6 +66,11 @@ void AGameObject::Update(double deltaTime)
 	
 }
 
+void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
+{
+	
+}
+
 void AGameObject::release()
 {
 	delete this;

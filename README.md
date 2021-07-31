@@ -14,3 +14,4 @@
 # 7/22/2021 - Added EngineTime class and finished slide 13 and 14 challenges in lesson ppt
 # 7/26/2021 - Added Plane primitive object and input system
 # 7/28/2021 - Added FPS camera
+# 7/31/2021 - Refactored AGameObject code
