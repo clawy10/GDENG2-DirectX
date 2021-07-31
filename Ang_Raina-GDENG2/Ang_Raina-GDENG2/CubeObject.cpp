@@ -1,4 +1,5 @@
 #include "CubeObject.h"
+#include "CameraManager.h"
 
 CubeObject::CubeObject(std::string name) : AGameObject(name)
 {
@@ -12,16 +13,16 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 	vertex list[] =
 	{
 		//FRONT FACE
-		{Vector3D(-0.5f,-0.5f,-0.5f),    Vector3D(1,0,0),  Vector3D(0.2f,0,0) },
-		{Vector3D(-0.5f,0.5f,-0.5f),    Vector3D(1,1,0), Vector3D(0.2f,0.2f,0) },
-		{ Vector3D(0.5f,0.5f,-0.5f),   Vector3D(1,1,0),  Vector3D(0.2f,0.2f,0) },
-		{ Vector3D(0.5f,-0.5f,-0.5f),     Vector3D(1,0,0), Vector3D(0.2f,0,0) },
+		{Vector3D(-0.5f,-0.5f,-0.5f),	color},
+		{Vector3D(-0.5f,0.5f,-0.5f),	color},
+		{Vector3D(0.5f,0.5f,-0.5f),	color},
+		{Vector3D(0.5f,-0.5f,-0.5f),	color},
 
 		//BACK FACE
-		{ Vector3D(0.5f,-0.5f,0.5f),    Vector3D(0,1,0), Vector3D(0,0.2f,0) },
-		{ Vector3D(0.5f,0.5f,0.5f),    Vector3D(0,1,1), Vector3D(0,0.2f,0.2f) },
-		{ Vector3D(-0.5f,0.5f,0.5f),   Vector3D(0,1,1),  Vector3D(0,0.2f,0.2f) },
-		{ Vector3D(-0.5f,-0.5f,0.5f),     Vector3D(0,1,0), Vector3D(0,0.2f,0) }
+		{Vector3D(0.5f,-0.5f,0.5f),	color},
+		{Vector3D(0.5f,0.5f,0.5f),	color},
+		{Vector3D(-0.5f,0.5f,0.5f),	color},
+		{Vector3D(-0.5f,-0.5f,0.5f),	color}
 	};
 	
 	UINT size_list = ARRAYSIZE(list);
@@ -56,8 +57,6 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 
 
 	constant cc;
-	//cc.m_time = 0;
-	cc.m_angle = 0;
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 }
@@ -68,7 +67,49 @@ void CubeObject::Update(double deltaTime)
 	
 	//this->rotation.x += deltaTime / 0.55f;
 	//this->rotation.y += deltaTime / 0.55f;
-	this->rotation.z += deltaTime * this->SPEED;
+	//this->rotation.z += deltaTime * this->SPEED;
+}
+
+void CubeObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
+{
+	//std::cout << "Drawing " << this->name << std::endl;
+	constant cc;
+
+	Matrix4x4 temp;
+
+	//scale
+	cc.m_world.SetIdentity();
+	cc.m_world.SetScale(this->scale);
+
+	// rotate
+	temp.SetIdentity();
+	temp.SetRotationZ(this->rotation.z);
+	cc.m_world *= temp;
+
+	temp.SetIdentity();
+	temp.SetRotationY(this->rotation.y);
+	cc.m_world *= temp;
+
+	temp.SetIdentity();
+	temp.SetRotationX(this->rotation.x);
+	cc.m_world *= temp;
+
+	// translate
+	temp.SetIdentity();
+	temp.SetTranslation(this->position);
+	cc.m_world *= temp;
+
+	cc.m_view = CameraManager::getInstance()->GetMainCamera()->GetCameraMatrix();
+	cc.m_projection.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
+
+	this->cb->update(GraphicsEngine::getInstance()->GetImmediateDeviceContext(), &cc);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(vertexShader, this->cb);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(pixelShader, this->cb);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetVertexBuffer(this->vb);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetIndexBuffer(this->ib);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->DrawIndexedTriangleList(this->ib->GetSizeIndexList(), 0, 0);
 }
 
 void CubeObject::SetAnimationSpeed(float speed)
@@ -78,5 +119,7 @@ void CubeObject::SetAnimationSpeed(float speed)
 
 CubeObject::~CubeObject()
 {
-	
+	this->vb->release();
+	this->ib->release();
+	this->cb->release();
 }

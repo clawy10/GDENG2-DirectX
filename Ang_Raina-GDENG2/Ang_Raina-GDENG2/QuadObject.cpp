@@ -1,5 +1,7 @@
 #include "QuadObject.h"
 
+#include "CameraManager.h"
+
 QuadObject::QuadObject(std::string name): AGameObject(name)
 {
 	
@@ -12,10 +14,10 @@ void QuadObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 	vertex list[] =
 	{
 		//X - Y - Z
-		{Vector3D(-0.5f,-0.5f,0.0f),   Vector3D(0,0,0),  Vector3D(0,1,0) }, // POS1
-		{Vector3D(-0.5f,0.5f,0.0f),   Vector3D(1,1,0),  Vector3D(0,1,1) }, // POS2
-		{ Vector3D(0.5f,0.5f,0.0f),	 Vector3D(0,0,1),  Vector3D(1,0,0) },// POS2
-		{ Vector3D(0.5f,-0.5f,0.0f),   Vector3D(1,1,1),  Vector3D(0,0,1) }
+		{Vector3D(-0.5f,-0.5f,0.0f),	color}, // POS1
+		{Vector3D(-0.5f,0.5f,0.0f),	color}, // POS2
+		{ Vector3D(0.5f,0.5f,0.0f),	color},// POS3
+		{ Vector3D(0.5f,-0.5f,0.0f),	color}
 	};
 	
 	UINT size_list = ARRAYSIZE(list);
@@ -33,8 +35,6 @@ void QuadObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 
 
 	constant cc;
-	//cc.m_time = 0;
-	cc.m_angle = 0;
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 }
@@ -62,10 +62,48 @@ void QuadObject::Update(double deltaTime)
 	{
 		this->speed -= 0.05f;
 	}
+}
 
-	//std::cout << this->ticks << std::endl;
+void QuadObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
+{
+	//std::cout << "Drawing " << this->name << std::endl;
+	constant cc;
 
-	this->m_angle = sin(this->ticks / this->speed) / 2.0f;
+	Matrix4x4 temp;
+
+	//scale
+	cc.m_world.SetIdentity();
+	cc.m_world.SetScale(this->scale);
+
+	// rotate
+	temp.SetIdentity();
+	temp.SetRotationZ(this->rotation.z);
+	cc.m_world *= temp;
+
+	temp.SetIdentity();
+	temp.SetRotationY(this->rotation.y);
+	cc.m_world *= temp;
+
+	temp.SetIdentity();
+	temp.SetRotationX(this->rotation.x);
+	cc.m_world *= temp;
+
+	// translate
+	temp.SetIdentity();
+	temp.SetTranslation(this->position);
+	cc.m_world *= temp;
+
+	cc.m_view = CameraManager::getInstance()->GetMainCamera()->GetCameraMatrix();
+	cc.m_projection.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
+
+	this->cb->update(GraphicsEngine::getInstance()->GetImmediateDeviceContext(), &cc);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(vertexShader, this->cb);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(pixelShader, this->cb);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetVertexBuffer(this->vb);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetIndexBuffer(this->ib);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->DrawIndexedTriangleList(this->ib->GetSizeIndexList(), 0, 0);
 }
 
 QuadObject::~QuadObject()

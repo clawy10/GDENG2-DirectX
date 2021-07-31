@@ -1,4 +1,5 @@
 #include "PlaneObject.h"
+#include "CameraManager.h"
 
 PlaneObject::PlaneObject(std::string name) : AGameObject(name)
 {
@@ -12,16 +13,16 @@ void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 	vertex list[] =
 	{
 		//X - Y - Z
-		{Vector3D(-0.8f,-0.8f,-0.025f),    Vector3D(1,1,1),  Vector3D(0.2f,0,0) },
-		{Vector3D(-0.8f,0.8f,-0.025f),    Vector3D(1,1,1), Vector3D(0.2f,0.2f,0) },
-		{Vector3D(0.8f,0.8f,-0.025f),   Vector3D(1,1,1),  Vector3D(0.2f,0.2f,0) },
-		{Vector3D(0.8f,-0.8f,-0.025f),     Vector3D(1,1,1), Vector3D(0.2f,0,0) },
+		{Vector3D(-0.8f,-0.8f,-0.025f),	color},
+		{Vector3D(-0.8f,0.8f,-0.025f),	color},
+		{Vector3D(0.8f,0.8f,-0.025f),		color},
+		{Vector3D(0.8f,-0.8f,-0.025f),	color},
 
 		//BACK FACE
-		{Vector3D(0.8f,-0.8f,0.025f),    Vector3D(1,1,1), Vector3D(0,0.2f,0) },
-		{Vector3D(0.8f,0.8f,0.025f),    Vector3D(1,1,1), Vector3D(0,0.2f,0.2f) },
-		{Vector3D(-0.8f,0.8f,0.025f),   Vector3D(1,1,1),  Vector3D(0,0.2f,0.2f) },
-		{Vector3D(-0.8f,-0.8f,0.025f),     Vector3D(1,1,1), Vector3D(0,0.2f,0) },
+		{Vector3D(0.8f,-0.8f,0.025f),		color},
+		{Vector3D(0.8f,0.8f,0.025f),		color},
+		{Vector3D(-0.8f,0.8f,0.025f),		color},
+		{Vector3D(-0.8f,-0.8f,0.025f),	color},
 	};
 
 	UINT size_list = ARRAYSIZE(list);
@@ -54,8 +55,6 @@ void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 
 
 	constant cc;
-	//cc.m_time = 0;
-	cc.m_angle = 0;
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 
@@ -65,6 +64,48 @@ void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 void PlaneObject::Update(double deltaTime)
 {
 	
+}
+
+void PlaneObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
+{
+	//std::cout << "Drawing " << this->name << std::endl;
+	constant cc;
+
+	Matrix4x4 temp;
+
+	//scale
+	cc.m_world.SetIdentity();
+	cc.m_world.SetScale(this->scale);
+
+	// rotate
+	temp.SetIdentity();
+	temp.SetRotationZ(this->rotation.z);
+	cc.m_world *= temp;
+
+	temp.SetIdentity();
+	temp.SetRotationY(this->rotation.y);
+	cc.m_world *= temp;
+
+	temp.SetIdentity();
+	temp.SetRotationX(this->rotation.x);
+	cc.m_world *= temp;
+
+	// translate
+	temp.SetIdentity();
+	temp.SetTranslation(this->position);
+	cc.m_world *= temp;
+
+	cc.m_view = CameraManager::getInstance()->GetMainCamera()->GetCameraMatrix();
+	cc.m_projection.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
+
+	this->cb->update(GraphicsEngine::getInstance()->GetImmediateDeviceContext(), &cc);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(vertexShader, this->cb);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(pixelShader, this->cb);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetVertexBuffer(this->vb);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetIndexBuffer(this->ib);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->DrawIndexedTriangleList(this->ib->GetSizeIndexList(), 0, 0);
 }
 
 PlaneObject::~PlaneObject()
