@@ -25,5 +25,7 @@ private:
 	VertexBuffer* vb;
 	IndexBuffer* ib;
 	ConstantBuffer* cb;
+
+	float delta = 0.0f;
 };
 

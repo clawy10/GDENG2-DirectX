@@ -126,13 +126,28 @@ void AppWindow::CreateGraphicsWindow()
 	//GameObjectManager::getInstance()->AddObject(quad_object2, Vector3D(1, 1, 0.38));
 
 	CubeObject* cube_object = new CubeObject("Cube1");
-	cube_object->SetPosition(0, 0, 0.25);
+	cube_object->SetPosition(0.0f, 0.9f, 0.0f);
 	GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
 
-	PlaneObject* plane_object = new PlaneObject("Plane1");
-	//plane_object->SetPosition(0.0, 0, 0);
-	GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 0.38));
+	CubeObject* cube_object2 = new CubeObject("Cube2");
+	cube_object2->SetPosition(-1.5f, 2.0f, 0.0f);
+	GameObjectManager::getInstance()->AddObject(cube_object2, Vector3D(1, 0.38, 0.38));
 
+	CubeObject* cube_object3 = new CubeObject("Cube3");
+	cube_object3->SetPosition(-1.5f, 3.0f, -2.0f);
+	GameObjectManager::getInstance()->AddObject(cube_object3, Vector3D(1, 0.38, 0.38));
+
+	PlaneObject* plane_object = new PlaneObject("Plane1");
+	plane_object->SetScale(5, 5, 1);
+	GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
+
+	/*for (int i = 0; i < 50; i++)
+	{
+		CubeObject* cube_object = new CubeObject("Cube" + std::to_string(i));
+		cube_object->SetPosition(RandomNumber(-3, 3), RandomNumber(-3, 3), RandomNumber(-1, 1));
+		GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 1, 1));
+	}*/
+	
 	// end of objects to draw
 
 	GraphicsEngine::getInstance()->ReleaseCompiledShader();

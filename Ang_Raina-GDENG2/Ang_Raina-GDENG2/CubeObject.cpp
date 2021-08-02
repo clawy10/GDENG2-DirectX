@@ -65,9 +65,19 @@ void CubeObject::Update(double deltaTime)
 {
 	AGameObject::Update(deltaTime);
 	
-	//this->rotation.x += deltaTime / 0.55f;
-	//this->rotation.y += deltaTime / 0.55f;
+	//this->rotation.x += deltaTime * this->SPEED;
+	//this->rotation.y += deltaTime * this->SPEED;
 	//this->rotation.z += deltaTime * this->SPEED;
+
+	//this->delta += deltaTime / 0.15f;
+	
+	//Vector3D scale = Vector3D::lerp(Vector3D(1.0f, 1.0f, 1.0f), Vector3D(5.0f, 5.0f, 1.0f), (sin(this->delta) + 1.0f) / 2.0f);
+	//this->SetScale(scale);
+	/*Vector3D position = Vector3D::lerp(Vector3D(-1.0, -1.0, 0), Vector3D(1.0f, 1.0f, 0), (sin(this->delta) + 1.0f) / 2.0f);
+	
+	this->SetScale(scale);
+	this->SetPosition(position);
+	*/
 }
 
 void CubeObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)

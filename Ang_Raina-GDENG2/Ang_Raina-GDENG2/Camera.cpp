@@ -17,14 +17,14 @@ void Camera::Update(double deltaTime)
 
 	if (this->isForward)
 	{
-		y += (float)deltaTime * this->CAMERA_MOVE_SPEED;
+		//y += (float)deltaTime * this->CAMERA_MOVE_SPEED;
 		z += (float) deltaTime * this->CAMERA_MOVE_SPEED;
 		this->SetPosition(x, y, z);
 		this->UpdateCameraMatrix();
 	}
 	else if (this->isBackward)
 	{
-		y -= (float)deltaTime * this->CAMERA_MOVE_SPEED;
+		//y -= (float)deltaTime * this->CAMERA_MOVE_SPEED;
 		z -= (float) deltaTime * this->CAMERA_MOVE_SPEED;
 		this->SetPosition(x, y, z);
 		this->UpdateCameraMatrix();
