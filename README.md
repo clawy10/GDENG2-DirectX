@@ -15,3 +15,4 @@
 # 7/26/2021 - Added Plane primitive object and input system
 # 7/28/2021 - Added FPS camera
 # 7/31/2021 - Refactored AGameObject code
+# 8/03/2021 - Fixed camera issues
