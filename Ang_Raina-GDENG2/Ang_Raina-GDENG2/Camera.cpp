@@ -33,22 +33,22 @@ void Camera::Update(double deltaTime)
 {
 	if (this->isForward)
 	{
-		this->position = this->position + GetForwardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
+		this->position = this->position + GetForwardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
-	else if (this->isBackward)
+	if (this->isBackward)
 	{
-		this->position = this->position - GetForwardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
+		this->position = this->position - GetForwardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
-	else if (this->isRight)
+	if (this->isRight)
 	{
-		this->position = this->position + GetSidewardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
+		this->position = this->position + GetSidewardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
-	else if (this->isLeft)
+	if (this->isLeft)
 	{
-		this->position = this->position - GetSidewardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
+		this->position = this->position - GetSidewardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 }
