@@ -97,18 +97,21 @@ void Camera::OnKeyUp(int key)
 
 void Camera::OnMouseMove(const Point& mousePos)
 {
-	float x = this->rotation.x;
-	float y = this->rotation.y;
-	float z = this->rotation.z;
+	if (this->isRotate)
+	{
+		float x = this->rotation.x;
+		float y = this->rotation.y;
+		float z = this->rotation.z;
 
-	int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
-	int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
-	
-	x += (mousePos.y - (height / 2.0f)) * this->CAMERA_ROTATE_SPEED;
-	y += (mousePos.x - (width / 2.0f)) * this->CAMERA_ROTATE_SPEED;
+		int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
+		int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
 
-	this->SetRotation(x, y, z);
-	this->UpdateCameraMatrix();
+		x += (mousePos.y - (height / 2.0f)) * this->CAMERA_ROTATE_SPEED;
+		y += (mousePos.x - (width / 2.0f)) * this->CAMERA_ROTATE_SPEED;
+
+		this->SetRotation(x, y, z);
+		this->UpdateCameraMatrix();
+	}
 }
 
 void Camera::OnLeftMouseDown(const Point& deltaMousePos)
@@ -121,10 +124,12 @@ void Camera::OnLeftMouseUp(const Point& deltaMousePos)
 
 void Camera::OnRightMouseDown(const Point& deltaMousePos)
 {
+	this->isRotate = true;
 }
 
 void Camera::OnRightMouseUp(const Point& deltaMousePos)
 {
+	this->isRotate = false;
 }
 
 Matrix4x4 Camera::GetCameraMatrix()

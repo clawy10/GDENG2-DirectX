@@ -30,11 +30,9 @@ private:
 	bool isBackward = false;
 	bool isRight = false;
 	bool isLeft = false;
+
+	bool isRotate = false;
 	
-	float rotX = 0.0f;
-	float rotY = 0.0f;
-	float forward = 0.0f;
-	float rightward = 0.0f;
 	Matrix4x4 cameraMatrix;
 
 	float CAMERA_MOVE_SPEED = 0.5f;

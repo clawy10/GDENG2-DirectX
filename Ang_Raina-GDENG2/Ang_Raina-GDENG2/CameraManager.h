@@ -7,7 +7,7 @@ public:
 	static void initialize();
 	static void destroy();
 
-	Camera* GetMainCamera();
+	Camera* GetSceneCamera();
 
 private:
 	CameraManager();
@@ -16,6 +16,6 @@ private:
 	CameraManager& operator=(CameraManager const&) {};
 	static CameraManager* sharedInstance;
 	
-	Camera* mainCamera;
+	Camera* sceneCamera;
 };
 

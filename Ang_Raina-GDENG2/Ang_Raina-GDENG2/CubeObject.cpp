@@ -109,7 +109,7 @@ void CubeObject::Draw(int width, int height, VertexShader* vertexShader, PixelSh
 	temp.SetTranslation(this->position);
 	cc.m_world *= temp;
 
-	cc.m_view = CameraManager::getInstance()->GetMainCamera()->GetCameraMatrix();
+	cc.m_view = CameraManager::getInstance()->GetSceneCamera()->GetCameraMatrix();
 	cc.m_projection.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
 
 	this->cb->update(GraphicsEngine::getInstance()->GetImmediateDeviceContext(), &cc);
