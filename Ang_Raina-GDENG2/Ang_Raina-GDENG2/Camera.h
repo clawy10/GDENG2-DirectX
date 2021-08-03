@@ -37,7 +37,7 @@ private:
 	float rightward = 0.0f;
 	Matrix4x4 cameraMatrix;
 
-	float CAMERA_MOVE_SPEED = 10.0f;
+	float CAMERA_MOVE_SPEED = 0.5f;
 	float CAMERA_ROTATE_SPEED = 0.001f;
 };
 

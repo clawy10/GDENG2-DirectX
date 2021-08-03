@@ -28,6 +28,14 @@ public:
 		return v;
 	}
 
+	static Vector3D normalize(Vector3D vector)
+	{
+		float w = sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
+		Vector3D result = Vector3D(vector.x / w, vector.y / w, vector.z / w);
+
+		return result;
+	}
+
 	Vector3D operator *(float num)
 	{
 		return Vector3D(this->x * num, this->y * num, this->z * num);
@@ -36,6 +44,11 @@ public:
 	Vector3D operator +(Vector3D vec)
 	{
 		return Vector3D(this->x + vec.x, this->y + vec.y, this->z + vec.z);
+	}
+
+	Vector3D operator -(Vector3D vec)
+	{
+		return Vector3D(this->x - vec.x, this->y - vec.y, this->z - vec.z);
 	}
 
 	~Vector3D() {}

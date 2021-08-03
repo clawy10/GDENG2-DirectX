@@ -9,36 +9,46 @@ Camera::Camera(std::string name) : AGameObject(name)
 	this->UpdateCameraMatrix();
 }
 
+Vector3D GetForwardDirection(Matrix4x4 matrix)
+{
+	Matrix4x4 viewMatrix = matrix;
+	viewMatrix.inverse();
+
+	Vector3D zDirection = viewMatrix.GetZDirection();
+
+	return Vector3D::normalize(zDirection);
+}
+
+Vector3D GetSidewardDirection(Matrix4x4 matrix)
+{
+	Matrix4x4 viewMatrix = matrix;
+	viewMatrix.inverse();
+
+	Vector3D xDirection = viewMatrix.GetXDirection();
+
+	return Vector3D::normalize(xDirection);
+}
+
 void Camera::Update(double deltaTime)
 {
-	float x = this->position.x;
-	float y = this->position.y;
-	float z = this->position.z;
-
 	if (this->isForward)
 	{
-		//y += (float)deltaTime * this->CAMERA_MOVE_SPEED;
-		z += (float) deltaTime * this->CAMERA_MOVE_SPEED;
-		this->SetPosition(x, y, z);
+		this->position = this->position + GetForwardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 	else if (this->isBackward)
 	{
-		//y -= (float)deltaTime * this->CAMERA_MOVE_SPEED;
-		z -= (float) deltaTime * this->CAMERA_MOVE_SPEED;
-		this->SetPosition(x, y, z);
+		this->position = this->position - GetForwardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 	else if (this->isRight)
 	{
-		x += (float)deltaTime * this->CAMERA_MOVE_SPEED;
-		this->SetPosition(x, y, z);
+		this->position = this->position + GetSidewardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 	else if (this->isLeft)
 	{
-		x -= (float)deltaTime * this->CAMERA_MOVE_SPEED;
-		this->SetPosition(x, y, z);
+		this->position = this->position - GetSidewardDirection(this->cameraMatrix) * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 }
