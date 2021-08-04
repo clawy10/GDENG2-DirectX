@@ -65,6 +65,15 @@
     <Filter Include="Game Engine\Game Objects\Camera">
       <UniqueIdentifier>{0133d7b7-88ab-4dfb-a175-e6580ae6fc83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Resources">
+      <UniqueIdentifier>{b295f433-e6f0-4a59-9701-e7b312fc2b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Resources\Resource Manager">
+      <UniqueIdentifier>{889ebb0a-bddb-4f3e-a5ad-901ad72d60f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Graphics Engine\Resources\Texture">
+      <UniqueIdentifier>{c97e6a8e-8169-480c-a35e-d053068340c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -129,6 +138,18 @@
     </ClCompile>
     <ClCompile Include="CameraManager.cpp">
       <Filter>Game Engine\Game Objects\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Game Engine\Graphics Engine\Resources\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Game Engine\Graphics Engine\Resources\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +230,21 @@
     </ClInclude>
     <ClInclude Include="Vector2D.h">
       <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Game Engine\Graphics Engine\Resources\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Prerequisites.h">
+      <Filter>Game Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Game Engine\Graphics Engine\Resources\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

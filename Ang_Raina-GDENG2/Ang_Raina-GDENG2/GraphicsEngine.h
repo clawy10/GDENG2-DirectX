@@ -1,14 +1,6 @@
 #pragma once
 #include <d3d11.h>
-
-class SwapChain;
-class DeviceContext;
-class VertexBuffer;
-class IndexBuffer;
-class ConstantBuffer;
-class VertexShader;
-class PixelShader;
-class DepthBuffer;
+#include "Prerequisites.h"
 
 class GraphicsEngine
 {
@@ -69,5 +61,6 @@ private:
 	friend class VertexShader;
 	friend class PixelShader;
 	friend class DepthBuffer;
+	friend class Texture;
 };
 
