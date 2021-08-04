@@ -207,6 +207,9 @@
     <ClInclude Include="CameraManager.h">
       <Filter>Game Engine\Game Objects\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">

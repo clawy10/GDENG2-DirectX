@@ -11,18 +11,33 @@ void QuadObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 {
 	AGameObject::Initialize(shaderByteCode, sizeShader, color);
 	
-	vertex list[] =
+	Vector3D position_list[] =
 	{
-		//X - Y - Z
-		{Vector3D(-0.5f,-0.5f,0.0f),	color}, // POS1
-		{Vector3D(-0.5f,0.5f,0.0f),	color}, // POS2
-		{ Vector3D(0.5f,0.5f,0.0f),	color},// POS3
-		{ Vector3D(0.5f,-0.5f,0.0f),	color}
+		{ Vector3D(-0.5f,-0.5f,0)},
+		{ Vector3D(-0.5f,0.5f,0) },
+		{ Vector3D(0.5f,0.5f,0) },
+		{ Vector3D(0.5f,-0.5f,0)},
+	};
+
+	Vector2D texcoord_list[] =
+	{
+		{ Vector2D(0.0f,0.0f) },
+		{ Vector2D(0.0f,1.0f) },
+		{ Vector2D(1.0f,0.0f) },
+		{ Vector2D(1.0f,1.0f) }
+	};
+
+	vertex vertex_list[] =
+	{
+		{ position_list[0],texcoord_list[1] },
+		{ position_list[1],texcoord_list[0] },
+		{ position_list[2],texcoord_list[2] },
+		{ position_list[3],texcoord_list[3] }
 	};
 	
-	UINT size_list = ARRAYSIZE(list);
+	UINT size_list = ARRAYSIZE(vertex_list);
 	this->vb = GraphicsEngine::getInstance()->CreateVertexBuffer();
-	this->vb->load(list, sizeof(vertex), size_list, shaderByteCode, sizeShader);
+	this->vb->load(vertex_list, sizeof(vertex), size_list, shaderByteCode, sizeShader);
 
 
 	unsigned int indexList[] =

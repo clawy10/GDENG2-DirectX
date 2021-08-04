@@ -1,6 +1,7 @@
 #include "CubeObject.h"
 #include "CameraManager.h"
 
+
 CubeObject::CubeObject(std::string name) : AGameObject(name)
 {
 	
@@ -10,24 +11,66 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 {
 	AGameObject::Initialize(shaderByteCode, sizeShader, color);
 
-	vertex list[] =
+	Vector3D position_list[] =
 	{
-		//FRONT FACE
-		{Vector3D(-0.5f,-0.5f,-0.5f),	color},
-		{Vector3D(-0.5f,0.5f,-0.5f),	color},
-		{Vector3D(0.5f,0.5f,-0.5f),	color},
-		{Vector3D(0.5f,-0.5f,-0.5f),	color},
+		{ Vector3D(-0.5f,-0.5f,-0.5f)},
+		{ Vector3D(-0.5f,0.5f,-0.5f) },
+		{ Vector3D(0.5f,0.5f,-0.5f) },
+		{ Vector3D(0.5f,-0.5f,-0.5f)},
 
 		//BACK FACE
-		{Vector3D(0.5f,-0.5f,0.5f),	color},
-		{Vector3D(0.5f,0.5f,0.5f),	color},
-		{Vector3D(-0.5f,0.5f,0.5f),	color},
-		{Vector3D(-0.5f,-0.5f,0.5f),	color}
+		{ Vector3D(0.5f,-0.5f,0.5f) },
+		{ Vector3D(0.5f,0.5f,0.5f) },
+		{ Vector3D(-0.5f,0.5f,0.5f)},
+		{ Vector3D(-0.5f,-0.5f,0.5f) }
 	};
 	
-	UINT size_list = ARRAYSIZE(list);
+	Vector2D texcoord_list[] =
+	{
+		{ Vector2D(0.0f,0.0f) },
+		{ Vector2D(0.0f,1.0f) },
+		{ Vector2D(1.0f,0.0f) },
+		{ Vector2D(1.0f,1.0f) }
+	};
+	
+	vertex vertex_list[] =
+	{
+		//X - Y - Z
+		//FRONT FACE
+		{ position_list[0],texcoord_list[1] },
+		{ position_list[1],texcoord_list[0] },
+		{ position_list[2],texcoord_list[2] },
+		{ position_list[3],texcoord_list[3] },
+
+		{ position_list[4],texcoord_list[1] },
+		{ position_list[5],texcoord_list[0] },
+		{ position_list[6],texcoord_list[2] },
+		{ position_list[7],texcoord_list[3] },
+
+		{ position_list[1],texcoord_list[1] },
+		{ position_list[6],texcoord_list[0] },
+		{ position_list[5],texcoord_list[2] },
+		{ position_list[2],texcoord_list[3] },
+
+		{ position_list[7],texcoord_list[1] },
+		{ position_list[0],texcoord_list[0] },
+		{ position_list[3],texcoord_list[2] },
+		{ position_list[4],texcoord_list[3] },
+
+		{ position_list[3],texcoord_list[1] },
+		{ position_list[2],texcoord_list[0] },
+		{ position_list[5],texcoord_list[2] },
+		{ position_list[4],texcoord_list[3] },
+
+		{ position_list[7],texcoord_list[1] },
+		{ position_list[6],texcoord_list[0] },
+		{ position_list[1],texcoord_list[2] },
+		{ position_list[0],texcoord_list[3] }
+	};
+	
+	UINT size_list = ARRAYSIZE(vertex_list);
 	this->vb = GraphicsEngine::getInstance()->CreateVertexBuffer();
-	this->vb->load(list, sizeof(vertex), size_list, shaderByteCode, sizeShader);
+	this->vb->load(vertex_list, sizeof(vertex), size_list, shaderByteCode, sizeShader);
 
 
 	unsigned int indexList[] =
