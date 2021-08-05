@@ -8,6 +8,7 @@ class ConstantBuffer;
 class VertexShader;
 class PixelShader;
 class DepthBuffer;
+class Texture;
 
 class DeviceContext
 {
@@ -20,8 +21,12 @@ public:
 	void DrawIndexedTriangleList(UINT indexCount, UINT startVertexIndex, UINT startIndexLocation);
 	void DrawTriangleStrip(UINT vertexCount, UINT startVertexIndex);
 	void SetViewportSize(UINT width, UINT height);
+	
 	void SetVertexShader(VertexShader* vertex_shader);
 	void SetPixelShader(PixelShader* pixel_shader);
+
+	void SetTexture(VertexShader* vertex_shader, Texture* texture);
+	void SetTexture(PixelShader* pixel_shader, Texture* texture);
 	
 	void SetConstantBuffer(VertexShader* vertex_shader, ConstantBuffer* constant_buffer);
 	void SetConstantBuffer(PixelShader* pixel_shader, ConstantBuffer* constant_buffer);

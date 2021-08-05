@@ -131,7 +131,7 @@ void AppWindow::CreateGraphicsWindow()
 
 	PlaneObject* plane_object = new PlaneObject("Plane1");
 	plane_object->SetScale(5, 5, 1);
-	GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
+	//GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
 	
 	// end of objects to draw
 

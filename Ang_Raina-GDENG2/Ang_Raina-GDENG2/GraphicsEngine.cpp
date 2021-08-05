@@ -8,6 +8,7 @@
 #include "PixelShader.h"
 #include <d3dcompiler.h>
 #include "DepthBuffer.h"
+#include "TextureManager.h"
 
 GraphicsEngine* GraphicsEngine::sharedInstance = nullptr;
 
@@ -82,6 +83,11 @@ PixelShader* GraphicsEngine::CreatePixelShader(const void* shader_byte_code, siz
 	}
 
 	return ps;
+}
+
+TextureManager* GraphicsEngine::GetTextureManager()
+{
+	return this->m_texture_manager;
 }
 
 bool GraphicsEngine::CompileVertexShader(const wchar_t* file_name, const char* entry_point_name, void** shader_byte_code, size_t* byte_code_size)
@@ -168,6 +174,8 @@ bool GraphicsEngine::init()
 	this->m_dxgi_device->GetParent(__uuidof(IDXGIAdapter), (void**)&this->m_dxgi_adapter);
 	this->m_dxgi_adapter->GetParent(__uuidof(IDXGIFactory), (void**)&this->m_dxgi_factory);
 
+	this->m_texture_manager = new TextureManager();
+	
 	return true;
 }
 

@@ -5,6 +5,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "ConstantBuffer.h"
+#include "Texture.h"
 
 class QuadObject : public AGameObject
 {
@@ -28,5 +29,7 @@ private:
 	VertexBuffer* vb;
 	IndexBuffer* ib;
 	ConstantBuffer* cb;
+
+	Texture* texture;
 };
 

@@ -6,6 +6,7 @@
 #include "VertexShader.h"
 #include "PixelShader.h"
 #include "DepthBuffer.h"
+#include "Texture.h"
 
 DeviceContext::DeviceContext(ID3D11DeviceContext* deviceContext) : m_device_context(deviceContext)
 {
@@ -70,6 +71,16 @@ void DeviceContext::SetVertexShader(VertexShader* vertex_shader)
 void DeviceContext::SetPixelShader(PixelShader* pixel_shader)
 {
 	this->m_device_context->PSSetShader(pixel_shader->m_pixel_shader, nullptr, 0);
+}
+
+void DeviceContext::SetTexture(VertexShader* vertex_shader, Texture* texture)
+{
+	m_device_context->VSSetShaderResources(0, 1, &texture->m_shader_res_view);
+}
+
+void DeviceContext::SetTexture(PixelShader* pixel_shader, Texture* texture)
+{
+	m_device_context->PSSetShaderResources(0, 1, &texture->m_shader_res_view);
 }
 
 void DeviceContext::SetConstantBuffer(VertexShader* vertex_shader, ConstantBuffer* constant_buffer)

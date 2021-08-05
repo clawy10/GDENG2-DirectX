@@ -1,5 +1,6 @@
 #include "PlaneObject.h"
 #include "CameraManager.h"
+#include "TextureManager.h"
 
 PlaneObject::PlaneObject(std::string name) : AGameObject(name)
 {
@@ -98,6 +99,8 @@ void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 
+	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\white-texture.jpg");
+
 	this->SetRotation(190.0f, 0.0f, 0.0f);
 }
 
@@ -144,6 +147,8 @@ void PlaneObject::Draw(int width, int height, VertexShader* vertexShader, PixelS
 
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetVertexBuffer(this->vb);
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetIndexBuffer(this->ib);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetTexture(pixelShader, this->texture);
 
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->DrawIndexedTriangleList(this->ib->GetSizeIndexList(), 0, 0);
 }

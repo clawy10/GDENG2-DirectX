@@ -5,6 +5,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "ConstantBuffer.h"
+#include "Texture.h"
 
 class CubeObject : public AGameObject
 {
@@ -25,6 +26,8 @@ private:
 	VertexBuffer* vb;
 	IndexBuffer* ib;
 	ConstantBuffer* cb;
+
+	Texture* texture;
 
 	float delta = 0.0f;
 };

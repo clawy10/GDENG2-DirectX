@@ -16,3 +16,5 @@
 # 7/28/2021 - Added FPS camera
 # 7/31/2021 - Refactored AGameObject code
 # 8/03/2021 - Fixed camera issues
+# 8/04/2021 - Added Texture class
+# 8/05/2021 - Added texture to primitive objects

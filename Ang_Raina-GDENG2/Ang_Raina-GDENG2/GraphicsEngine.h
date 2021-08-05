@@ -22,6 +22,8 @@ public:
 	VertexShader* CreateVertexShader(const void* shader_byte_code, size_t byte_code_size);
 	PixelShader* CreatePixelShader(const void* shader_byte_code, size_t byte_code_size);
 
+	TextureManager* GetTextureManager();
+	
 	bool CompileVertexShader(const wchar_t* file_name, const char* entry_point_name, void** shader_byte_code, size_t* byte_code_size);
 	bool CompilePixelShader(const wchar_t* file_name, const char* entry_point_name, void** shader_byte_code, size_t* byte_code_size);
 	void ReleaseCompiledShader();
@@ -52,6 +54,8 @@ private:
 	ID3DBlob* m_psblob = nullptr;
 	ID3D11VertexShader* m_vs = nullptr;
 	ID3D11PixelShader* m_ps = nullptr;
+
+	TextureManager* m_texture_manager = nullptr;
 
 private:
 	friend class SwapChain;

@@ -18,7 +18,7 @@ ResourceManager::~ResourceManager()
 {
 }
 
-ResourcePtr ResourceManager::createResourceFromFile(const wchar_t* file_path)
+Resource* ResourceManager::createResourceFromFile(const wchar_t* file_path)
 {
 
 #if (_MSC_VER >= 1900 && _MSC_VER <= 1916)  || ( _MSC_VER >= 1920 && __cplusplus <= 201402L) 
@@ -40,9 +40,8 @@ ResourcePtr ResourceManager::createResourceFromFile(const wchar_t* file_path)
 
 	if (raw_res)
 	{
-		ResourcePtr res(raw_res);
-		m_map_resources[full_path] = res;
-		return res;
+		m_map_resources[full_path] = raw_res;
+		return raw_res;
 	}
 
 	return nullptr;

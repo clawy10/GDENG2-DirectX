@@ -77,7 +77,11 @@ bool Window::init()
 	{
 		window = this;
 	}
-
+	auto hr = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
+	if (FAILED(hr)) {
+		throw std::runtime_error("COM Library is already initialized on this thread.");
+	}
+	
 	// creation of the window 
 	this->m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"DirectX Window Application", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 1024, 768, NULL, NULL, NULL, this);
 
@@ -94,6 +98,8 @@ bool Window::init()
 	// set flag to true to indicate window is initialized and running
 	this->m_is_run = true;
 	EngineTime::initialize();
+
+	
 	
 	return true;
 }
