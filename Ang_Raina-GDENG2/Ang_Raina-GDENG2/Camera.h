@@ -19,21 +19,28 @@ public:
 	void OnRightMouseDown(const Point& deltaMousePos) override;
 	void OnRightMouseUp(const Point& deltaMousePos) override;
 	
-	Matrix4x4 GetCameraMatrix();
+	Matrix4x4 GetCameraViewMatrix();
 	void UpdateCameraMatrix();
+
+	Matrix4x4 GetCameraProjectionMatrix();
 
 	~Camera();
 
 	
 private:
+	void ChangeCameraMode(); // change camera mode to perspective or othographic
+	
 	bool isForward = false;
 	bool isBackward = false;
 	bool isRight = false;
 	bool isLeft = false;
 
 	bool isRotate = false;
+
+	bool isOrtho = false; // if the camera is set to orthographic mode
 	
-	Matrix4x4 cameraMatrix;
+	Matrix4x4 cameraViewMatrix;
+	Matrix4x4 cameraProjectionMatrix;
 
 	float CAMERA_MOVE_SPEED = 10.0f;
 	float CAMERA_ROTATE_SPEED = 0.001f;

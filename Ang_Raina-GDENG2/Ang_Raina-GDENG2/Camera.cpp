@@ -6,6 +6,11 @@ Camera::Camera(std::string name) : AGameObject(name)
 {
 	InputSystem::getInstance()->AddListener(this);
 	this->position = Vector3D(0, 0, -2);
+
+	int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
+	int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
+	this->cameraProjectionMatrix.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
+	
 	this->UpdateCameraMatrix();
 }
 
@@ -33,22 +38,22 @@ void Camera::Update(double deltaTime)
 {
 	if (this->isForward)
 	{
-		this->position = this->position + GetForwardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
+		this->position = this->position + GetForwardDirection(this->cameraViewMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 	if (this->isBackward)
 	{
-		this->position = this->position - GetForwardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
+		this->position = this->position - GetForwardDirection(this->cameraViewMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 	if (this->isRight)
 	{
-		this->position = this->position + GetSidewardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
+		this->position = this->position + GetSidewardDirection(this->cameraViewMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 	if (this->isLeft)
 	{
-		this->position = this->position - GetSidewardDirection(this->cameraMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
+		this->position = this->position - GetSidewardDirection(this->cameraViewMatrix) * deltaTime * this->CAMERA_MOVE_SPEED;
 		this->UpdateCameraMatrix();
 	}
 }
@@ -93,6 +98,10 @@ void Camera::OnKeyUp(int key)
 	{
 		this->isRight = false;
 	}
+	else if (key == 'Q')
+	{
+		this->ChangeCameraMode();
+	}
 }
 
 void Camera::OnMouseMove(const Point& mousePos)
@@ -132,9 +141,9 @@ void Camera::OnRightMouseUp(const Point& deltaMousePos)
 	this->isRotate = false;
 }
 
-Matrix4x4 Camera::GetCameraMatrix()
+Matrix4x4 Camera::GetCameraViewMatrix()
 {
-	return this->cameraMatrix;
+	return this->cameraViewMatrix;
 }
 
 void Camera::UpdateCameraMatrix()
@@ -158,7 +167,30 @@ void Camera::UpdateCameraMatrix()
 	
 	world_cam.inverse();
 
-	this->cameraMatrix = world_cam;
+	this->cameraViewMatrix = world_cam;
+}
+
+Matrix4x4 Camera::GetCameraProjectionMatrix()
+{
+	return this->cameraProjectionMatrix;
+}
+
+void Camera::ChangeCameraMode()
+{
+	this->isOrtho = !this->isOrtho;
+
+	int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
+	int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
+	this->cameraProjectionMatrix.SetIdentity();
+	
+	if (this->isOrtho)
+	{
+		this->cameraProjectionMatrix.SetOrthoLH((float)width / 300.0f, (float)height / 300.0f, -4.0f, 4.0f);
+	}
+	else
+	{
+		this->cameraProjectionMatrix.SetPerspectiveFOVLH(1.57f, (float)width / (float)height, 0.1f, 100.0f);
+	}
 }
 
 Camera::~Camera()
