@@ -112,12 +112,15 @@ void Camera::OnMouseMove(const Point& mousePos)
 		float y = this->rotation.y;
 		float z = this->rotation.z;
 
-		int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
-		int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
+		//int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
+		//int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
 
-		x += (mousePos.y - (height / 2.0f)) * this->CAMERA_ROTATE_SPEED;
-		y += (mousePos.x - (width / 2.0f)) * this->CAMERA_ROTATE_SPEED;
+		//x += (mousePos.y - (height / 2.0f)) * this->CAMERA_ROTATE_SPEED;
+		//y += (mousePos.x - (width / 2.0f)) * this->CAMERA_ROTATE_SPEED;
 
+		x += mousePos.y * this->CAMERA_ROTATE_SPEED;
+		y += mousePos.x * this->CAMERA_ROTATE_SPEED;
+		
 		this->SetRotation(x, y, z);
 		this->UpdateCameraMatrix();
 	}
@@ -185,7 +188,7 @@ void Camera::ChangeCameraMode()
 	
 	if (this->isOrtho)
 	{
-		this->cameraProjectionMatrix.SetOrthoLH((float)width / 300.0f, (float)height / 300.0f, -4.0f, 4.0f);
+		this->cameraProjectionMatrix.SetOrthoLH((float)width / 300.0f, (float)height / 300.0f, -69.0f, 420.0f);
 	}
 	else
 	{

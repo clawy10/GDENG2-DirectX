@@ -56,7 +56,7 @@ void InputSystem::Update()
 		std::unordered_set<InputListener*>::iterator it = m_set_listeners.begin();
 		while (it != m_set_listeners.end())
 		{
-			(*it)->OnMouseMove(Point(currentMousePos.x, currentMousePos.y));
+			(*it)->OnMouseMove(Point(currentMousePos.x - this->oldMousePos.x, currentMousePos.y - this->oldMousePos.y));
 			it++;
 		}
 	}

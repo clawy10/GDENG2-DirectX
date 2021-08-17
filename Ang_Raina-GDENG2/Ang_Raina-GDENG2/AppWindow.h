@@ -51,9 +51,5 @@ private:
 	VertexShader* m_vertex_shader;
 	PixelShader* m_pixel_shader;
 	DepthBuffer* m_depth_buffer;
-
-	long m_old_delta;
-	long m_new_delta;
-	float m_delta_time;
 };
 

@@ -74,6 +74,21 @@
     <Filter Include="Game Engine\Graphics Engine\Resources\Texture">
       <UniqueIdentifier>{c97e6a8e-8169-480c-a35e-d053068340c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{f94b2b0f-7f6b-413c-96a4-2b1d32cc2c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI">
+      <UniqueIdentifier>{c3531e7e-331d-44f3-a4e2-fc7d7c4ceaaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen">
+      <UniqueIdentifier>{29a20f90-8885-4cba-a479-10db98ec28b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen\Color Picker Screen">
+      <UniqueIdentifier>{9a26efc3-e8d5-42d5-8ab5-322a09b4c66e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen\Credits Screen">
+      <UniqueIdentifier>{4a77b54c-f0ff-497c-87ac-3b7f7b003f0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -150,6 +165,42 @@
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Game Engine\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="AUIScreen.cpp">
+      <Filter>Game Engine\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScreen.cpp">
+      <Filter>Game Engine\UI\Menu Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditsScreen.cpp">
+      <Filter>Game Engine\UI\Menu Screen\Credits Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorPickerScreen.cpp">
+      <Filter>Game Engine\UI\Menu Screen\Color Picker Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiTexture.cpp">
+      <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +297,51 @@
     <ClInclude Include="TextureManager.h">
       <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Game Engine\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="AUIScreen.h">
+      <Filter>Game Engine\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScreen.h">
+      <Filter>Game Engine\UI\Menu Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditsScreen.h">
+      <Filter>Game Engine\UI\Menu Screen\Credits Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorPickerScreen.h">
+      <Filter>Game Engine\UI\Menu Screen\Color Picker Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGuiTexture.h">
+      <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx11.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\stb_image.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">
@@ -255,5 +351,10 @@
       <Filter>App</Filter>
     </FxCompile>
     <FxCompile Include="shader.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImGui\imgui.ini">
+      <Filter>ImGui</Filter>
+    </None>
   </ItemGroup>
 </Project>

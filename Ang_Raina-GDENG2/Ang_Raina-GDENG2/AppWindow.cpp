@@ -10,6 +10,7 @@
 #include "EngineTime.h"
 #include "InputSystem.h"
 #include "CameraManager.h"
+#include "UIManager.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -69,13 +70,10 @@ void AppWindow::OnUpdate()
 	int height = rc.bottom - rc.top;
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetViewportSize(width, height);
 
-	m_old_delta = m_new_delta;
-	m_new_delta = ::GetTickCount();
-
-	m_delta_time = (m_old_delta) ? ((m_new_delta - m_old_delta) / 1000.0f) : 0;
-
 	GameObjectManager::getInstance()->UpdateObjects(EngineTime::GetDeltaTime());
 	GameObjectManager::getInstance()->DrawObjects(width, height, this->m_vertex_shader, this->m_pixel_shader);
+
+	UIManager::getInstance()->DrawAllUI();
 	
 	this->m_swap_chain->present(true);
 }
@@ -93,9 +91,10 @@ void AppWindow::CreateGraphicsWindow()
 {
 	GraphicsEngine::initialize();
 	InputSystem::initialize();
+	UIManager::initialize(this->m_hwnd);
 
 	InputSystem::getInstance()->AddListener(this);
-	InputSystem::getInstance()->ShowCursor(false);
+	//InputSystem::getInstance()->ShowCursor(false);
 
 	this->m_swap_chain = GraphicsEngine::getInstance()->CreateSwapChain();
 
@@ -140,7 +139,7 @@ void AppWindow::CreateGraphicsWindow()
 	GraphicsEngine::getInstance()->CompilePixelShader(L"PixelShader.hlsl", "main", &shader_byte_code, &sizeShader);
 	this->m_pixel_shader = GraphicsEngine::getInstance()->CreatePixelShader(shader_byte_code, sizeShader);
 	GraphicsEngine::getInstance()->ReleaseCompiledShader();
-
+	
 	std::cout << "App Window initialized" << std::endl;
 }
 
@@ -164,11 +163,11 @@ void AppWindow::OnKeyUp(int key)
 
 void AppWindow::OnMouseMove(const Point& mousePos)
 {
-	int width = this->GetClientWindowRect().right - this->GetClientWindowRect().left;
-	int height = this->GetClientWindowRect().bottom - this->GetClientWindowRect().top;
+	//int width = this->GetClientWindowRect().right - this->GetClientWindowRect().left;
+	//int height = this->GetClientWindowRect().bottom - this->GetClientWindowRect().top;
 	
 	// lock cursor
-	InputSystem::getInstance()->SetCursorPosition(Point(width / 2.0f, height / 2.0f));
+	//InputSystem::getInstance()->SetCursorPosition(Point(width / 2.0f, height / 2.0f));
 }
 
 void AppWindow::OnLeftMouseDown(const Point& deltaMousePos)

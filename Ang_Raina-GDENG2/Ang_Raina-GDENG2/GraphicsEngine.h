@@ -2,6 +2,8 @@
 #include <d3d11.h>
 #include "Prerequisites.h"
 
+class ImGuiTexture;
+
 class GraphicsEngine
 {
 public:
@@ -66,5 +68,7 @@ private:
 	friend class PixelShader;
 	friend class DepthBuffer;
 	friend class Texture;
+	friend class UIManager;
+	friend class ImGuiTexture;
 };
 

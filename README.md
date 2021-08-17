@@ -18,3 +18,5 @@
 # 8/03/2021 - Fixed camera issues
 # 8/04/2021 - Added Texture class
 # 8/05/2021 - Added texture to primitive objects
+# 8/16/2021 - Added UIManager
+# 8/17/2021 - Added AUIScreen class with initial UI screens: MenuScreen, CreditScreen, (Non-functioning) ColorPickerScreen 
