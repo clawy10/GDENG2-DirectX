@@ -103,7 +103,7 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 
-	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg");
+	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\brick.png");
 }
 
 void CubeObject::Update(double deltaTime)

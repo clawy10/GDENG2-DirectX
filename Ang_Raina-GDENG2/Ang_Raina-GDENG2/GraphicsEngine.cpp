@@ -90,6 +90,11 @@ TextureManager* GraphicsEngine::GetTextureManager()
 	return this->m_texture_manager;
 }
 
+MeshManager* GraphicsEngine::GetMeshManager()
+{
+	return this->m_mesh_manager;
+}
+
 bool GraphicsEngine::CompileVertexShader(const wchar_t* file_name, const char* entry_point_name, void** shader_byte_code, size_t* byte_code_size)
 {
 	ID3DBlob* error_blob = nullptr;
@@ -175,6 +180,15 @@ bool GraphicsEngine::init()
 	this->m_dxgi_adapter->GetParent(__uuidof(IDXGIFactory), (void**)&this->m_dxgi_factory);
 
 	this->m_texture_manager = new TextureManager();
+	this->m_mesh_manager = new MeshManager();
+
+	void* shader_byte_code = nullptr;
+	size_t sizeShader = 0;
+
+	this->CompileVertexShader(L"VertexMeshLayoutShader.hlsl", "main", &shader_byte_code, &sizeShader);
+	::memcpy(m_mesh_layout_byte_code, shader_byte_code, sizeShader);
+	m_mesh_layout_size = sizeShader;
+	this->ReleaseCompiledShader();
 	
 	return true;
 }
@@ -191,8 +205,15 @@ bool GraphicsEngine::release()
 	return true;
 }
 
+void GraphicsEngine::GetVertexMeshLayoutShaderByteCodeAndSize(void** byte_code, size_t* size)
+{
+	*byte_code = this->m_mesh_layout_byte_code;
+	*size = this->m_mesh_layout_size;
+}
+
 GraphicsEngine::GraphicsEngine()
 {
+
 }
 
 GraphicsEngine::~GraphicsEngine()

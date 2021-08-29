@@ -24,6 +24,7 @@ public:
 	
 	void SetVertexShader(VertexShader* vertex_shader);
 	void SetPixelShader(PixelShader* pixel_shader);
+	void PSSetSamplers(Texture* texture);
 
 	void SetTexture(VertexShader* vertex_shader, Texture* texture);
 	void SetTexture(PixelShader* pixel_shader, Texture* texture);

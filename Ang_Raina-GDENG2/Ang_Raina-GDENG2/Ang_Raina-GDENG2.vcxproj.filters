@@ -89,6 +89,12 @@
     <Filter Include="Game Engine\UI\Menu Screen\Credits Screen">
       <UniqueIdentifier>{4a77b54c-f0ff-497c-87ac-3b7f7b003f0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen\Resize Object Screen">
+      <UniqueIdentifier>{f61d1ce7-67e0-42b5-afd9-e18c68854790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Game Objects\Mesh Manager">
+      <UniqueIdentifier>{b0afddad-67b1-4a4a-bd40-67579e2c4033}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -201,6 +207,15 @@
     </ClCompile>
     <ClCompile Include="ImGui\imgui_widgets.cpp">
       <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Game Engine\Game Objects\Mesh Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshManager.cpp">
+      <Filter>Game Engine\Game Objects\Mesh Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizeObjectScreen.cpp">
+      <Filter>Game Engine\UI\Menu Screen\Resize Object Screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -342,6 +357,18 @@
     <ClInclude Include="ImGui\stb_image.h">
       <Filter>ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="MeshManager.h">
+      <Filter>Game Engine\Game Objects\Mesh Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Game Engine\Game Objects\Mesh Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexMesh.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizeObjectScreen.h">
+      <Filter>Game Engine\UI\Menu Screen\Resize Object Screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">
@@ -351,6 +378,9 @@
       <Filter>App</Filter>
     </FxCompile>
     <FxCompile Include="shader.fx" />
+    <FxCompile Include="VertexMeshLayoutShader.hlsl">
+      <Filter>Game Engine\Graphics Engine</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ImGui\imgui.ini">

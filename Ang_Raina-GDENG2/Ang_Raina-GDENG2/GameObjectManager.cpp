@@ -26,6 +26,8 @@ void GameObjectManager::AddObject(AGameObject* object, Vector3D color)
 {
 	object->Initialize(this->shader_byte_code, this->sizeShader, color);
 	this->objectList.push_back(object);
+
+	this->objectMap.insert({ object->GetName(), object });
 }
 
 void GameObjectManager::DeleteObject(AGameObject* object)
@@ -53,6 +55,11 @@ void GameObjectManager::DeleteAllObjects()
 	{
 		this->objectList[i]->release();
 	}
+}
+
+AGameObject* GameObjectManager::GetObjectByName(std::string name)
+{
+	return this->objectMap[name];
 }
 
 void GameObjectManager::UpdateObjects(double deltaTime)

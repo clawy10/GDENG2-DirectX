@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <unordered_map>
 #include "AGameObject.h"
 
 class GameObjectManager
@@ -15,6 +16,8 @@ public:
 
 	void DeleteObject(AGameObject* object);
 	void DeleteAllObjects();
+
+	AGameObject* GetObjectByName(std::string);
 	
 private:
 	GameObjectManager();
@@ -27,5 +30,6 @@ private:
 	size_t sizeShader = 0;
 	
 	std::vector<AGameObject*> objectList;
+	std::unordered_map< std::string, AGameObject*> objectMap;
 };
 

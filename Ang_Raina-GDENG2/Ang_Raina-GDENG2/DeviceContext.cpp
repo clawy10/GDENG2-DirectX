@@ -73,6 +73,11 @@ void DeviceContext::SetPixelShader(PixelShader* pixel_shader)
 	this->m_device_context->PSSetShader(pixel_shader->m_pixel_shader, nullptr, 0);
 }
 
+void DeviceContext::PSSetSamplers(Texture* texture)
+{
+	this->m_device_context->PSSetSamplers(0u, 1u, &texture->m_ss);
+}
+
 void DeviceContext::SetTexture(VertexShader* vertex_shader, Texture* texture)
 {
 	m_device_context->VSSetShaderResources(0, 1, &texture->m_shader_res_view);

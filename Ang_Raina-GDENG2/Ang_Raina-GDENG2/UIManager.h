@@ -10,6 +10,7 @@ public:
 	const std::string MENU_SCREEN = "MENU_SCREEN";
 	const std::string CREDITS_SCREEN = "CREDITS_SCREEN";
 	const std::string COLORPICKER_SCREEN = "COLORPICKER_SCREEN";
+	const std::string OBJECTRESIZER_SCREEN = "OBJECTRESIZER_SCREEN";
 };
 
 class UIManager

@@ -2,6 +2,7 @@
 #include "UIManager.h"
 #include "CreditsScreen.h"
 #include "ColorPickerScreen.h"
+#include "ResizeObjectScreen.h"
 
 MenuScreen::MenuScreen(std::string name) : AUIScreen(name)
 {
@@ -35,6 +36,10 @@ void MenuScreen::DrawUI()
 		if (ImGui::MenuItem("Color Picker"))
 		{
 			UIManager::getInstance()->AddUIScreen(new ColorPickerScreen(uinames.COLORPICKER_SCREEN));
+		}
+		if (ImGui::MenuItem("Object Resizer"))
+		{
+			UIManager::getInstance()->AddUIScreen(new ResizeObjectScreen(uinames.OBJECTRESIZER_SCREEN));
 		}
 		ImGui::EndMenu();
 	}

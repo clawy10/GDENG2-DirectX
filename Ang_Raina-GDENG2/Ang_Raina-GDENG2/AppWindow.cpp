@@ -71,7 +71,12 @@ void AppWindow::OnUpdate()
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetViewportSize(width, height);
 
 	GameObjectManager::getInstance()->UpdateObjects(EngineTime::GetDeltaTime());
+	//this->m_mesh->Draw(this->m_vertex_shader, this->m_pixel_shader);
 	GameObjectManager::getInstance()->DrawObjects(width, height, this->m_vertex_shader, this->m_pixel_shader);
+
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetVertexShader(this->m_vertex_shader);
+	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetPixelShader(this->m_pixel_shader);
+	
 
 	UIManager::getInstance()->DrawAllUI();
 	
@@ -98,6 +103,7 @@ void AppWindow::CreateGraphicsWindow()
 
 	this->m_swap_chain = GraphicsEngine::getInstance()->CreateSwapChain();
 
+
 	RECT rc = this->GetClientWindowRect();
 	this->m_swap_chain->init(this->m_hwnd, rc.right - rc.left, rc.bottom - rc.top);
 
@@ -110,6 +116,8 @@ void AppWindow::CreateGraphicsWindow()
 
 	GraphicsEngine::getInstance()->CompileVertexShader(L"VertexShader.hlsl", "main", &shader_byte_code, &sizeShader);
 	this->m_vertex_shader = GraphicsEngine::getInstance()->CreateVertexShader(shader_byte_code, sizeShader);
+
+	//GraphicsEngine::getInstance()->CompileVertexShader(L"VertexMeshLayoutShader.hlsl", "main", &shader_byte_code, &sizeShader);
 
 	GameObjectManager::initialize(shader_byte_code, sizeShader);
 	CameraManager::initialize();
@@ -126,11 +134,22 @@ void AppWindow::CreateGraphicsWindow()
 
 	CubeObject* cube_object = new CubeObject("Cube1");
 	cube_object->SetPosition(0.0f, 0.0f, -0.5f);
-	GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
+	//GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
 
 	PlaneObject* plane_object = new PlaneObject("Plane1");
 	plane_object->SetScale(5, 5, 1);
-	GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
+	//GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
+
+	Mesh* teapot = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\teapot.obj", "teapot");
+	teapot->SetPosition(3.0f, 0.0f, 0.0f);
+	GameObjectManager::getInstance()->AddObject(teapot, Vector3D(1, 0.38, 0.38));
+	
+	Mesh* bunny = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\bunny.obj", "bunny");
+	bunny->SetPosition(-3.0f, 0.0f, 0.0f);
+	GameObjectManager::getInstance()->AddObject(bunny, Vector3D(1, 0.38, 0.38));
+	
+	Mesh* armadillo = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\armadillo.obj", "armadillo");
+	GameObjectManager::getInstance()->AddObject(armadillo, Vector3D(1, 0.38, 0.38));
 	
 	// end of objects to draw
 

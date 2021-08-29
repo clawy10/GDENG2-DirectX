@@ -12,6 +12,7 @@
 #include "PixelShader.h"
 #include "DepthBuffer.h"
 #include "InputListener.h"
+#include "Mesh.h"
 
 class AppWindow : public Window, public InputListener
 {
@@ -51,5 +52,7 @@ private:
 	VertexShader* m_vertex_shader;
 	PixelShader* m_pixel_shader;
 	DepthBuffer* m_depth_buffer;
+
+	Mesh* m_mesh;
 };
 
