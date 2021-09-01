@@ -23,17 +23,30 @@ Vector3D AGameObject::GetPosition()
 
 void AGameObject::SetRotation(float x, float y, float z)
 {
-	this->rotation = Vector3D(x, y, z);
+	this->orientation = {}; 
+	this->orientation = AQuaternion(x, y, z);
+}
+
+void AGameObject::SetRotation(float x, float y, float z, float w)
+{
+	this->orientation = {};
+	this->orientation = AQuaternion(x, y, z, w);
 }
 
 void AGameObject::SetRotation(Vector3D rotation)
 {
-	this->rotation = rotation;
+	this->orientation = {};
+	this->orientation = AQuaternion(rotation.x, rotation.y, rotation.z);
 }
 
 Vector3D AGameObject::GetRotation()
 {
-	return this->rotation;
+	return Vector3D(this->orientation.x, this->orientation.y, this->orientation.z);
+}
+
+AQuaternion AGameObject::GetOrientation()
+{
+	return this->orientation;
 }
 
 void AGameObject::SetScale(float x, float y, float z)
@@ -63,12 +76,32 @@ void AGameObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 
 void AGameObject::Update(double deltaTime)
 {
-	
+	//std::cout << this->GetName() << " gameobject updating." << std::endl;
 }
 
 void AGameObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
 {
 	
+}
+
+void AGameObject::AttachComponent(AComponent* component)
+{
+	this->componentList.push_back(component);
+	component->AttachOwner(this);
+}
+
+void AGameObject::DetachComponent(AComponent* component)
+{
+	int index = -1;
+	for (int i = 0; i < this->componentList.size(); i++) {
+		if (this->componentList[i] == component) {
+			index = i;
+			break;
+		}
+	}
+	if (index != -1) {
+		this->componentList.erase(this->componentList.begin() + index);
+	}
 }
 
 void AGameObject::release()
@@ -77,6 +110,11 @@ void AGameObject::release()
 }
 
 AGameObject::~AGameObject()
+{
+	
+}
+
+void AGameObject::Awake()
 {
 	
 }

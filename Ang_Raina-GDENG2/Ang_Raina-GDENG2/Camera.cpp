@@ -5,7 +5,7 @@
 Camera::Camera(std::string name) : AGameObject(name)
 {
 	InputSystem::getInstance()->AddListener(this);
-	this->position = Vector3D(0, 0, -2);
+	this->position = Vector3D(0, 0, -5);
 
 	int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
 	int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
@@ -108,9 +108,9 @@ void Camera::OnMouseMove(const Point& mousePos)
 {
 	if (this->isRotate)
 	{
-		float x = this->rotation.x;
-		float y = this->rotation.y;
-		float z = this->rotation.z;
+		float x = this->orientation.x;
+		float y = this->orientation.y;
+		float z = this->orientation.z;
 
 		//int width = AppWindow::getInstance()->GetClientWindowRect().right - AppWindow::getInstance()->GetClientWindowRect().left;
 		//int height = AppWindow::getInstance()->GetClientWindowRect().bottom - AppWindow::getInstance()->GetClientWindowRect().top;
@@ -158,11 +158,11 @@ void Camera::UpdateCameraMatrix()
 	world_cam.SetIdentity();
 
 	temp.SetIdentity();
-	temp.SetRotationX(this->rotation.x);
+	temp.SetRotationX(this->orientation.x);
 	world_cam *= temp;
 
 	temp.SetIdentity();
-	temp.SetRotationY(this->rotation.y);
+	temp.SetRotationY(this->orientation.y);
 	world_cam *= temp;
 
 	temp.SetTranslation(this->position);

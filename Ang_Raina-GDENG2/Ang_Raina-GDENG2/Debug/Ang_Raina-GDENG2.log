@@ -1,4 +1,5 @@
-﻿  ResizeObjectScreen.cpp
+﻿  AComponent.cpp
+  AGameObject.cpp
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -16,5 +17,283 @@ F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GD
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(153,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Ang_Raina-GDENG2.vcxproj -> F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Debug\Ang_Raina-GDENG2.exe
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  AppWindow.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\AppWindow.cpp(137,81): warning C4305: 'argument': truncation from 'double' to 'float'
+  AUIScreen.cpp
+  BaseComponentSystem.cpp
+  Camera.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Camera.cpp(41,83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Camera.cpp(46,83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Camera.cpp(51,84): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Camera.cpp(56,84): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  CameraManager.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  ColorPickerScreen.cpp
+  ConstantBuffer.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  CreditsScreen.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\CreditsScreen.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\CreditsScreen.cpp(18,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\CreditsScreen.cpp(18,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CubeObject.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  DepthBuffer.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  DeviceContext.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\DeviceContext.cpp(58,13): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\DeviceContext.cpp(59,14): warning C4244: '=': conversion from 'UINT' to 'FLOAT', possible loss of data
+  EngineTime.cpp
+  GameObjectManager.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\GameObjectManager.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\GameObjectManager.cpp(54,20): warning C4018: '<': signed/unsigned mismatch
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\GameObjectManager.cpp(67,21): warning C4018: '<': signed/unsigned mismatch
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\GameObjectManager.cpp(75,20): warning C4018: '<': signed/unsigned mismatch
+  GraphicsEngine.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ImGuiTexture.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  Generating Code...
+  Compiling...
+  imgui_impl_dx11.cpp
+  imgui_impl_win32.cpp
+  imgui_widgets.cpp
+  IndexBuffer.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  InputSystem.cpp
+  main.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  MenuScreen.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\CreditsScreen.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Mesh.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  MeshManager.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  PhysicsComponent.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  PhysicsSystem.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\ContactManifold.h(37,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\ContactManifoldInfo.h(42): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\ContactManifold.h(37): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\narrowphase\NarrowPhaseAlgorithm.h(36,26): warning C4099: 'reactphysics3d::ContactManifoldInfo': type name first seen using 'struct' now seen using 'class'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\narrowphase\NarrowPhaseInfoBatch.h(38): message : see declaration of 'reactphysics3d::ContactManifoldInfo'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\shapes\HeightFieldShape.h(197,104): warning C4244: 'return': conversion from 'double' to 'reactphysics3d::decimal', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\include\reactphysics3d\collision\shapes\HeightFieldShape.h(205,19): warning C4244: 'return': conversion from 'reactphysics3d::decimal' to 'int', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\PhysicsSystem.cpp(9,56): warning C4305: 'argument': truncation from 'double' to 'reactphysics3d::decimal'
+  PixelShader.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  PlaneObject.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  QuadObject.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\QuadObject.cpp(63,34): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  ResizeObjectScreen.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(41,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(42,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(43,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(44,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(49,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(50,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(51,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(52,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(57,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(58,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(59,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(60,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(158,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Resource.cpp
+  ResourceManager.cpp
+  SwapChain.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Texture.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  TextureManager.cpp
+  Generating Code...
+  Compiling...
+  UIManager.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\UIManager.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+  VertexBuffer.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  VertexShader.cpp
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(105,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(106,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(107,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Window.cpp
+  Generating Code...
+PhysicsSystem.obj : error LNK2019: unresolved external symbol "public: __thiscall reactphysics3d::PhysicsCommon::PhysicsCommon(class reactphysics3d::MemoryAllocator *)" (??0PhysicsCommon@reactphysics3d@@QAE@PAVMemoryAllocator@1@@Z) referenced in function "public: __thiscall PhysicsSystem::PhysicsSystem(void)" (??0PhysicsSystem@@QAE@XZ)
+PhysicsSystem.obj : error LNK2019: unresolved external symbol "public: class reactphysics3d::PhysicsWorld * __thiscall reactphysics3d::PhysicsCommon::createPhysicsWorld(struct reactphysics3d::PhysicsWorld::WorldSettings const &)" (?createPhysicsWorld@PhysicsCommon@reactphysics3d@@QAEPAVPhysicsWorld@2@ABUWorldSettings@32@@Z) referenced in function "public: __thiscall PhysicsSystem::PhysicsSystem(void)" (??0PhysicsSystem@@QAE@XZ)
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\ReactPhysics3D\reactphysics3d.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Debug\Ang_Raina-GDENG2.exe : fatal error LNK1120: 2 unresolved externals

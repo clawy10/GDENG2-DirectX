@@ -20,7 +20,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	case WM_CREATE: // window creation event
 		{
 			Window* window = (Window*)((LPCREATESTRUCT)lparam)->lpCreateParams;
-			SetWindowLongPtr(hwnd, GWL_USERDATA, (LONG_PTR)window);
+			//SetWindowLongPtr(hwnd, GWL_USERDATA, (LONG_PTR)window);
 			window->SetHWND(hwnd);
 			window->OnCreate();
 			break;
@@ -28,21 +28,21 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 
 	case WM_SETFOCUS: // window focus event 
 	{
-		Window* window = (Window*)GetWindowLong(hwnd, GWL_USERDATA);
+		//Window* window = (Window*)GetWindowLong(hwnd, GWL_USERDATA);
 		window->OnFocus();
 		break;
 	}
 
 	case WM_KILLFOCUS: // window lost focus event 
 	{
-		Window* window = (Window*)GetWindowLong(hwnd, GWL_USERDATA);
+		//Window* window = (Window*)GetWindowLong(hwnd, GWL_USERDATA);
 		window->OnKillFocus();
 		break;
 	}
 
 	case WM_DESTROY: // window destruction event 
 		{
-			Window* window = (Window*)GetWindowLong(hwnd, GWL_USERDATA);
+			//Window* window = (Window*)GetWindowLong(hwnd, GWL_USERDATA);
 			window->OnDestroy();
 			::PostQuitMessage(0);
 			break;

@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <memory>
 #include "Vector3D.h"
 #include "Vector4D.h"
@@ -38,6 +39,7 @@ public:
 
 	void SetRotationX(float x)
 	{
+		this->SetIdentity();
 		mat[1][1] = cos(x);
 		mat[1][2] = sin(x);
 		mat[2][1] = -sin(x);
@@ -46,6 +48,7 @@ public:
 
 	void SetRotationY(float y)
 	{
+		this->SetIdentity();
 		mat[0][0] = cos(y);
 		mat[0][2] = -sin(y);
 		mat[2][0] = sin(y);
@@ -54,6 +57,7 @@ public:
 
 	void SetRotationZ(float z)
 	{
+		this->SetIdentity();
 		mat[0][0] = cos(z);
 		mat[0][1] = sin(z);
 		mat[1][0] = -sin(z);
@@ -128,9 +132,74 @@ public:
 		::memcpy(mat, out.mat, sizeof(float) * 16);
 	}
 
+	static Matrix4x4 QuaternionToMatrix(float qx, float qy, float qz, float qw)
+	{
+		float wx, wy, wz, xx, yy, yz, xy, xz, zz;
+
+		xx = qx * qx;
+		xy = qx * qy;
+		xz = qx * qz;
+		yy = qy * qy;
+		zz = qz * qz;
+		yz = qy * qz;
+
+		wx = qw * qx;
+		wy = qw * qy;
+		wz = qw * qz;
+
+		float matrix[16];
+		matrix[0] = 1.0f - 2.0f * (yy + zz);
+		matrix[4] = 2.0f * (xy - wz);
+		matrix[8] = 2.0f * (xz + wy);
+		matrix[12] = 0.0;
+
+		matrix[1] = 2.0f * (xy + wz);
+		matrix[5] = 1.0f - 2.0f * (xx + zz);
+		matrix[9] = 2.0f * (yz - wx);
+		matrix[13] = 0.0;
+
+		matrix[2] = 2.0f * (xz - wy);
+		matrix[6] = 2.0f * (yz + wx);
+		matrix[10] = 1.0f - 2.0f * (xx + yy);
+		matrix[14] = 0.0;
+
+		matrix[3] = 0;
+		matrix[7] = 0;
+		matrix[11] = 0;
+		matrix[15] = 1;
+
+		Matrix4x4 matrix4x4;
+		matrix4x4.mat[0][0] = matrix[0];
+		matrix4x4.mat[0][1] = matrix[1];
+		matrix4x4.mat[0][2] = matrix[2];
+		matrix4x4.mat[0][3] = matrix[3];
+
+		matrix4x4.mat[1][0] = matrix[4];
+		matrix4x4.mat[1][1] = matrix[5];
+		matrix4x4.mat[1][2] = matrix[6];
+		matrix4x4.mat[1][3] = matrix[7];
+
+		matrix4x4.mat[2][0] = matrix[8];
+		matrix4x4.mat[2][1] = matrix[9];
+		matrix4x4.mat[2][2] = matrix[10];
+		matrix4x4.mat[2][3] = matrix[11];
+
+		matrix4x4.mat[3][0] = matrix[12];
+		matrix4x4.mat[3][1] = matrix[13];
+		matrix4x4.mat[3][2] = matrix[14];
+		matrix4x4.mat[3][3] = matrix[15];
+
+		return matrix4x4;
+	}
+
 	void SetMatrix(const Matrix4x4& matrix)
 	{
 		::memcpy(mat, matrix.mat, sizeof(float) * 16);
+	}
+
+	void SetMatrix(float matrix[4][4])
+	{
+		::memcpy(this->mat, matrix, sizeof(float) * 16);
 	}
 
 	Vector3D GetZDirection()
@@ -167,6 +236,11 @@ public:
 		this->mat[1][1] = 2.0f / height;
 		this->mat[2][2] = 1.0f / (farPlane - nearPlane);
 		this->mat[3][2] = -(nearPlane / (farPlane - nearPlane));
+	}
+
+	float* GetMatrix()
+	{
+		return *this->mat;
 	}
 
 	~Matrix4x4() {}

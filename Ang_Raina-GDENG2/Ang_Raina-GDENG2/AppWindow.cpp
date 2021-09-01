@@ -7,10 +7,14 @@
 #include "QuadObject.h"
 #include "CubeObject.h"
 #include "PlaneObject.h"
+#include "PhysicsCube.h"
+#include "PhysicsPlane.h"
 #include "EngineTime.h"
 #include "InputSystem.h"
 #include "CameraManager.h"
 #include "UIManager.h"
+#include "BaseComponentSystem.h"
+#include "PhysicsSystem.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -70,6 +74,7 @@ void AppWindow::OnUpdate()
 	int height = rc.bottom - rc.top;
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetViewportSize(width, height);
 
+	BaseComponentSystem::getInstance()->GetPhysicsSystem()->UpdateAllComponents();
 	GameObjectManager::getInstance()->UpdateObjects(EngineTime::GetDeltaTime());
 	//this->m_mesh->Draw(this->m_vertex_shader, this->m_pixel_shader);
 	GameObjectManager::getInstance()->DrawObjects(width, height, this->m_vertex_shader, this->m_pixel_shader);
@@ -121,35 +126,38 @@ void AppWindow::CreateGraphicsWindow()
 
 	GameObjectManager::initialize(shader_byte_code, sizeShader);
 	CameraManager::initialize();
-	
+	BaseComponentSystem::initialize();
+
 	// insert objects to draw here
 
-	QuadObject* quad_object = new QuadObject("Quad1"); // orange
-	//quad_object->SetRotation(0, 0, 0);
-	//GameObjectManager::getInstance()->AddObject(quad_object, Vector3D(1, 0.38, 0.38));
-
-	QuadObject* quad_object2 = new QuadObject("Quad2"); // yellow
-	//quad_object2->SetPosition(0.5, 0, 1.0);
-	//GameObjectManager::getInstance()->AddObject(quad_object2, Vector3D(1, 1, 0.38));
-
-	CubeObject* cube_object = new CubeObject("Cube1");
-	cube_object->SetPosition(0.0f, 0.0f, -0.5f);
+	//CubeObject* cube_object = new CubeObject("Cube1");
+	//cube_object->SetPosition(0.0f, 0.0f, -0.5f);
 	//GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
 
-	PlaneObject* plane_object = new PlaneObject("Plane1");
-	plane_object->SetScale(5, 5, 1);
+	for (int i = 0; i < 20; i++)
+	{
+		PhysicsCube* physics_cube = new PhysicsCube("PhysicsCube");
+		physics_cube->SetPosition(0, 5, 0);
+		GameObjectManager::getInstance()->AddObject(physics_cube, Vector3D(1, 0.38, 0.38));
+	}
+
+	PhysicsPlane* physics_plane = new PhysicsPlane("PhysicsPlane");
+	GameObjectManager::getInstance()->AddObject(physics_plane, Vector3D(1, 0.38, 0.38));
+
+	//PlaneObject* plane_object = new PlaneObject("Plane1");
+	//plane_object->SetScale(5, 5, 1);
 	//GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
 
-	Mesh* teapot = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\teapot.obj", "teapot");
-	teapot->SetPosition(3.0f, 0.0f, 0.0f);
-	GameObjectManager::getInstance()->AddObject(teapot, Vector3D(1, 0.38, 0.38));
+	//Mesh* teapot = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\teapot.obj", "teapot");
+	//teapot->SetPosition(3.0f, 0.0f, 0.0f);
+	//GameObjectManager::getInstance()->AddObject(teapot, Vector3D(1, 0.38, 0.38));
 	
-	Mesh* bunny = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\bunny.obj", "bunny");
-	bunny->SetPosition(-3.0f, 0.0f, 0.0f);
-	GameObjectManager::getInstance()->AddObject(bunny, Vector3D(1, 0.38, 0.38));
+	//Mesh* bunny = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\bunny.obj", "bunny");
+	//bunny->SetPosition(-3.0f, 0.0f, 0.0f);
+	//GameObjectManager::getInstance()->AddObject(bunny, Vector3D(1, 0.38, 0.38));
 	
-	Mesh* armadillo = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\armadillo.obj", "armadillo");
-	GameObjectManager::getInstance()->AddObject(armadillo, Vector3D(1, 0.38, 0.38));
+	//Mesh* armadillo = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\armadillo.obj", "armadillo");
+	//GameObjectManager::getInstance()->AddObject(armadillo, Vector3D(1, 0.38, 0.38));
 	
 	// end of objects to draw
 

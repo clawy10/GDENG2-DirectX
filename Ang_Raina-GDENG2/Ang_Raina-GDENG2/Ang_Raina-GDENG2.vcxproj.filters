@@ -95,6 +95,21 @@
     <Filter Include="Game Engine\Game Objects\Mesh Manager">
       <UniqueIdentifier>{b0afddad-67b1-4a4a-bd40-67579e2c4033}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\ECS">
+      <UniqueIdentifier>{20be6176-d9d1-47bc-8683-866577fe49f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\ECS\Base Component System">
+      <UniqueIdentifier>{81a4d23d-e1ed-412b-9932-694fb6be3723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\ECS\Physics Engine">
+      <UniqueIdentifier>{0aa86007-edcb-4d3d-896a-17cf3acf70dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\ECS\Components">
+      <UniqueIdentifier>{cc2ccf45-f6ae-4d24-bb8e-7870ae628eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\ECS\Components\Physics Component">
+      <UniqueIdentifier>{9dc6c003-7aaa-4769-9af7-49d0e3a06d66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -216,6 +231,24 @@
     </ClCompile>
     <ClCompile Include="ResizeObjectScreen.cpp">
       <Filter>Game Engine\UI\Menu Screen\Resize Object Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsSystem.cpp">
+      <Filter>Game Engine\ECS\Physics Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseComponentSystem.cpp">
+      <Filter>Game Engine\ECS\Base Component System</Filter>
+    </ClCompile>
+    <ClCompile Include="AComponent.cpp">
+      <Filter>Game Engine\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>Game Engine\ECS\Components\Physics Component</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsCube.cpp">
+      <Filter>Game Engine\Game Objects\Cube</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsPlane.cpp">
+      <Filter>Game Engine\Game Objects\Plane</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -369,6 +402,25 @@
     <ClInclude Include="ResizeObjectScreen.h">
       <Filter>Game Engine\UI\Menu Screen\Resize Object Screen</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="PhysicsSystem.h">
+      <Filter>Game Engine\ECS\Physics Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseComponentSystem.h">
+      <Filter>Game Engine\ECS\Base Component System</Filter>
+    </ClInclude>
+    <ClInclude Include="AComponent.h">
+      <Filter>Game Engine\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Game Engine\ECS\Components\Physics Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsCube.h">
+      <Filter>Game Engine\Game Objects\Cube</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsPlane.h">
+      <Filter>Game Engine\Game Objects\Plane</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">
@@ -386,5 +438,10 @@
     <None Include="ImGui\imgui.ini">
       <Filter>ImGui</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ang_Raina-GDENG2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

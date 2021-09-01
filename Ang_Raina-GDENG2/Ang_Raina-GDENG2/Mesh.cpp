@@ -127,15 +127,15 @@ void Mesh::Draw(int width, int height, VertexShader* vertexShader, PixelShader* 
 
 	// rotate
 	temp.SetIdentity();
-	temp.SetRotationZ(this->rotation.z);
+	temp.SetRotationZ(this->orientation.z);
 	cc.m_world *= temp;
 
 	temp.SetIdentity();
-	temp.SetRotationY(this->rotation.y);
+	temp.SetRotationY(this->orientation.y);
 	cc.m_world *= temp;
 
 	temp.SetIdentity();
-	temp.SetRotationX(this->rotation.x);
+	temp.SetRotationX(this->orientation.x);
 	cc.m_world *= temp;
 
 	// translate

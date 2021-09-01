@@ -13,16 +13,16 @@ void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 
 	Vector3D position_list[] =
 	{
-		{ Vector3D(-0.8f,-0.8f,-0.0255f)},
-		{ Vector3D(-0.8f,0.8f,-0.025f) },
-		{ Vector3D(0.8f,0.8f,-0.025f) },
-		{ Vector3D(0.8f,-0.8f,-0.025f)},
+		{ Vector3D(-0.5f,-0.2f,-0.5f)},
+		{ Vector3D(-0.5f,0.2f,-0.5f) },
+		{ Vector3D(0.5f,0.2f,-0.5f) },
+		{ Vector3D(0.5f,-0.2f,-0.5f)},
 
 		//BACK FACE
-		{ Vector3D(0.8f,-0.8f,0.025f) },
-		{ Vector3D(0.8f,0.8f,0.025f) },
-		{ Vector3D(-0.8f,0.8f,0.025f)},
-		{ Vector3D(-0.8f,-0.8f,0.025f) }
+		{ Vector3D(0.5f,-0.2f,0.5f) },
+		{ Vector3D(0.5f,0.2f,0.5f) },
+		{ Vector3D(-0.5f,0.2f,0.5f)},
+		{ Vector3D(-0.5f,-0.2f,0.5f) }
 	};
 
 	Vector2D texcoord_list[] =
@@ -101,12 +101,12 @@ void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D c
 
 	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\white-texture.jpg");
 
-	this->SetRotation(190.0f, 0.0f, 0.0f);
+	
 }
 
 void PlaneObject::Update(double deltaTime)
 {
-	
+	AGameObject::Update(deltaTime);
 }
 
 void PlaneObject::Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader)
@@ -121,16 +121,7 @@ void PlaneObject::Draw(int width, int height, VertexShader* vertexShader, PixelS
 	cc.m_world.SetScale(this->scale);
 
 	// rotate
-	temp.SetIdentity();
-	temp.SetRotationZ(this->rotation.z);
-	cc.m_world *= temp;
-
-	temp.SetIdentity();
-	temp.SetRotationY(this->rotation.y);
-	cc.m_world *= temp;
-
-	temp.SetIdentity();
-	temp.SetRotationX(this->rotation.x);
+	temp = Matrix4x4::QuaternionToMatrix(this->orientation.x, this->orientation.y, this->orientation.z, this->orientation.w);
 	cc.m_world *= temp;
 
 	// translate

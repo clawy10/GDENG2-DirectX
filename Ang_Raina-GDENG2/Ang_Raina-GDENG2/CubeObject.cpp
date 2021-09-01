@@ -103,16 +103,16 @@ void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D co
 	this->cb = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->cb->load(&cc, sizeof(constant));
 
-	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\brick.png");
+	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg");
 }
 
 void CubeObject::Update(double deltaTime)
 {
 	AGameObject::Update(deltaTime);
 	
-	//this->rotation.x += deltaTime * this->SPEED;
-	//this->rotation.y += deltaTime * this->SPEED;
-	//this->rotation.z += deltaTime * this->SPEED;
+	//this->orientation.x += deltaTime * this->SPEED;
+	//this->orientation.y += deltaTime * this->SPEED;
+	//this->orientation.z += deltaTime * this->SPEED;
 
 	//this->delta += deltaTime / 0.15f;
 	
@@ -137,23 +137,15 @@ void CubeObject::Draw(int width, int height, VertexShader* vertexShader, PixelSh
 	cc.m_world.SetScale(this->scale);
 
 	// rotate
-	temp.SetIdentity();
-	temp.SetRotationZ(this->rotation.z);
-	cc.m_world *= temp;
-
-	temp.SetIdentity();
-	temp.SetRotationY(this->rotation.y);
-	cc.m_world *= temp;
-
-	temp.SetIdentity();
-	temp.SetRotationX(this->rotation.x);
+	temp = Matrix4x4::QuaternionToMatrix(this->orientation.x, this->orientation.y, this->orientation.z, this->orientation.w);
 	cc.m_world *= temp;
 
 	// translate
 	temp.SetIdentity();
 	temp.SetTranslation(this->position);
+	
+	//cc.m_world = this->localMatrix;
 	cc.m_world *= temp;
-
 	cc.m_view = CameraManager::getInstance()->GetSceneCamera()->GetCameraViewMatrix();
 	cc.m_projection = CameraManager::getInstance()->GetSceneCamera()->GetCameraProjectionMatrix();
 	
