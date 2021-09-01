@@ -10,7 +10,7 @@ public:
 	static void initialize(void* shaderByteCode, size_t size);
 	static void destroy();
 
-	void AddObject(AGameObject* object, Vector3D color);
+	void AddObject(AGameObject* object);
 	void UpdateObjects(double deltaTime);
 	void DrawObjects(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader);
 

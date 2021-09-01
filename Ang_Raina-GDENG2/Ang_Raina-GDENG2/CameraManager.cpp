@@ -12,7 +12,7 @@ void CameraManager::initialize()
 {
 	sharedInstance = new CameraManager();
 	sharedInstance->sceneCamera = new Camera("Camera");
-	GameObjectManager::getInstance()->AddObject(sharedInstance->sceneCamera, Vector3D(1, 1, 1));
+	GameObjectManager::getInstance()->AddObject(sharedInstance->sceneCamera);
 }
 
 void CameraManager::destroy()

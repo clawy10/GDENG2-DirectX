@@ -11,12 +11,12 @@ PhysicsCube::~PhysicsCube()
 	
 }
 
-void PhysicsCube::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color)
+void PhysicsCube::Initialize(void* shaderByteCode, size_t sizeShader)
 {
-	CubeObject::Initialize(shaderByteCode, sizeShader, color);
+	CubeObject::Initialize(shaderByteCode, sizeShader);
 
 	this->AttachComponent(new PhysicsComponent("PhysicsComponent", this));
-	PhysicsComponent* physicsComponent = (PhysicsComponent*)this->componentList[0];
+	PhysicsComponent* physicsComponent = (PhysicsComponent*)this->FindComponentByName("PhysicsComponent");
 	physicsComponent->GetRigidBody()->setMass(this->mass);
 }
 

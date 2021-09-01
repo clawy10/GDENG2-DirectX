@@ -22,9 +22,9 @@ void GameObjectManager::destroy()
 	}
 }
 
-void GameObjectManager::AddObject(AGameObject* object, Vector3D color)
+void GameObjectManager::AddObject(AGameObject* object)
 {
-	object->Initialize(this->shader_byte_code, this->sizeShader, color);
+	object->Initialize(this->shader_byte_code, this->sizeShader);
 	this->objectList.push_back(object);
 
 	this->objectMap.insert({ object->GetName(), object });

@@ -69,7 +69,7 @@ std::string AGameObject::GetName()
 	return this->name;
 }
 
-void AGameObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color)
+void AGameObject::Initialize(void* shaderByteCode, size_t sizeShader)
 {
 	
 }
@@ -102,6 +102,17 @@ void AGameObject::DetachComponent(AComponent* component)
 	if (index != -1) {
 		this->componentList.erase(this->componentList.begin() + index);
 	}
+}
+
+AComponent* AGameObject::FindComponentByName(std::string name)
+{
+	for (int i = 0; i < this->componentList.size(); i++) {
+		if (this->componentList[i]->GetName() == name) {
+			return this->componentList[i];
+		}
+	}
+
+	return nullptr;
 }
 
 void AGameObject::release()

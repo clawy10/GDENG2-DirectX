@@ -7,9 +7,9 @@ PlaneObject::PlaneObject(std::string name) : AGameObject(name)
 	
 }
 
-void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color)
+void PlaneObject::Initialize(void* shaderByteCode, size_t sizeShader)
 {
-	AGameObject::Initialize(shaderByteCode, sizeShader, color);
+	AGameObject::Initialize(shaderByteCode, sizeShader);
 
 	Vector3D position_list[] =
 	{

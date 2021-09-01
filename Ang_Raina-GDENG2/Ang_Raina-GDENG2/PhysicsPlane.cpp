@@ -11,12 +11,12 @@ PhysicsPlane::~PhysicsPlane()
 {
 }
 
-void PhysicsPlane::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color)
+void PhysicsPlane::Initialize(void* shaderByteCode, size_t sizeShader)
 {
-	PlaneObject::Initialize(shaderByteCode, sizeShader, color);
+	PlaneObject::Initialize(shaderByteCode, sizeShader);
 
 	this->AttachComponent(new PhysicsComponent("PhysicsComponent", this));
-	PhysicsComponent* physicsComponent = (PhysicsComponent*)this->componentList[0];
+	PhysicsComponent* physicsComponent = (PhysicsComponent*)this->FindComponentByName("PhysicsComponent");
 	physicsComponent->GetRigidBody()->setMass(this->mass);
 	physicsComponent->GetRigidBody()->setType(BodyType::KINEMATIC);
 }

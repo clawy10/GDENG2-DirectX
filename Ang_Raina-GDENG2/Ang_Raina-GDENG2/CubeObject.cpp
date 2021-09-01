@@ -7,9 +7,9 @@ CubeObject::CubeObject(std::string name) : AGameObject(name)
 	
 }
 
-void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color)
+void CubeObject::Initialize(void* shaderByteCode, size_t sizeShader)
 {
-	AGameObject::Initialize(shaderByteCode, sizeShader, color);
+	AGameObject::Initialize(shaderByteCode, sizeShader);
 
 	Vector3D position_list[] =
 	{

@@ -7,9 +7,9 @@ QuadObject::QuadObject(std::string name): AGameObject(name)
 	
 }
 
-void QuadObject::Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color)
+void QuadObject::Initialize(void* shaderByteCode, size_t sizeShader)
 {
-	AGameObject::Initialize(shaderByteCode, sizeShader, color);
+	AGameObject::Initialize(shaderByteCode, sizeShader);
 	
 	Vector3D position_list[] =
 	{

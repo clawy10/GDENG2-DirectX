@@ -138,11 +138,11 @@ void AppWindow::CreateGraphicsWindow()
 	{
 		PhysicsCube* physics_cube = new PhysicsCube("PhysicsCube");
 		physics_cube->SetPosition(0, 5, 0);
-		GameObjectManager::getInstance()->AddObject(physics_cube, Vector3D(1, 0.38, 0.38));
+		GameObjectManager::getInstance()->AddObject(physics_cube);
 	}
 
 	PhysicsPlane* physics_plane = new PhysicsPlane("PhysicsPlane");
-	GameObjectManager::getInstance()->AddObject(physics_plane, Vector3D(1, 0.38, 0.38));
+	GameObjectManager::getInstance()->AddObject(physics_plane);
 
 	//PlaneObject* plane_object = new PlaneObject("Plane1");
 	//plane_object->SetScale(5, 5, 1);

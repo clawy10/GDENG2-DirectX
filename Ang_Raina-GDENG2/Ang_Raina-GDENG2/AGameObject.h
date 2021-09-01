@@ -72,12 +72,14 @@ public:
 
 	std::string GetName();
 
-	virtual void Initialize(void* shaderByteCode, size_t sizeShader, Vector3D color);
+	virtual void Initialize(void* shaderByteCode, size_t sizeShader);
 	virtual void Update(double deltaTime);
 	virtual void Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader);
 
 	void AttachComponent(AComponent* component);
 	void DetachComponent(AComponent* component);
+
+	AComponent* FindComponentByName(std::string name); 
 	
 	void release();
 	
