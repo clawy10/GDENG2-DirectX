@@ -130,27 +130,24 @@ void AppWindow::CreateGraphicsWindow()
 
 	// insert objects to draw here
 
-	//CubeObject* cube_object = new CubeObject("Cube1");
+	CubeObject* cube_object = new CubeObject("Cube1");
 	//cube_object->SetPosition(0.0f, 0.0f, -0.5f);
-	//GameObjectManager::getInstance()->AddObject(cube_object, Vector3D(1, 0.38, 0.38));
+	GameObjectManager::getInstance()->AddObject(cube_object);
 
-	for (int i = 0; i < 20; i++)
-	{
-		PhysicsCube* physics_cube = new PhysicsCube("PhysicsCube");
-		physics_cube->SetPosition(0, 5, 0);
-		GameObjectManager::getInstance()->AddObject(physics_cube);
-	}
-
+	/*PhysicsCube* physics_cube = new PhysicsCube("PhysicsCube");
+	physics_cube->SetPosition(0, 5, 0);
+	GameObjectManager::getInstance()->AddObject(physics_cube);
+	
 	PhysicsPlane* physics_plane = new PhysicsPlane("PhysicsPlane");
-	GameObjectManager::getInstance()->AddObject(physics_plane);
+	GameObjectManager::getInstance()->AddObject(physics_plane);*/
 
 	//PlaneObject* plane_object = new PlaneObject("Plane1");
 	//plane_object->SetScale(5, 5, 1);
 	//GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
 
-	//Mesh* teapot = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\teapot.obj", "teapot");
+	Mesh* teapot = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\teapot.obj", "teapot");
 	//teapot->SetPosition(3.0f, 0.0f, 0.0f);
-	//GameObjectManager::getInstance()->AddObject(teapot, Vector3D(1, 0.38, 0.38));
+	GameObjectManager::getInstance()->AddObject(teapot);
 	
 	//Mesh* bunny = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\bunny.obj", "bunny");
 	//bunny->SetPosition(-3.0f, 0.0f, 0.0f);

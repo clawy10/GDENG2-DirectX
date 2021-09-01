@@ -5,6 +5,8 @@
 #include "ImGui/imgui_impl_win32.h"
 #include <iostream>
 #include "MenuScreen.h"
+#include "ObjectListScreen.h"
+#include "TransformObjectScreen.h"
 
 UIManager* UIManager::sharedInstance = nullptr;
 
@@ -60,6 +62,12 @@ UIManager::UIManager(HWND hwnd)
 	UINames uinames; 
 	MenuScreen* menuScreen = new MenuScreen(uinames.MENU_SCREEN);
 	this->uiList.push_back(menuScreen);
+
+	ObjectListScreen* objectListScreen = new ObjectListScreen(uinames.OBJECTLIST_SCREEN);
+	this->uiList.push_back(objectListScreen);
+
+	TransformObjectScreen* transformObjectScreen = new TransformObjectScreen(uinames.TRANSFORMOBJECT_SCREEN);
+	this->uiList.push_back(transformObjectScreen);
 }
 
 UIManager::~UIManager()

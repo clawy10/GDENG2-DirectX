@@ -11,6 +11,8 @@ public:
 	const std::string CREDITS_SCREEN = "CREDITS_SCREEN";
 	const std::string COLORPICKER_SCREEN = "COLORPICKER_SCREEN";
 	const std::string OBJECTRESIZER_SCREEN = "OBJECTRESIZER_SCREEN";
+	const std::string OBJECTLIST_SCREEN = "OBJECTLIST_SCREEN";
+	const std::string TRANSFORMOBJECT_SCREEN = "TRANSFORMOBJECT_SCREEN";
 };
 
 class UIManager

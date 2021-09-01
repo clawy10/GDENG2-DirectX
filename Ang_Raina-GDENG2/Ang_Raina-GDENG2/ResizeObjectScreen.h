@@ -9,14 +9,10 @@ public:
 	~ResizeObjectScreen();
 	void DrawUI() override;
 
-	void SelectObject(AGameObject* gameObject);
-
 	friend class MenuScreen;
 	friend class UIManager;
 
-	float size[3];
-
 private:
-	AGameObject* selectedObject; 
+	float size[3];
 };
 

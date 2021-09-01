@@ -57,9 +57,29 @@ void GameObjectManager::DeleteAllObjects()
 	}
 }
 
+void GameObjectManager::SelectObject(std::string name)
+{
+	this->selectedObject = this->GetObjectByName(name);
+}
+
+void GameObjectManager::SelectObject(AGameObject* object)
+{
+	this->selectedObject = object;
+}
+
+AGameObject* GameObjectManager::GetSelectedObject()
+{
+	return this->selectedObject;
+}
+
 AGameObject* GameObjectManager::GetObjectByName(std::string name)
 {
 	return this->objectMap[name];
+}
+
+std::vector<AGameObject*> GameObjectManager::GetAllObjects()
+{
+	return this->objectList;
 }
 
 void GameObjectManager::UpdateObjects(double deltaTime)

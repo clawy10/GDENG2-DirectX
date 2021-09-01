@@ -110,6 +110,12 @@
     <Filter Include="Game Engine\ECS\Components\Physics Component">
       <UniqueIdentifier>{9dc6c003-7aaa-4769-9af7-49d0e3a06d66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\UI\Object List Screen">
+      <UniqueIdentifier>{6ff65eff-a668-41c0-90c2-a38d7e94081d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Transform Object Screen">
+      <UniqueIdentifier>{a39502dd-15ad-428c-bc4d-4b34526c1796}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -250,6 +256,10 @@
     <ClCompile Include="PhysicsPlane.cpp">
       <Filter>Game Engine\Game Objects\Plane</Filter>
     </ClCompile>
+    <ClCompile Include="ObjectListScreen.cpp">
+      <Filter>Game Engine\UI\Object List Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformObjectScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -421,6 +431,10 @@
     <ClInclude Include="PhysicsPlane.h">
       <Filter>Game Engine\Game Objects\Plane</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectListScreen.h">
+      <Filter>Game Engine\UI\Object List Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformObjectScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">

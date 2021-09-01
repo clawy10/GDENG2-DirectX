@@ -17,7 +17,11 @@ public:
 	void DeleteObject(AGameObject* object);
 	void DeleteAllObjects();
 
-	AGameObject* GetObjectByName(std::string);
+	void SelectObject(std::string name);
+	void SelectObject(AGameObject* object);
+	AGameObject* GetSelectedObject();
+	AGameObject* GetObjectByName(std::string name);
+	std::vector<AGameObject*> GetAllObjects();
 	
 private:
 	GameObjectManager();
@@ -31,5 +35,7 @@ private:
 	
 	std::vector<AGameObject*> objectList;
 	std::unordered_map< std::string, AGameObject*> objectMap;
+
+	AGameObject* selectedObject = nullptr; 
 };
 

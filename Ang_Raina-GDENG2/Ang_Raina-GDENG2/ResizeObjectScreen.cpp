@@ -2,10 +2,7 @@
 #include "GameObjectManager.h"
 ResizeObjectScreen::ResizeObjectScreen(std::string name) :AUIScreen(name)
 {
-	this->selectedObject = GameObjectManager::getInstance()->GetObjectByName("teapot");
-	this->size[0] = this->selectedObject->GetScale().x;
-	this->size[1] = this->selectedObject->GetScale().y;
-	this->size[2] = this->selectedObject->GetScale().z;
+	
 }
 
 ResizeObjectScreen::~ResizeObjectScreen()
@@ -14,19 +11,25 @@ ResizeObjectScreen::~ResizeObjectScreen()
 
 void ResizeObjectScreen::DrawUI()
 {
-	ImGui::Begin("Resize Teapot");
-	ImGui::DragFloat3("Scale", this->size);
+	ImGui::Begin("Resize Object");
 	
-	if (this->selectedObject != nullptr)
+	if (GameObjectManager::getInstance()->GetSelectedObject() != nullptr)
 	{
+		AGameObject* selectedObject = GameObjectManager::getInstance()->GetSelectedObject();
+		this->size[0] = selectedObject->GetScale().x;
+		this->size[1] = selectedObject->GetScale().y;
+		this->size[2] = selectedObject->GetScale().z;
 		
-		this->selectedObject->SetScale(this->size[0], this->size[1], this->size[2]);
+		if (ImGui::DragFloat3("Scale", this->size))
+		{
+			Vector3D newScale(this->size[0], this->size[1], this->size[2]);
+			GameObjectManager::getInstance()->GetSelectedObject()->SetScale(newScale);
+		}
+	}
+	else
+	{
+		ImGui::Text("No object selected!");
 	}
 	
 	ImGui::End();
-}
-
-void ResizeObjectScreen::SelectObject(AGameObject* gameObject)
-{
-	this->selectedObject = gameObject;
 }

@@ -20,3 +20,5 @@
 # 8/05/2021 - Added texture to primitive objects
 # 8/16/2021 - Added UIManager
 # 8/17/2021 - Added AUIScreen class with initial UI screens: MenuScreen, CreditScreen, (Non-functioning) ColorPickerScreen 
+# 9/01/2021 - Added base for ECS architecture and Physics Component 
+# 9/02/2021 - Added object selection + transformation UI
