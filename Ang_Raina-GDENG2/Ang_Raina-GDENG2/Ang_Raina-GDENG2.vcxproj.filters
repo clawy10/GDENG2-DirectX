@@ -259,7 +259,9 @@
     <ClCompile Include="ObjectListScreen.cpp">
       <Filter>Game Engine\UI\Object List Screen</Filter>
     </ClCompile>
-    <ClCompile Include="TransformObjectScreen.cpp" />
+    <ClCompile Include="TransformObjectScreen.cpp">
+      <Filter>Game Engine\UI\Transform Object Screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h">
@@ -434,7 +436,15 @@
     <ClInclude Include="ObjectListScreen.h">
       <Filter>Game Engine\UI\Object List Screen</Filter>
     </ClInclude>
-    <ClInclude Include="TransformObjectScreen.h" />
+    <ClInclude Include="AQuaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathTools.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformObjectScreen.h">
+      <Filter>Game Engine\UI\Transform Object Screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">

@@ -21,22 +21,21 @@ Vector3D AGameObject::GetPosition()
 	return this->position;
 }
 
-void AGameObject::SetRotation(float x, float y, float z)
-{
-	this->orientation = {}; 
-	this->orientation = AQuaternion(x, y, z);
-}
-
 void AGameObject::SetRotation(float x, float y, float z, float w)
 {
 	this->orientation = {};
 	this->orientation = AQuaternion(x, y, z, w);
 }
 
-void AGameObject::SetRotation(Vector3D rotation)
+void AGameObject::SetRotation(Vector3D rotation, float w)
 {
 	this->orientation = {};
-	this->orientation = AQuaternion(rotation.x, rotation.y, rotation.z);
+	this->orientation = AQuaternion(rotation, w);
+}
+
+void AGameObject::SetRotation(AQuaternion quaternion)
+{
+	this->orientation = quaternion;
 }
 
 Vector3D AGameObject::GetRotation()

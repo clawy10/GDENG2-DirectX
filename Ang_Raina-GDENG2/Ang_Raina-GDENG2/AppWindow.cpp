@@ -1,8 +1,6 @@
 #include "AppWindow.h"
 #include <iostream>
 #include <Windows.h>
-#include "Vector3D.h"
-#include "Matrix4x4.h"
 #include "GameObjectManager.h"
 #include "QuadObject.h"
 #include "CubeObject.h"
@@ -86,15 +84,6 @@ void AppWindow::OnUpdate()
 	UIManager::getInstance()->DrawAllUI();
 	
 	this->m_swap_chain->present(true);
-}
-
-
-float RandomNumber(float min, float max)
-{
-	float random = ((float)rand()) / (float)RAND_MAX;
-	float diff = max - min;
-	float r = random * diff;
-	return min + r;
 }
 
 void AppWindow::CreateGraphicsWindow()

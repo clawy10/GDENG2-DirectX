@@ -1,5 +1,5 @@
 #include "TransformObjectScreen.h"
-
+#include "MathTools.h"
 #include "GameObjectManager.h"
 
 TransformObjectScreen::TransformObjectScreen(std::string name) : AUIScreen(name)
@@ -19,17 +19,17 @@ void TransformObjectScreen::DrawUI()
 		ImGui::Text("Selected object: %s",  GameObjectManager::getInstance()->GetSelectedObject()->GetName().c_str());
 		this->GetObjectTransform();
 
-		if (ImGui::DragFloat3("Position", this->position))
+		if (ImGui::DragFloat3("Position", this->position, 0.05))
 		{
 			this->UpdatePosition();
 		}
 
-		if (ImGui::DragFloat3("Rotation", this->rotation))
+		if (ImGui::DragFloat3("Rotation", this->rotation, 0.05))
 		{
 			this->UpdateRotation();
 		}
 		
-		if (ImGui::DragFloat3("Scale", this->scale))
+		if (ImGui::DragFloat3("Scale", this->scale, 0.05))
 		{
 			this->UpdateScale();
 		}
@@ -50,9 +50,15 @@ void TransformObjectScreen::GetObjectTransform()
 	this->position[1] = selectedObject->GetPosition().y;
 	this->position[2] = selectedObject->GetPosition().z;
 
-	this->rotation[0] = selectedObject->GetRotation().x;
-	this->rotation[1] = selectedObject->GetRotation().y;
-	this->rotation[2] = selectedObject->GetRotation().z;
+	Vector3D objectRotation = MathTools::QuaternionToEuler(selectedObject->GetOrientation());
+
+	objectRotation.x = MathTools::ConvertRadiansToDegrees(objectRotation.x);
+	objectRotation.y = MathTools::ConvertRadiansToDegrees(objectRotation.y);
+	objectRotation.z = MathTools::ConvertRadiansToDegrees(objectRotation.z);
+	
+	this->rotation[0] = objectRotation.x;
+	this->rotation[1] = objectRotation.y;
+	this->rotation[2] = objectRotation.z;
 
 	this->scale[0] = selectedObject->GetScale().x;
 	this->scale[1] = selectedObject->GetScale().y;
@@ -67,7 +73,9 @@ void TransformObjectScreen::UpdatePosition()
 
 void TransformObjectScreen::UpdateRotation()
 {
-	
+	Vector3D newRotation(this->rotation[0], this->rotation[1], this->rotation[2]);
+	AQuaternion orientation = MathTools::EulerToQuaternion(newRotation);
+	GameObjectManager::getInstance()->GetSelectedObject()->SetRotation(orientation);
 }
 
 void TransformObjectScreen::UpdateScale()

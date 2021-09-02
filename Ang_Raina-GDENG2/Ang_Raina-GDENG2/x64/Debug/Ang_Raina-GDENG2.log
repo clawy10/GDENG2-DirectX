@@ -1,6 +1,22 @@
 ﻿  TransformObjectScreen.cpp
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(108,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(109,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(110,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(111,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Vector3D.h(33,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(131,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(132,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(133,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Matrix4x4.h(134,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(11,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(17,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(63,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(64,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(65,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(66,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(67,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(68,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(80,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(92,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(94,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\MathTools.h(96,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\TransformObjectScreen.cpp(22,6): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\TransformObjectScreen.cpp(27,6): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\TransformObjectScreen.cpp(32,6): warning C4305: 'argument': truncation from 'double' to 'float'
   Ang_Raina-GDENG2.vcxproj -> F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\x64\Debug\Ang_Raina-GDENG2.exe

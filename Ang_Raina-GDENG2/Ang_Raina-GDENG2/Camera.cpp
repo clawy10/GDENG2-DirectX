@@ -121,7 +121,7 @@ void Camera::OnMouseMove(const Point& mousePos)
 		x += mousePos.y * this->CAMERA_ROTATE_SPEED;
 		y += mousePos.x * this->CAMERA_ROTATE_SPEED;
 		
-		this->SetRotation(x, y, z);
+		this->SetRotation(x, y, z, 1);
 		this->UpdateCameraMatrix();
 	}
 }

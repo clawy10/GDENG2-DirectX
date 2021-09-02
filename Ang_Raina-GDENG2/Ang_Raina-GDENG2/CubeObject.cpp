@@ -137,7 +137,7 @@ void CubeObject::Draw(int width, int height, VertexShader* vertexShader, PixelSh
 	cc.m_world.SetScale(this->scale);
 
 	// rotate
-	temp = Matrix4x4::QuaternionToMatrix(this->orientation.x, this->orientation.y, this->orientation.z, this->orientation.w);
+	temp = MathTools::QuaternionToMatrix(this->orientation.x, this->orientation.y, this->orientation.z, this->orientation.w);
 	cc.m_world *= temp;
 
 	// translate
