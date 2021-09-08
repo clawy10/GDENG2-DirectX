@@ -168,6 +168,8 @@
     <ClCompile Include="CubeObject.cpp" />
     <ClCompile Include="DepthBuffer.cpp" />
     <ClCompile Include="DeviceContext.cpp" />
+    <ClCompile Include="EditorModeScreen.cpp" />
+    <ClCompile Include="EngineBackend.cpp" />
     <ClCompile Include="EngineTime.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="GraphicsEngine.cpp" />
@@ -219,6 +221,8 @@
     <ClInclude Include="CubeObject.h" />
     <ClInclude Include="DepthBuffer.h" />
     <ClInclude Include="DeviceContext.h" />
+    <ClInclude Include="EditorModeScreen.h" />
+    <ClInclude Include="EngineBackend.h" />
     <ClInclude Include="EngineTime.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GraphicsEngine.h" />

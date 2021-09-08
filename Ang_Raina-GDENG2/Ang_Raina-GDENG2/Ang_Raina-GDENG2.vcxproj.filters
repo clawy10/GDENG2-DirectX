@@ -116,6 +116,12 @@
     <Filter Include="Game Engine\UI\Transform Object Screen">
       <UniqueIdentifier>{a39502dd-15ad-428c-bc4d-4b34526c1796}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Engine Backend">
+      <UniqueIdentifier>{7442a809-58d1-48c9-8ab8-cac999dd2a65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Editor Mode Screen">
+      <UniqueIdentifier>{12b40d75-9bae-4d87-a070-5ce6c7d31cf4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -261,6 +267,12 @@
     </ClCompile>
     <ClCompile Include="TransformObjectScreen.cpp">
       <Filter>Game Engine\UI\Transform Object Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineBackend.cpp">
+      <Filter>Game Engine\Engine Backend</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorModeScreen.cpp">
+      <Filter>Game Engine\UI\Editor Mode Screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -444,6 +456,12 @@
     </ClInclude>
     <ClInclude Include="TransformObjectScreen.h">
       <Filter>Game Engine\UI\Transform Object Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineBackend.h">
+      <Filter>Game Engine\Engine Backend</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorModeScreen.h">
+      <Filter>Game Engine\UI\Editor Mode Screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

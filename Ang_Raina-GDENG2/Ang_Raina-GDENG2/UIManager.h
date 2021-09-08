@@ -13,6 +13,7 @@ public:
 	const std::string OBJECTRESIZER_SCREEN = "OBJECTRESIZER_SCREEN";
 	const std::string OBJECTLIST_SCREEN = "OBJECTLIST_SCREEN";
 	const std::string TRANSFORMOBJECT_SCREEN = "TRANSFORMOBJECT_SCREEN";
+	const std::string EDITORMODE_SCREEN = "EDITORMODE_SCREEN";
 };
 
 class UIManager
