@@ -1,5 +1,6 @@
 #include "EditorModeScreen.h"
 #include "EngineBackend.h"
+#include "GameObjectManager.h"
 
 EditorModeScreen::EditorModeScreen(std::string name) : AUIScreen(name)
 {
@@ -15,33 +16,41 @@ void EditorModeScreen::DrawUI()
 	
 	if (EngineBackend::getInstance()->GetMode() == EngineBackend::EDITOR)
 	{
-		if (ImGui::Button("Play", ImVec2(100, 0)))
+		if (ImGui::Button("Play"))
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::PLAY);
+			GameObjectManager::getInstance()->SaveEditStates();
 		}
 	}
 	else if (EngineBackend::getInstance()->GetMode() == EngineBackend::PLAY)
 	{
-		if (ImGui::Button("Stop", ImVec2(100, 0)))
+		ImGui::SameLine();
+		if (ImGui::Button("Stop"))
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::EDITOR);
+			GameObjectManager::getInstance()->RestoreEditStates();
 		}
-		if (ImGui::Button("Pause", ImVec2(100, 0)))
+		ImGui::SameLine();
+		if (ImGui::Button("Pause"))
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::PAUSED);
 		}
 	}
 	else if (EngineBackend::getInstance()->GetMode() == EngineBackend::PAUSED)
 	{
-		if (ImGui::Button("Stop", ImVec2(100, 0)))
+		ImGui::SameLine();
+		if (ImGui::Button("Stop"))
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::EDITOR);
+			GameObjectManager::getInstance()->RestoreEditStates();
 		}
-		if (ImGui::Button("Resume", ImVec2(100, 0)))
+		ImGui::SameLine();
+		if (ImGui::Button("Resume"))
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::PLAY);
 		}
-		if (ImGui::Button("Framestep", ImVec2(100, 0)))
+		ImGui::SameLine();
+		if (ImGui::Button("Framestep"))
 		{
 			EngineBackend::getInstance()->StartFrameStep();
 		}

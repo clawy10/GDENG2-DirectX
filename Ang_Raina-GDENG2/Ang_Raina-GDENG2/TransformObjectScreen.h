@@ -13,6 +13,7 @@ public:
 	void UpdatePosition();
 	void UpdateRotation();
 	void UpdateScale();
+	void RecordAction();
 	
 private:
 	float position[3];

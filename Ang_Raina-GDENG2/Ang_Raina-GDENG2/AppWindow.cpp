@@ -14,6 +14,7 @@
 #include "BaseComponentSystem.h"
 #include "PhysicsSystem.h"
 #include "EngineBackend.h"
+#include "ActionHistory.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -109,6 +110,7 @@ void AppWindow::CreateGraphicsWindow()
 	GraphicsEngine::initialize();
 	InputSystem::initialize();
 	UIManager::initialize(this->m_hwnd);
+	ActionHistory::initialize();
 
 	InputSystem::getInstance()->AddListener(this);
 	//InputSystem::getInstance()->ShowCursor(false);

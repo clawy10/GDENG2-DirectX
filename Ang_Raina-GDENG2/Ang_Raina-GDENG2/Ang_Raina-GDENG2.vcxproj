@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AComponent.cpp" />
+    <ClCompile Include="ActionHistory.cpp" />
     <ClCompile Include="AGameObject.cpp" />
     <ClCompile Include="AppWindow.cpp" />
     <ClCompile Include="AUIScreen.cpp" />
@@ -168,6 +169,8 @@
     <ClCompile Include="CubeObject.cpp" />
     <ClCompile Include="DepthBuffer.cpp" />
     <ClCompile Include="DeviceContext.cpp" />
+    <ClCompile Include="EditorAction.cpp" />
+    <ClCompile Include="EditorActionScreen.cpp" />
     <ClCompile Include="EditorModeScreen.cpp" />
     <ClCompile Include="EngineBackend.cpp" />
     <ClCompile Include="EngineTime.cpp" />
@@ -208,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AComponent.h" />
+    <ClInclude Include="ActionHistory.h" />
     <ClInclude Include="AGameObject.h" />
     <ClInclude Include="AppWindow.h" />
     <ClInclude Include="AQuaternion.h" />
@@ -221,6 +225,8 @@
     <ClInclude Include="CubeObject.h" />
     <ClInclude Include="DepthBuffer.h" />
     <ClInclude Include="DeviceContext.h" />
+    <ClInclude Include="EditorAction.h" />
+    <ClInclude Include="EditorActionScreen.h" />
     <ClInclude Include="EditorModeScreen.h" />
     <ClInclude Include="EngineBackend.h" />
     <ClInclude Include="EngineTime.h" />

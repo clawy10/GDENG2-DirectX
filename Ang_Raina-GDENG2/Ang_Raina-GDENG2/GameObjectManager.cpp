@@ -1,4 +1,5 @@
 #include "GameObjectManager.h"
+#include "EditorAction.h"
 
 GameObjectManager* GameObjectManager::sharedInstance = nullptr;
 
@@ -65,6 +66,33 @@ void GameObjectManager::SelectObject(std::string name)
 void GameObjectManager::SelectObject(AGameObject* object)
 {
 	this->selectedObject = object;
+}
+
+void GameObjectManager::SaveEditStates()
+{
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		this->objectList[i]->SaveEditState();
+	}
+}
+
+void GameObjectManager::RestoreEditStates()
+{
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		this->objectList[i]->RestoreEditState();
+	}
+}
+
+void GameObjectManager::ApplyEditorAction(EditorAction* action)
+{
+	AGameObject* gameObject = this->GetObjectByName(action->GetOwnerName());
+	if (gameObject != nullptr)
+	{
+		gameObject->SetPosition(action->GetStoredPos());
+		gameObject->SetRotation(action->GetStoredOrientation());
+		gameObject->SetScale(action->GetStoredScale());
+	}
 }
 
 AGameObject* GameObjectManager::GetSelectedObject()

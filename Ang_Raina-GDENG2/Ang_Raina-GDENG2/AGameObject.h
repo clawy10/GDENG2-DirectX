@@ -25,6 +25,8 @@ struct constant
 	Matrix4x4 m_projection;
 };
 
+class EditorAction;
+
 class AGameObject
 {
 public:
@@ -52,8 +54,11 @@ public:
 
 	void AttachComponent(AComponent* component);
 	void DetachComponent(AComponent* component);
-
+	
 	AComponent* FindComponentByName(std::string name); 
+
+	void SaveEditState();
+	void RestoreEditState();
 	
 	void release();
 	
@@ -66,10 +71,13 @@ protected:
 	AQuaternion orientation;
 	Vector3D scale = Vector3D(1, 1, 1);
 
-	std::vector<AComponent*> componentList; 
+	std::vector<AComponent*> componentList;
 
 	virtual void Awake();
 
+private:
+	EditorAction* lastEditState = nullptr;
+	
 private:
 	friend class GameObjectManager;
 };

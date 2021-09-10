@@ -1,5 +1,5 @@
 #include "AGameObject.h"
-#include "CameraManager.h"
+#include "EditorAction.h"
 
 AGameObject::AGameObject(std::string name)
 {
@@ -112,6 +112,21 @@ AComponent* AGameObject::FindComponentByName(std::string name)
 	}
 
 	return nullptr;
+}
+
+void AGameObject::SaveEditState()
+{
+	this->lastEditState = new EditorAction(this);
+}
+
+void AGameObject::RestoreEditState()
+{
+	if (this->lastEditState != nullptr)
+	{
+		this->position = this->lastEditState->GetStoredPos();
+		this->orientation = this->lastEditState->GetStoredOrientation();
+		this->scale = this->lastEditState->GetStoredScale();
+	}
 }
 
 void AGameObject::release()

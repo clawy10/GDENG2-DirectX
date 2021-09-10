@@ -77,21 +77,6 @@
     <Filter Include="ImGui">
       <UniqueIdentifier>{f94b2b0f-7f6b-413c-96a4-2b1d32cc2c78}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Engine\UI">
-      <UniqueIdentifier>{c3531e7e-331d-44f3-a4e2-fc7d7c4ceaaf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Engine\UI\Menu Screen">
-      <UniqueIdentifier>{29a20f90-8885-4cba-a479-10db98ec28b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Engine\UI\Menu Screen\Color Picker Screen">
-      <UniqueIdentifier>{9a26efc3-e8d5-42d5-8ab5-322a09b4c66e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Engine\UI\Menu Screen\Credits Screen">
-      <UniqueIdentifier>{4a77b54c-f0ff-497c-87ac-3b7f7b003f0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Engine\UI\Menu Screen\Resize Object Screen">
-      <UniqueIdentifier>{f61d1ce7-67e0-42b5-afd9-e18c68854790}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game Engine\Game Objects\Mesh Manager">
       <UniqueIdentifier>{b0afddad-67b1-4a4a-bd40-67579e2c4033}</UniqueIdentifier>
     </Filter>
@@ -110,17 +95,38 @@
     <Filter Include="Game Engine\ECS\Components\Physics Component">
       <UniqueIdentifier>{9dc6c003-7aaa-4769-9af7-49d0e3a06d66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Engine Backend">
+      <UniqueIdentifier>{7442a809-58d1-48c9-8ab8-cac999dd2a65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Editor Actions">
+      <UniqueIdentifier>{3843300a-ec1f-4c9c-9df5-cb768b419694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI">
+      <UniqueIdentifier>{c3531e7e-331d-44f3-a4e2-fc7d7c4ceaaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen">
+      <UniqueIdentifier>{29a20f90-8885-4cba-a479-10db98ec28b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen\Color Picker Screen">
+      <UniqueIdentifier>{9a26efc3-e8d5-42d5-8ab5-322a09b4c66e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen\Credits Screen">
+      <UniqueIdentifier>{4a77b54c-f0ff-497c-87ac-3b7f7b003f0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Menu Screen\Resize Object Screen">
+      <UniqueIdentifier>{f61d1ce7-67e0-42b5-afd9-e18c68854790}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Game Engine\UI\Object List Screen">
       <UniqueIdentifier>{6ff65eff-a668-41c0-90c2-a38d7e94081d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game Engine\UI\Transform Object Screen">
       <UniqueIdentifier>{a39502dd-15ad-428c-bc4d-4b34526c1796}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Engine\Engine Backend">
-      <UniqueIdentifier>{7442a809-58d1-48c9-8ab8-cac999dd2a65}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game Engine\UI\Editor Mode Screen">
       <UniqueIdentifier>{12b40d75-9bae-4d87-a070-5ce6c7d31cf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\UI\Editor Action Screen">
+      <UniqueIdentifier>{e0cc62c2-8c20-4447-8307-f9eee4e15343}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +279,15 @@
     </ClCompile>
     <ClCompile Include="EditorModeScreen.cpp">
       <Filter>Game Engine\UI\Editor Mode Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorAction.cpp">
+      <Filter>Game Engine\Editor Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionHistory.cpp">
+      <Filter>Game Engine\Editor Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorActionScreen.cpp">
+      <Filter>Game Engine\UI\Editor Action Screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -462,6 +477,15 @@
     </ClInclude>
     <ClInclude Include="EditorModeScreen.h">
       <Filter>Game Engine\UI\Editor Mode Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorAction.h">
+      <Filter>Game Engine\Editor Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionHistory.h">
+      <Filter>Game Engine\Editor Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorActionScreen.h">
+      <Filter>Game Engine\UI\Editor Action Screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

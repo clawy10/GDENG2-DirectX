@@ -8,6 +8,7 @@
 #include "ObjectListScreen.h"
 #include "TransformObjectScreen.h"
 #include "EditorModeScreen.h"
+#include "EditorActionScreen.h"
 
 UIManager* UIManager::sharedInstance = nullptr;
 
@@ -72,6 +73,9 @@ UIManager::UIManager(HWND hwnd)
 
 	EditorModeScreen* editorModeScreen = new EditorModeScreen(uinames.EDITORMODE_SCREEN);
 	this->uiList.push_back(editorModeScreen);
+
+	EditorActionScreen* editorActionScreen = new EditorActionScreen(uinames.EDITORACTION_SCREEN);
+	this->uiList.push_back(editorActionScreen);
 }
 
 UIManager::~UIManager()

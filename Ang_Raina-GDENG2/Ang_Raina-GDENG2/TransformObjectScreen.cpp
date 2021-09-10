@@ -1,6 +1,7 @@
 #include "TransformObjectScreen.h"
 #include "MathTools.h"
 #include "GameObjectManager.h"
+#include "ActionHistory.h"
 
 TransformObjectScreen::TransformObjectScreen(std::string name) : AUIScreen(name)
 {
@@ -21,16 +22,19 @@ void TransformObjectScreen::DrawUI()
 
 		if (ImGui::DragFloat3("Position", this->position, 0.05))
 		{
+			ActionHistory::getInstance()->RecordAction(GameObjectManager::getInstance()->GetSelectedObject());
 			this->UpdatePosition();
 		}
 
 		if (ImGui::DragFloat3("Rotation", this->rotation, 0.05))
 		{
+			ActionHistory::getInstance()->RecordAction(GameObjectManager::getInstance()->GetSelectedObject());
 			this->UpdateRotation();
 		}
 		
 		if (ImGui::DragFloat3("Scale", this->scale, 0.05))
 		{
+			ActionHistory::getInstance()->RecordAction(GameObjectManager::getInstance()->GetSelectedObject());
 			this->UpdateScale();
 		}
 	}

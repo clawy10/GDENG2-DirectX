@@ -3,6 +3,8 @@
 #include <unordered_map>
 #include "AGameObject.h"
 
+class EditorAction;
+
 class GameObjectManager
 {
 public:
@@ -19,6 +21,12 @@ public:
 
 	void SelectObject(std::string name);
 	void SelectObject(AGameObject* object);
+
+	void SaveEditStates();
+	void RestoreEditStates();
+
+	void ApplyEditorAction(EditorAction* action);
+	
 	AGameObject* GetSelectedObject();
 	AGameObject* GetObjectByName(std::string name);
 	std::vector<AGameObject*> GetAllObjects();
