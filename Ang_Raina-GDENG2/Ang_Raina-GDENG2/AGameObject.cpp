@@ -68,6 +68,11 @@ std::string AGameObject::GetName()
 	return this->name;
 }
 
+void AGameObject::SetName(std::string name)
+{
+	this->name = name;
+}
+
 void AGameObject::Initialize(void* shaderByteCode, size_t sizeShader)
 {
 	

@@ -47,6 +47,7 @@ public:
 	Vector3D GetScale();
 
 	std::string GetName();
+	void SetName(std::string name);
 
 	virtual void Initialize(void* shaderByteCode, size_t sizeShader);
 	virtual void Update(double deltaTime);

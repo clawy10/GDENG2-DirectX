@@ -7,7 +7,7 @@ class EditorAction;
 
 class GameObjectManager
 {
-public:
+public:	
 	static GameObjectManager* getInstance();
 	static void initialize(void* shaderByteCode, size_t size);
 	static void destroy();

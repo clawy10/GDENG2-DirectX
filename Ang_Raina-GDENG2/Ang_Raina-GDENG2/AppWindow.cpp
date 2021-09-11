@@ -15,6 +15,7 @@
 #include "PhysicsSystem.h"
 #include "EngineBackend.h"
 #include "ActionHistory.h"
+#include "TextureManager.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -139,31 +140,9 @@ void AppWindow::CreateGraphicsWindow()
 	
 	// insert objects to draw here
 
-	//CubeObject* cube_object = new CubeObject("Cube1");
-	//cube_object->SetPosition(0.0f, 0.0f, -0.5f);
-	//GameObjectManager::getInstance()->AddObject(cube_object);
-
-	PhysicsCube* physics_cube = new PhysicsCube("PhysicsCube");
-	physics_cube->SetPosition(0, 5, 0);
-	GameObjectManager::getInstance()->AddObject(physics_cube);
-	
-	PhysicsPlane* physics_plane = new PhysicsPlane("PhysicsPlane");
-	GameObjectManager::getInstance()->AddObject(physics_plane);
-
-	//PlaneObject* plane_object = new PlaneObject("Plane1");
-	//plane_object->SetScale(5, 5, 1);
-	//GameObjectManager::getInstance()->AddObject(plane_object, Vector3D(1, 1, 1));
-
-	//Mesh* teapot = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\teapot.obj", "teapot");
-	//teapot->SetPosition(3.0f, 0.0f, 0.0f);
-	//GameObjectManager::getInstance()->AddObject(teapot);
-	
-	//Mesh* bunny = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\bunny.obj", "bunny");
-	//bunny->SetPosition(-3.0f, 0.0f, 0.0f);
-	//GameObjectManager::getInstance()->AddObject(bunny, Vector3D(1, 0.38, 0.38));
-	
-	//Mesh* armadillo = GraphicsEngine::getInstance()->GetMeshManager()->createMeshFromFile(L"..\\Assets\\Meshes\\armadillo.obj", "armadillo");
-	//GameObjectManager::getInstance()->AddObject(armadillo, Vector3D(1, 0.38, 0.38));
+	Mesh* cube = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(Mesh::Cube);
+	cube->SetTexture(GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg"));
+	GameObjectManager::getInstance()->AddObject(cube);
 	
 	// end of objects to draw
 

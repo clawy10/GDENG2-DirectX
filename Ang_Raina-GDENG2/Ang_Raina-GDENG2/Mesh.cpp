@@ -4,7 +4,6 @@
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <iostream>
 #include <tiny_obj_loader.h>
-
 #include "CameraManager.h"
 #include "GraphicsEngine.h"
 #include "VertexMesh.h"
@@ -76,7 +75,7 @@ Mesh::Mesh(const wchar_t* full_path, std::string name) : Resource(full_path), AG
 			indexOffset += numFaceVertices; 
 		}
 	}
-	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\brick.png");
+	this->texture = GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\white-texture.jpg");
 	this->texture->CreateSamplerState(); 
 
 	void* shader_byte_code = nullptr;
@@ -92,6 +91,11 @@ Mesh::Mesh(const wchar_t* full_path, std::string name) : Resource(full_path), AG
 	constant cc;
 	this->m_constant_buffer = GraphicsEngine::getInstance()->CreateConstantBuffer();
 	this->m_constant_buffer->load(&cc, sizeof(constant));
+}
+
+Mesh::Mesh(PrimitiveType type, std::string name) : Resource(), AGameObject(name)
+{
+	
 }
 
 Mesh::~Mesh()
@@ -126,16 +130,7 @@ void Mesh::Draw(int width, int height, VertexShader* vertexShader, PixelShader* 
 	cc.m_world.SetScale(this->scale);
 
 	// rotate
-	temp.SetIdentity();
-	temp.SetRotationZ(this->orientation.z);
-	cc.m_world *= temp;
-
-	temp.SetIdentity();
-	temp.SetRotationY(this->orientation.y);
-	cc.m_world *= temp;
-
-	temp.SetIdentity();
-	temp.SetRotationX(this->orientation.x);
+	temp = MathTools::QuaternionToMatrix(this->orientation.x, this->orientation.y, this->orientation.z, this->orientation.w);
 	cc.m_world *= temp;
 
 	// translate
@@ -151,4 +146,10 @@ void Mesh::Draw(int width, int height, VertexShader* vertexShader, PixelShader* 
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->SetConstantBuffer(pixelShader, this->m_constant_buffer);
 
 	GraphicsEngine::getInstance()->GetImmediateDeviceContext()->DrawIndexedTriangleList(this->m_index_buffer->GetSizeIndexList(), 0, 0);
+}
+
+void Mesh::SetTexture(Texture* texture)
+{
+	this->texture = texture;
+	this->texture->CreateSamplerState();
 }

@@ -28,7 +28,18 @@ void GameObjectManager::AddObject(AGameObject* object)
 	object->Initialize(this->shader_byte_code, this->sizeShader);
 	this->objectList.push_back(object);
 
-	this->objectMap.insert({ object->GetName(), object });
+	if (this->objectMap[object->GetName()] != nullptr)
+	{
+		int count = 1;
+		std::string revisedName = object->GetName() + "(" + std::to_string(count) + ")";
+		while (this->objectMap[revisedName] != nullptr) {
+			count++;
+			revisedName = object->GetName() + "(" + std::to_string(count) + ")";
+		}
+		object->SetName(revisedName);
+	}
+
+	this->objectMap[object->GetName()] = object;
 }
 
 void GameObjectManager::DeleteObject(AGameObject* object)
