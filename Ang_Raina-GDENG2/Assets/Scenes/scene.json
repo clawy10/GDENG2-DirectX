@@ -1,1 +1,40 @@
-{"Objects":["Object Name","cube","X Position",0.0,"Y Position",0.0,"Z Position",0.0]}
+{
+    "Object 0": {
+        "Object Name": "cube",
+        "Object Type": 0,
+        "Position": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Scale": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+        }
+    },
+    "Object 1": {
+        "Object Name": "cube(1)",
+        "Object Type": 0,
+        "Position": {
+            "X": 4.099999904632568,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Rotation": {
+            "X": 2.8357818126678467,
+            "Y": 1.414170503616333,
+            "Z": -2.620682716369629
+        },
+        "Scale": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+        }
+    }
+}

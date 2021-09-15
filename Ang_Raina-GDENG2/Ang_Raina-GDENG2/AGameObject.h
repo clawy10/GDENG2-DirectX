@@ -25,19 +25,27 @@ struct constant
 	Matrix4x4 m_projection;
 };
 
+enum PrimitiveType
+{
+	Cube,
+	Cylinder,
+	Plane,
+	Other
+};
+
 class EditorAction;
 
 class AGameObject
 {
 public:
-	AGameObject(std::string name);
+	AGameObject(std::string name, PrimitiveType type);
 	
 	void SetPosition(float x, float y, float z);
 	void SetPosition(Vector3D position);
 	Vector3D GetPosition();
 	
 	void SetRotation(float x, float y, float z, float w);
-	void SetRotation(Vector3D rotation, float w);
+	void SetRotation(Vector3D rotation);
 	void SetRotation(AQuaternion quaternion);
 	Vector3D GetRotation();
 	AQuaternion GetOrientation();
@@ -48,6 +56,8 @@ public:
 
 	std::string GetName();
 	void SetName(std::string name);
+
+	PrimitiveType GetType();
 
 	virtual void Initialize(void* shaderByteCode, size_t sizeShader);
 	virtual void Update(double deltaTime);
@@ -66,7 +76,8 @@ public:
 	~AGameObject();
 
 protected:
-	std::string name; 
+	std::string name;
+	PrimitiveType type; 
 	
 	Vector3D position = Vector3D(0, 0, 0);
 	AQuaternion orientation;

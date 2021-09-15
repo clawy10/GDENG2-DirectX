@@ -9,14 +9,7 @@
 class Mesh : public Resource, public AGameObject
 {
 public:
-	enum PrimitiveType
-	{
-		Cube,
-		Cylinder,
-		Plane,
-	};
-	
-	Mesh(const wchar_t* full_path, std::string name);
+	Mesh(const wchar_t* full_path, std::string name, PrimitiveType type);
 	Mesh(PrimitiveType type, std::string name);
 	~Mesh();
 

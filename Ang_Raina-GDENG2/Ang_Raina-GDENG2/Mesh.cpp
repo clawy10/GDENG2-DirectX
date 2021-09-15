@@ -11,7 +11,7 @@
 #include "DeviceContext.h"
 
 
-Mesh::Mesh(const wchar_t* full_path, std::string name) : Resource(full_path), AGameObject(name)
+Mesh::Mesh(const wchar_t* full_path, std::string name, PrimitiveType type) : Resource(full_path), AGameObject(name, type)
 {
 	tinyobj::attrib_t attribs;
 	std::vector<tinyobj::shape_t> shapes;
@@ -93,7 +93,7 @@ Mesh::Mesh(const wchar_t* full_path, std::string name) : Resource(full_path), AG
 	this->m_constant_buffer->load(&cc, sizeof(constant));
 }
 
-Mesh::Mesh(PrimitiveType type, std::string name) : Resource(), AGameObject(name)
+Mesh::Mesh(PrimitiveType type, std::string name) : Resource(), AGameObject(name, type)
 {
 	
 }

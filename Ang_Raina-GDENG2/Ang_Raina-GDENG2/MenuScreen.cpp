@@ -39,12 +39,12 @@ void MenuScreen::DrawUI()
 	{
 		if (ImGui::MenuItem("Create Cube"))
 		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(Mesh::Cube);
+			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
 			GameObjectManager::getInstance()->AddObject(mesh);
 		}
 		if (ImGui::MenuItem("Create Cylinder"))
 		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(Mesh::Cylinder);
+			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cylinder);
 			GameObjectManager::getInstance()->AddObject(mesh);
 		}
 

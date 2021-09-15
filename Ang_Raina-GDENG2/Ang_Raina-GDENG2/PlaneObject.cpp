@@ -2,7 +2,7 @@
 #include "CameraManager.h"
 #include "TextureManager.h"
 
-PlaneObject::PlaneObject(std::string name) : AGameObject(name)
+PlaneObject::PlaneObject(std::string name) : AGameObject(name, PrimitiveType::Plane)
 {
 	
 }

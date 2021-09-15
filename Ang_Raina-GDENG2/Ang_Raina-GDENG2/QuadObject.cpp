@@ -2,7 +2,7 @@
 #include "CameraManager.h"
 #include "TextureManager.h"
 
-QuadObject::QuadObject(std::string name): AGameObject(name)
+QuadObject::QuadObject(std::string name): AGameObject(name, PrimitiveType::Other)
 {
 	
 }

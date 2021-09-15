@@ -2,7 +2,7 @@
 #include "CameraManager.h"
 #include "TextureManager.h"
 
-CubeObject::CubeObject(std::string name) : AGameObject(name)
+CubeObject::CubeObject(std::string name) : AGameObject(name, PrimitiveType::Cube)
 {
 	
 }

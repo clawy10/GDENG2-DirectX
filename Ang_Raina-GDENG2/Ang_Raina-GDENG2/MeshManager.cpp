@@ -14,21 +14,21 @@ Mesh* MeshManager::createMeshFromFile(const wchar_t* file_path, std::string name
 	return (Mesh*)this->createResourceFromFileConcrete(file_path, name);
 }
 
-Mesh* MeshManager::createPrimitiveMesh(Mesh::PrimitiveType type)
+Mesh* MeshManager::createPrimitiveMesh(PrimitiveType type)
 {
 	Mesh* mesh = nullptr; 
 	switch (type)
 	{
-	case Mesh::Cube:
-		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "cube");
+	case PrimitiveType::Cube:
+		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "cube", PrimitiveType::Cube);
 		break;
 
-	case Mesh::Cylinder:
-		mesh = new Mesh(L"..\\Assets\\Meshes\\cylinder.obj", "cylinder");
+	case PrimitiveType::Cylinder:
+		mesh = new Mesh(L"..\\Assets\\Meshes\\cylinder.obj", "cylinder", PrimitiveType::Cylinder);
 		break;
 
-	case Mesh::Plane:
-		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "plane");
+	case PrimitiveType::Plane:
+		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "plane", PrimitiveType::Plane);
 		mesh->SetScale(5, 0.5, 5);
 		break;
 	}
@@ -41,7 +41,7 @@ Resource* MeshManager::createResourceFromFileConcrete(const wchar_t* file_path, 
 	Mesh* mesh = nullptr;
 	try
 	{
-		mesh = new Mesh(file_path, name);
+		mesh = new Mesh(file_path, name, PrimitiveType::Other);
 	}
 	catch (...) {}
 

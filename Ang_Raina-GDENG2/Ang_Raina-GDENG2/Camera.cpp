@@ -2,7 +2,7 @@
 #include "InputSystem.h"
 #include "AppWindow.h"
 
-Camera::Camera(std::string name) : AGameObject(name)
+Camera::Camera(std::string name) : AGameObject(name, PrimitiveType::Other)
 {
 	InputSystem::getInstance()->AddListener(this);
 	this->position = Vector3D(0, 0, -5);

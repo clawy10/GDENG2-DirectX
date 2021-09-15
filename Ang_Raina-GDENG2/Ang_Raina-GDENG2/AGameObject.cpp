@@ -1,9 +1,10 @@
 #include "AGameObject.h"
 #include "EditorAction.h"
 
-AGameObject::AGameObject(std::string name)
+AGameObject::AGameObject(std::string name, PrimitiveType type)
 {
 	this->name = name;
+	this->type = type;
 }
 
 void AGameObject::SetPosition(float x, float y, float z)
@@ -27,10 +28,10 @@ void AGameObject::SetRotation(float x, float y, float z, float w)
 	this->orientation = AQuaternion(x, y, z, w);
 }
 
-void AGameObject::SetRotation(Vector3D rotation, float w)
+void AGameObject::SetRotation(Vector3D rotation)
 {
 	this->orientation = {};
-	this->orientation = AQuaternion(rotation, w);
+	this->orientation = MathTools::EulerToQuaternion(rotation);
 }
 
 void AGameObject::SetRotation(AQuaternion quaternion)
@@ -40,7 +41,7 @@ void AGameObject::SetRotation(AQuaternion quaternion)
 
 Vector3D AGameObject::GetRotation()
 {
-	return Vector3D(this->orientation.x, this->orientation.y, this->orientation.z);
+	return MathTools::QuaternionToEuler(this->orientation);
 }
 
 AQuaternion AGameObject::GetOrientation()
@@ -71,6 +72,11 @@ std::string AGameObject::GetName()
 void AGameObject::SetName(std::string name)
 {
 	this->name = name;
+}
+
+PrimitiveType AGameObject::GetType()
+{
+	return this->type;
 }
 
 void AGameObject::Initialize(void* shaderByteCode, size_t sizeShader)

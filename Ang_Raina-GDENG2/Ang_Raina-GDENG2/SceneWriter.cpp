@@ -1,7 +1,6 @@
 #include "SceneWriter.h"
 #include "GameObjectManager.h"
-#include <rapidjson/document.h>
-#include <rapidjson/filewritestream.h>
+#include "MathTools.h"
 
 SceneWriter::SceneWriter(std::string directory)
 {
@@ -15,25 +14,55 @@ SceneWriter::~SceneWriter()
 void SceneWriter::WriteToFile()
 {
 	StringBuffer s;
-	Writer<StringBuffer> writer(s);
+	PrettyWriter<StringBuffer> writer(s);
 	Document document;
 
 	std::vector<AGameObject*> objectList = GameObjectManager::getInstance()->GetAllObjects();
 	writer.StartObject();
-	writer.Key("Objects");
-	writer.StartArray();
 	for (int i = 0; i < objectList.size(); i++)
 	{
+		std::string name = "Object " + std::to_string(i);
+		writer.Key(name.c_str());
+		writer.StartObject();
+		
 		writer.Key("Object Name");
 		writer.String(objectList[i]->GetName().c_str());
-		writer.Key("X Position");
+
+		writer.Key("Object Type");
+		writer.Int(objectList[i]->GetType());
+		
+		writer.Key("Position");
+		writer.StartObject();
+		writer.Key("X");
 		writer.Double(objectList[i]->GetPosition().x);
-		writer.Key("Y Position");
+		writer.Key("Y");
 		writer.Double(objectList[i]->GetPosition().y);
-		writer.Key("Z Position");
+		writer.Key("Z");
 		writer.Double(objectList[i]->GetPosition().z);
+		writer.EndObject();
+
+		writer.Key("Rotation");
+		writer.StartObject();
+		writer.Key("X");
+		writer.Double(objectList[i]->GetRotation().x);
+		writer.Key("Y");
+		writer.Double(objectList[i]->GetRotation().y);
+		writer.Key("Z");
+		writer.Double(objectList[i]->GetRotation().z);
+		writer.EndObject();
+
+		writer.Key("Scale");
+		writer.StartObject();
+		writer.Key("X");
+		writer.Double(objectList[i]->GetScale().x);
+		writer.Key("Y");
+		writer.Double(objectList[i]->GetScale().y);
+		writer.Key("Z");
+		writer.Double(objectList[i]->GetScale().z);
+		writer.EndObject();
+
+		writer.EndObject();
 	}
-	writer.EndArray();
 	writer.EndObject();
 
 	if (document.Parse(s.GetString()).HasParseError())
@@ -45,7 +74,7 @@ void SceneWriter::WriteToFile()
 	char writeBuffer[65536];
 	FileWriteStream os(file, writeBuffer, sizeof(writeBuffer));
 
-	Writer<FileWriteStream> fileWriter(os);
+	PrettyWriter<FileWriteStream> fileWriter(os);
 	document.Accept(fileWriter);
 	
 	fclose(file);
