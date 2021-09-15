@@ -1,5 +1,6 @@
 #pragma once
 #include "AUIScreen.h"
+#include "SceneWriter.h"
 class MenuScreen : public AUIScreen
 {
 private:

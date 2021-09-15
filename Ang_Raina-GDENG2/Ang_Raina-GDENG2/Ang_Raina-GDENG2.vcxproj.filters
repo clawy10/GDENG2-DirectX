@@ -128,6 +128,12 @@
     <Filter Include="Game Engine\UI\Editor Action Screen">
       <UniqueIdentifier>{e0cc62c2-8c20-4447-8307-f9eee4e15343}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Engine\Save System">
+      <UniqueIdentifier>{3fe1ae8d-4a4b-4d3a-a1bb-30ed0e870e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Save System\Scene Writer">
+      <UniqueIdentifier>{49675905-6377-495a-81cd-079e9f248121}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppWindow.cpp">
@@ -288,6 +294,9 @@
     </ClCompile>
     <ClCompile Include="EditorActionScreen.cpp">
       <Filter>Game Engine\UI\Editor Action Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneWriter.cpp">
+      <Filter>Game Engine\Save System\Scene Writer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -486,6 +495,9 @@
     </ClInclude>
     <ClInclude Include="EditorActionScreen.h">
       <Filter>Game Engine\UI\Editor Action Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneWriter.h">
+      <Filter>Game Engine\Save System\Scene Writer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

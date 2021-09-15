@@ -29,7 +29,8 @@ void MenuScreen::DrawUI()
 		}
 		if (ImGui::MenuItem("Save"))
 		{
-			// do something
+			SceneWriter writer = SceneWriter("..\\Assets\\Scenes");
+			writer.WriteToFile();
 		}
 		ImGui::EndMenu();
 	}
