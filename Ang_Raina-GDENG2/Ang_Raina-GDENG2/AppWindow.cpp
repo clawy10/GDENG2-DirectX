@@ -93,7 +93,8 @@ void AppWindow::OnUpdate()
 			EngineBackend::getInstance()->EndFrameStep();
 		}
 	}
-
+	CameraManager::getInstance()->Update(EngineTime::GetDeltaTime());
+	
 	//this->m_mesh->Draw(this->m_vertex_shader, this->m_pixel_shader);
 	GameObjectManager::getInstance()->DrawObjects(width, height, this->m_vertex_shader, this->m_pixel_shader);
 

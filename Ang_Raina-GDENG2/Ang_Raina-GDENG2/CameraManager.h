@@ -6,6 +6,8 @@ public:
 	static CameraManager* getInstance();
 	static void initialize();
 	static void destroy();
+	
+	static void Update(float deltaTime);
 
 	Camera* GetSceneCamera();
 
