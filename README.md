@@ -25,3 +25,5 @@
 * 9/09/2021 - Added Engine Backend
 * 9/11/2021 - Added Undo/Redo actions
 * 9/12/2021 - Added primitive spawning
+* 9/15/2021 - Added scene writer for saving
+* 9/16/2021 - Fixed physics component issues, additional primitive meshes

@@ -4,9 +4,9 @@
 #include "ColorPickerScreen.h"
 #include "ResizeObjectScreen.h"
 #include "GraphicsEngine.h"
-#include "MeshManager.h"
 #include "GameObjectManager.h"
 #include "PhysicsComponent.h"
+#include "EngineBackend.h"
 
 MenuScreen::MenuScreen(std::string name) : AUIScreen(name)
 {
@@ -14,6 +14,12 @@ MenuScreen::MenuScreen(std::string name) : AUIScreen(name)
 
 MenuScreen::~MenuScreen()
 {
+}
+
+void MenuScreen::CreateMesh(PrimitiveType type)
+{
+	Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(type);
+	GameObjectManager::getInstance()->AddObject(mesh);
 }
 
 void MenuScreen::DrawUI()
@@ -30,8 +36,16 @@ void MenuScreen::DrawUI()
 		}
 		if (ImGui::MenuItem("Save"))
 		{
-			SceneWriter writer = SceneWriter("..\\Assets\\Scenes");
-			writer.WriteToFile();
+			if (EngineBackend::getInstance()->GetMode() == EngineBackend::EDITOR)
+			{
+				SceneWriter writer = SceneWriter("..\\Assets\\Scenes");
+				writer.WriteToFile();
+			}
+			else
+			{
+				std::cout << "Cannot save in current mode!";
+			}
+			
 		}
 		ImGui::EndMenu();
 	}
@@ -40,20 +54,27 @@ void MenuScreen::DrawUI()
 	{
 		if (ImGui::MenuItem("Create Cube"))
 		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
-			GameObjectManager::getInstance()->AddObject(mesh);
-		}
-		
-		if (ImGui::MenuItem("Create Cylinder"))
-		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cylinder);
-			GameObjectManager::getInstance()->AddObject(mesh);
+			this->CreateMesh(PrimitiveType::Cube);
 		}
 
 		if (ImGui::MenuItem("Create Plane"))
 		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Plane);
-			GameObjectManager::getInstance()->AddObject(mesh);
+			this->CreateMesh(PrimitiveType::Plane);
+		}
+		
+		if (ImGui::MenuItem("Create Cylinder"))
+		{
+			this->CreateMesh(PrimitiveType::Cylinder);
+		}
+
+		if (ImGui::MenuItem("Create Capsule"))
+		{
+			this->CreateMesh(PrimitiveType::Capsule);
+		}
+
+		if (ImGui::MenuItem("Create Sphere"))
+		{
+			this->CreateMesh(PrimitiveType::Sphere);
 		}
 
 		if (ImGui::MenuItem("Physics Cube"))
@@ -61,6 +82,15 @@ void MenuScreen::DrawUI()
 			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
 			mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
 			PhysicsComponent* physicsComponent = (PhysicsComponent*)mesh->FindComponentByName("PhysicsComponent");
+			GameObjectManager::getInstance()->AddObject(mesh);
+		}
+
+		if (ImGui::MenuItem("Physics Plane"))
+		{
+			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Plane);
+			mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
+			PhysicsComponent* physicsComponent = (PhysicsComponent*)mesh->FindComponentByName("PhysicsComponent");
+			physicsComponent->SetBodyType(BodyType::STATIC);
 			GameObjectManager::getInstance()->AddObject(mesh);
 		}
 
@@ -91,3 +121,4 @@ void MenuScreen::DrawUI()
 
 	ImGui::EndMainMenuBar();
 }
+

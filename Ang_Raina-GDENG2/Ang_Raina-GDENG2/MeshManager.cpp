@@ -20,16 +20,24 @@ Mesh* MeshManager::createPrimitiveMesh(PrimitiveType type)
 	switch (type)
 	{
 	case PrimitiveType::Cube:
-		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "cube", PrimitiveType::Cube);
+		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "Cube", PrimitiveType::Cube);
 		break;
 
 	case PrimitiveType::Cylinder:
-		mesh = new Mesh(L"..\\Assets\\Meshes\\cylinder.obj", "cylinder", PrimitiveType::Cylinder);
+		mesh = new Mesh(L"..\\Assets\\Meshes\\cylinder.obj", "Cylinder", PrimitiveType::Cylinder);
 		break;
 
 	case PrimitiveType::Plane:
-		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "plane", PrimitiveType::Plane);
+		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "Plane", PrimitiveType::Plane);
 		mesh->SetScale(5, 0.5, 5);
+		break;
+
+	case PrimitiveType::Capsule:
+		mesh = new Mesh(L"..\\Assets\\Meshes\\capsule.obj", "Capsule", PrimitiveType::Capsule);
+		break;
+
+	case PrimitiveType::Sphere:
+		mesh = new Mesh(L"..\\Assets\\Meshes\\sphere.obj", "Sphere", PrimitiveType::Sphere);
 		break;
 	}
 

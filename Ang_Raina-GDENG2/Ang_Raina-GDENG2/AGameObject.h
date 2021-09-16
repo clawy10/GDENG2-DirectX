@@ -30,6 +30,8 @@ enum PrimitiveType
 	Cube,
 	Cylinder,
 	Plane,
+	Capsule,
+	Sphere,
 	Other
 };
 
