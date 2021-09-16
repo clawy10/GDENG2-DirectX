@@ -22,18 +22,16 @@ void SceneWriter::WriteToFile()
 	
 	writer.StartObject();
 
-	writer.Key("Objects");
-	writer.StartObject();
+	writer.Key("ObjectList");
+	writer.StartArray();
 	for (int i = 0; i < objectList.size(); i++)
 	{
-		std::string name = "Object_" + std::to_string(i);
-		writer.Key(name.c_str());
 		writer.StartObject();
-
-		writer.Key("Object Type");
+		
+		writer.Key("ObjectType");
 		writer.Int(objectList[i]->GetType());
 		
-		writer.Key("Object Name");
+		writer.Key("ObjectName");
 		writer.String(objectList[i]->GetName().c_str());
 		
 		writer.Key("Position");
@@ -69,20 +67,21 @@ void SceneWriter::WriteToFile()
 		if  (objectList[i]->FindComponentByName("PhysicsComponent") != nullptr)
 		{
 			PhysicsComponent* physicsComponent = (PhysicsComponent*) objectList[i]->FindComponentByName("PhysicsComponent");
-			writer.Key("Rigid Body Component");
+			writer.Key("RigidBodyComponent");
 			writer.StartObject();
 			writer.Key("Type");
 			writer.Int((int) physicsComponent->GetBodyType());
 			writer.Key("Mass");
 			writer.Double(physicsComponent->GetMass());
-			writer.Key("Gravity Enabled");
+			writer.Key("GravityEnabled");
 			writer.Bool(physicsComponent->IsGravityEnabled());
 			writer.EndObject();
 		}
 
 		writer.EndObject();
 	}
-	writer.EndObject();
+	
+	writer.EndArray();
 	
 	writer.EndObject();
 

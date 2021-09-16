@@ -26,13 +26,12 @@ void SceneReader::ReadFile()
 		Document document;
 		document.ParseStream(is);
 
-		Value& objects = document["Objects"];
-		if (objects.IsObject())
+		Value& objects = document["ObjectList"];
+		if (objects.IsArray())
 		{
-			for (Value::ConstMemberIterator itr = objects.MemberBegin(); itr != objects.MemberEnd(); ++itr) //iterate through object  
+			for (Value::ConstValueIterator itr = objects.Begin(); itr != objects.End(); ++itr) //iterate through array
 			{
-				const Value& gameobject = itr->value;
-				this->CreateMesh(gameobject);
+				this->CreateMesh(*itr);
 			}
 		}
 
@@ -46,8 +45,8 @@ void SceneReader::ReadFile()
 
 void SceneReader::CreateMesh(const Value& obj)
 {
-	Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh((PrimitiveType) obj["Object Type"].GetInt());
-	mesh->SetName(obj["Object Name"].GetString());
+	Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh((PrimitiveType) obj["ObjectType"].GetInt());
+	mesh->SetName(obj["ObjectName"].GetString());
 
 	float posX = obj["Position"]["X"].GetFloat();
 	float posY = obj["Position"]["Y"].GetFloat();
@@ -64,13 +63,13 @@ void SceneReader::CreateMesh(const Value& obj)
 	float scaleZ = obj["Scale"]["Z"].GetFloat();
 	mesh->SetScale(scaleX, scaleY, scaleZ);
 
-	if (obj.HasMember("Rigid Body Component"))
+	if (obj.HasMember("RigidBodyComponent"))
 	{
 		mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
 		PhysicsComponent* physicsComponent = (PhysicsComponent*) mesh->FindComponentByName("PhysicsComponent");
-		physicsComponent->SetBodyType((BodyType) obj["Rigid Body Component"]["Type"].GetInt());
-		physicsComponent->SetMass(obj["Rigid Body Component"]["Mass"].GetFloat());
-		physicsComponent->EnableGravity(obj["Rigid Body Component"]["Gravity Enabled"].GetBool());
+		physicsComponent->SetBodyType((BodyType) obj["RigidBodyComponent"]["Type"].GetInt());
+		physicsComponent->SetMass(obj["RigidBodyComponent"]["Mass"].GetFloat());
+		physicsComponent->EnableGravity(obj["RigidBodyComponent"]["GravityEnabled"].GetBool());
 	}
 	
 	

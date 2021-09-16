@@ -1,11 +1,11 @@
 {
-    "Objects": {
-        "Object_0": {
-            "Object Type": 0,
-            "Object Name": "Cube",
+    "ObjectList": [
+        {
+            "ObjectType": 0,
+            "ObjectName": "Cube",
             "Position": {
-                "X": 0.0,
-                "Y": 12.199999809265137,
+                "X": 6.300000190734863,
+                "Y": 0.0,
                 "Z": 0.0
             },
             "Rotation": {
@@ -18,15 +18,34 @@
                 "Y": 1.0,
                 "Z": 1.0
             },
-            "Rigid Body Component": {
+            "RigidBodyComponent": {
                 "Type": 2,
                 "Mass": 69.0,
-                "Gravity Enabled": true
+                "GravityEnabled": true
             }
         },
-        "Object_1": {
-            "Object Type": 2,
-            "Object Name": "Plane",
+        {
+            "ObjectType": 1,
+            "ObjectName": "Cylinder",
+            "Position": {
+                "X": -4.050000190734863,
+                "Y": 0.0,
+                "Z": 0.0
+            },
+            "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+            },
+            "Scale": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+            }
+        },
+        {
+            "ObjectType": 4,
+            "ObjectName": "Sphere",
             "Position": {
                 "X": 0.0,
                 "Y": 0.0,
@@ -38,15 +57,15 @@
                 "Z": 0.0
             },
             "Scale": {
-                "X": 5.0,
-                "Y": 0.5,
-                "Z": 5.0
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
             },
-            "Rigid Body Component": {
+            "RigidBodyComponent": {
                 "Type": 0,
-                "Mass": 1000.0,
-                "Gravity Enabled": true
+                "Mass": 100.0,
+                "GravityEnabled": true
             }
         }
-    }
+    ]
 }
