@@ -15,6 +15,7 @@ public:
 	const std::string TRANSFORMOBJECT_SCREEN = "TRANSFORMOBJECT_SCREEN";
 	const std::string EDITORMODE_SCREEN = "EDITORMODE_SCREEN";
 	const std::string EDITORACTION_SCREEN = "EDITORACTION_SCREEN";
+	const std::string COMPONENTS_SCREEN = "COMPONENTS_SCREEN";
 };
 
 class UIManager

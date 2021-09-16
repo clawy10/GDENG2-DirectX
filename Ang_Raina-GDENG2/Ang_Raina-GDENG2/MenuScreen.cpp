@@ -3,6 +3,7 @@
 #include "CreditsScreen.h"
 #include "ColorPickerScreen.h"
 #include "ResizeObjectScreen.h"
+#include "ComponentsScreen.h"
 #include "GraphicsEngine.h"
 #include "GameObjectManager.h"
 #include "PhysicsComponent.h"
@@ -77,35 +78,14 @@ void MenuScreen::DrawUI()
 			this->CreateMesh(PrimitiveType::Sphere);
 		}
 
-		if (ImGui::MenuItem("Physics Cube"))
-		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
-			mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
-			PhysicsComponent* physicsComponent = (PhysicsComponent*)mesh->FindComponentByName("PhysicsComponent");
-			GameObjectManager::getInstance()->AddObject(mesh);
-		}
-
-		if (ImGui::MenuItem("Physics Plane"))
-		{
-			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Plane);
-			mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
-			PhysicsComponent* physicsComponent = (PhysicsComponent*)mesh->FindComponentByName("PhysicsComponent");
-			physicsComponent->SetBodyType(BodyType::STATIC);
-			GameObjectManager::getInstance()->AddObject(mesh);
-		}
-
 		ImGui::EndMenu();
 	}
 
 	if (ImGui::BeginMenu("Windows"))
 	{
-		if (ImGui::MenuItem("Color Picker"))
+		if (ImGui::MenuItem("Components"))
 		{
-			UIManager::getInstance()->AddUIScreen(new ColorPickerScreen(uinames.COLORPICKER_SCREEN));
-		}
-		if (ImGui::MenuItem("Object Resizer"))
-		{
-			UIManager::getInstance()->AddUIScreen(new ResizeObjectScreen(uinames.OBJECTRESIZER_SCREEN));
+			UIManager::getInstance()->AddUIScreen(new ComponentsScreen(uinames.COMPONENTS_SCREEN));
 		}
 		ImGui::EndMenu();
 	}

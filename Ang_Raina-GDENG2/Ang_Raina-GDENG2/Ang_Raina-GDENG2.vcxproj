@@ -164,6 +164,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="ColorPickerScreen.cpp" />
+    <ClCompile Include="ComponentsScreen.cpp" />
     <ClCompile Include="ConstantBuffer.cpp" />
     <ClCompile Include="CreditsScreen.cpp" />
     <ClCompile Include="CubeObject.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="ColorPickerScreen.h" />
+    <ClInclude Include="ComponentsScreen.h" />
     <ClInclude Include="ConstantBuffer.h" />
     <ClInclude Include="CreditsScreen.h" />
     <ClInclude Include="CubeObject.h" />
