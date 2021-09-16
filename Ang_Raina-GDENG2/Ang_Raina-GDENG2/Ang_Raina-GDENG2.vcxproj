@@ -163,7 +163,6 @@
     <ClCompile Include="BaseComponentSystem.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
-    <ClCompile Include="ColorPickerScreen.cpp" />
     <ClCompile Include="ComponentsScreen.cpp" />
     <ClCompile Include="ConstantBuffer.cpp" />
     <ClCompile Include="CreditsScreen.cpp" />
@@ -198,9 +197,9 @@
     <ClCompile Include="PixelShader.cpp" />
     <ClCompile Include="PlaneObject.cpp" />
     <ClCompile Include="QuadObject.cpp" />
-    <ClCompile Include="ResizeObjectScreen.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="SceneReader.cpp" />
     <ClCompile Include="SceneWriter.cpp" />
     <ClCompile Include="SwapChain.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -221,7 +220,6 @@
     <ClInclude Include="BaseComponentSystem.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
-    <ClInclude Include="ColorPickerScreen.h" />
     <ClInclude Include="ComponentsScreen.h" />
     <ClInclude Include="ConstantBuffer.h" />
     <ClInclude Include="CreditsScreen.h" />
@@ -263,10 +261,10 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Prerequisites.h" />
     <ClInclude Include="QuadObject.h" />
-    <ClInclude Include="ResizeObjectScreen.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="SceneReader.h" />
     <ClInclude Include="SceneWriter.h" />
     <ClInclude Include="SwapChain.h" />
     <ClInclude Include="Texture.h" />

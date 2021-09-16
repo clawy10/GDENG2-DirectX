@@ -25,7 +25,7 @@ void PhysicsComponent::start()
 	Quaternion rotation = Quaternion(this->GetOwner()->GetOrientation().x, this->GetOwner()->GetOrientation().y, this->GetOwner()->GetOrientation().z, this->GetOwner()->GetOrientation().w);
 
 	Transform transform(position, rotation);
-	BoxShape* boxShape = physicsCommon->createBoxShape(Vector3(scale.x / 2, scale.y / 2, scale.z / 2));
+	BoxShape* boxShape = physicsCommon->createBoxShape(Vector3(scale.x, scale.y, scale.z));
 	this->rigidBody = physicsWorld->createRigidBody(transform);
 	transform.setToIdentity();
 	this->rigidBody->addCollider(boxShape, transform);

@@ -1,13 +1,13 @@
 #include "MenuScreen.h"
 #include "UIManager.h"
 #include "CreditsScreen.h"
-#include "ColorPickerScreen.h"
-#include "ResizeObjectScreen.h"
 #include "ComponentsScreen.h"
 #include "GraphicsEngine.h"
 #include "GameObjectManager.h"
 #include "PhysicsComponent.h"
 #include "EngineBackend.h"
+#include "SceneWriter.h"
+#include "SceneReader.h"
 
 MenuScreen::MenuScreen(std::string name) : AUIScreen(name)
 {
@@ -33,8 +33,17 @@ void MenuScreen::DrawUI()
 	{
 		if (ImGui::MenuItem("Open"))
 		{
-			// do something
+			if (EngineBackend::getInstance()->GetMode() == EngineBackend::EDITOR)
+			{
+				SceneReader reader = SceneReader("..\\Assets\\Scenes");
+				reader.ReadFile();
+			}
+			else
+			{
+				std::cout << "Cannot save in current mode!";
+			}
 		}
+		
 		if (ImGui::MenuItem("Save"))
 		{
 			if (EngineBackend::getInstance()->GetMode() == EngineBackend::EDITOR)
@@ -46,7 +55,6 @@ void MenuScreen::DrawUI()
 			{
 				std::cout << "Cannot save in current mode!";
 			}
-			
 		}
 		ImGui::EndMenu();
 	}

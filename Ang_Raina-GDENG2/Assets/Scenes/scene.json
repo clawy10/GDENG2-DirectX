@@ -1,45 +1,52 @@
 {
-    "Object_0": {
-        "Object Name": "Cube",
-        "Object Type": 0,
-        "Position": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": 0.0
+    "Objects": {
+        "Object_0": {
+            "Object Type": 0,
+            "Object Name": "Cube",
+            "Position": {
+                "X": 0.0,
+                "Y": 12.199999809265137,
+                "Z": 0.0
+            },
+            "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+            },
+            "Scale": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+            },
+            "Rigid Body Component": {
+                "Type": 2,
+                "Mass": 69.0,
+                "Gravity Enabled": true
+            }
         },
-        "Rotation": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": 0.0
-        },
-        "Scale": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 1.0
-        }
-    },
-    "Object_1": {
-        "Object Name": "Cube(1)",
-        "Object Type": 0,
-        "Position": {
-            "X": 4.0,
-            "Y": 0.0,
-            "Z": 0.0
-        },
-        "Rotation": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": 0.0
-        },
-        "Scale": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 1.0
-        },
-        "Rigid Body Component": {
-            "Type": 2,
-            "Mass": 69.0,
-            "Gravity Enabled: ": true
+        "Object_1": {
+            "Object Type": 2,
+            "Object Name": "Plane",
+            "Position": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+            },
+            "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+            },
+            "Scale": {
+                "X": 5.0,
+                "Y": 0.5,
+                "Z": 5.0
+            },
+            "Rigid Body Component": {
+                "Type": 0,
+                "Mass": 1000.0,
+                "Gravity Enabled": true
+            }
         }
     }
 }

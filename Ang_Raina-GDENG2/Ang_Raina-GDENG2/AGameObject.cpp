@@ -28,6 +28,13 @@ void AGameObject::SetRotation(float x, float y, float z, float w)
 	this->orientation = AQuaternion(x, y, z, w);
 }
 
+void AGameObject::SetRotation(float x, float y, float z)
+{
+	Vector3D rotation = Vector3D(x, y, z);
+	this->orientation = {};
+	this->orientation = MathTools::EulerToQuaternion(rotation);
+}
+
 void AGameObject::SetRotation(Vector3D rotation)
 {
 	this->orientation = {};

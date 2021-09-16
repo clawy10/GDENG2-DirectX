@@ -107,14 +107,8 @@
     <Filter Include="Game Engine\UI\Menu Screen">
       <UniqueIdentifier>{29a20f90-8885-4cba-a479-10db98ec28b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Engine\UI\Menu Screen\Color Picker Screen">
-      <UniqueIdentifier>{9a26efc3-e8d5-42d5-8ab5-322a09b4c66e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game Engine\UI\Menu Screen\Credits Screen">
       <UniqueIdentifier>{4a77b54c-f0ff-497c-87ac-3b7f7b003f0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Engine\UI\Menu Screen\Resize Object Screen">
-      <UniqueIdentifier>{f61d1ce7-67e0-42b5-afd9-e18c68854790}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game Engine\UI\Object List Screen">
       <UniqueIdentifier>{6ff65eff-a668-41c0-90c2-a38d7e94081d}</UniqueIdentifier>
@@ -136,6 +130,9 @@
     </Filter>
     <Filter Include="Game Engine\UI\Menu Screen\Components Screen">
       <UniqueIdentifier>{83a1ffa2-3d22-4696-970c-d665e579d705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine\Save System\Scene Reader">
+      <UniqueIdentifier>{1e52beab-4f96-48d0-9b62-9158db66aa3c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -226,9 +223,6 @@
     <ClCompile Include="CreditsScreen.cpp">
       <Filter>Game Engine\UI\Menu Screen\Credits Screen</Filter>
     </ClCompile>
-    <ClCompile Include="ColorPickerScreen.cpp">
-      <Filter>Game Engine\UI\Menu Screen\Color Picker Screen</Filter>
-    </ClCompile>
     <ClCompile Include="ImGuiTexture.cpp">
       <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
     </ClCompile>
@@ -255,9 +249,6 @@
     </ClCompile>
     <ClCompile Include="MeshManager.cpp">
       <Filter>Game Engine\Game Objects\Mesh Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="ResizeObjectScreen.cpp">
-      <Filter>Game Engine\UI\Menu Screen\Resize Object Screen</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsSystem.cpp">
       <Filter>Game Engine\ECS\Physics Engine</Filter>
@@ -303,6 +294,9 @@
     </ClCompile>
     <ClCompile Include="ComponentsScreen.cpp">
       <Filter>Game Engine\UI\Menu Screen\Components Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneReader.cpp">
+      <Filter>Game Engine\Save System\Scene Reader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -411,9 +405,6 @@
     <ClInclude Include="CreditsScreen.h">
       <Filter>Game Engine\UI\Menu Screen\Credits Screen</Filter>
     </ClInclude>
-    <ClInclude Include="ColorPickerScreen.h">
-      <Filter>Game Engine\UI\Menu Screen\Color Picker Screen</Filter>
-    </ClInclude>
     <ClInclude Include="ImGuiTexture.h">
       <Filter>Game Engine\Graphics Engine\Resources\Texture</Filter>
     </ClInclude>
@@ -452,9 +443,6 @@
     </ClInclude>
     <ClInclude Include="VertexMesh.h">
       <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="ResizeObjectScreen.h">
-      <Filter>Game Engine\UI\Menu Screen\Resize Object Screen</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h" />
     <ClInclude Include="PhysicsSystem.h">
@@ -507,6 +495,9 @@
     </ClInclude>
     <ClInclude Include="ComponentsScreen.h">
       <Filter>Game Engine\UI\Menu Screen\Components Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneReader.h">
+      <Filter>Game Engine\Save System\Scene Reader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

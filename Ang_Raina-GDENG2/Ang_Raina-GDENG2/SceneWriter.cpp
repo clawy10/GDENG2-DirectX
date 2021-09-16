@@ -19,18 +19,22 @@ void SceneWriter::WriteToFile()
 	Document document;
 
 	std::vector<AGameObject*> objectList = GameObjectManager::getInstance()->GetAllObjects();
+	
+	writer.StartObject();
+
+	writer.Key("Objects");
 	writer.StartObject();
 	for (int i = 0; i < objectList.size(); i++)
 	{
 		std::string name = "Object_" + std::to_string(i);
 		writer.Key(name.c_str());
 		writer.StartObject();
-		
-		writer.Key("Object Name");
-		writer.String(objectList[i]->GetName().c_str());
 
 		writer.Key("Object Type");
 		writer.Int(objectList[i]->GetType());
+		
+		writer.Key("Object Name");
+		writer.String(objectList[i]->GetName().c_str());
 		
 		writer.Key("Position");
 		writer.StartObject();
@@ -71,13 +75,15 @@ void SceneWriter::WriteToFile()
 			writer.Int((int) physicsComponent->GetBodyType());
 			writer.Key("Mass");
 			writer.Double(physicsComponent->GetMass());
-			writer.Key("Gravity Enabled: ");
+			writer.Key("Gravity Enabled");
 			writer.Bool(physicsComponent->IsGravityEnabled());
 			writer.EndObject();
 		}
 
 		writer.EndObject();
 	}
+	writer.EndObject();
+	
 	writer.EndObject();
 
 	if (document.Parse(s.GetString()).HasParseError())

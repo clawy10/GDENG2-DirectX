@@ -47,6 +47,7 @@ public:
 	Vector3D GetPosition();
 	
 	void SetRotation(float x, float y, float z, float w);
+	void SetRotation(float x, float y, float z);
 	void SetRotation(Vector3D rotation);
 	void SetRotation(AQuaternion quaternion);
 	Vector3D GetRotation();
