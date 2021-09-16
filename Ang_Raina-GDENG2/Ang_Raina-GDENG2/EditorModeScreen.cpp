@@ -1,6 +1,8 @@
 #include "EditorModeScreen.h"
+#include "BaseComponentSystem.h"
 #include "EngineBackend.h"
 #include "GameObjectManager.h"
+#include "PhysicsSystem.h"
 
 EditorModeScreen::EditorModeScreen(std::string name) : AUIScreen(name)
 {
@@ -29,6 +31,7 @@ void EditorModeScreen::DrawUI()
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::EDITOR);
 			GameObjectManager::getInstance()->RestoreEditStates();
+			BaseComponentSystem::getInstance()->GetPhysicsSystem()->StopUpdating();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Pause"))
@@ -43,6 +46,7 @@ void EditorModeScreen::DrawUI()
 		{
 			EngineBackend::getInstance()->SetMode(EngineBackend::EDITOR);
 			GameObjectManager::getInstance()->RestoreEditStates();
+			BaseComponentSystem::getInstance()->GetPhysicsSystem()->StopUpdating();
 		}
 		ImGui::SameLine();
 		if (ImGui::Button("Resume"))

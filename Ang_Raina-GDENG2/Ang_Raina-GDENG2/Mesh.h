@@ -22,12 +22,16 @@ public:
 	void Draw(int width, int height, VertexShader* vertexShader, PixelShader* pixelShader) override;
 
 	void SetTexture(Texture* texture);
+
+	float mass = 3.0f;
 	
 private:
 	VertexBuffer* m_vertex_buffer;
 	IndexBuffer* m_index_buffer;
 	ConstantBuffer* m_constant_buffer;
-	Texture* texture; 
+	Texture* texture;
+
+	
 
 private:
 	friend class DeviceContext;

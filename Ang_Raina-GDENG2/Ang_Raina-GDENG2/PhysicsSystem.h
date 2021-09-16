@@ -24,11 +24,16 @@ public:
 	PhysicsWorld* GetPhysicsWorld();
 	PhysicsCommon* GetPhysicsCommon();
 
+	void StartAllComponents();
+	void StopUpdating();
+
 private:
 	reactphysics3d::PhysicsCommon* physicsCommon;
 	reactphysics3d::PhysicsWorld* physicsWorld;
 
 	std::vector<PhysicsComponent*> componentList;
 	std::unordered_map<std::string, PhysicsComponent*> componentTable;
+
+	bool firstUpdate = true;
 };
 

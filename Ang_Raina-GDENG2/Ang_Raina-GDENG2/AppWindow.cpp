@@ -141,13 +141,13 @@ void AppWindow::CreateGraphicsWindow()
 	
 	// insert objects to draw here
 
-	Mesh* cube = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
+	/*Mesh* cube = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
 	cube->SetTexture(GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg"));
 	GameObjectManager::getInstance()->AddObject(cube);
 
 	Mesh* cube2 = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
 	//cube->SetTexture(GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg"));
-	GameObjectManager::getInstance()->AddObject(cube2);
+	GameObjectManager::getInstance()->AddObject(cube2);*/
 	
 	// end of objects to draw
 

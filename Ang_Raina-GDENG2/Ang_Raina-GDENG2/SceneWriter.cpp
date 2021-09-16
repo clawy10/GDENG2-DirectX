@@ -1,6 +1,7 @@
 #include "SceneWriter.h"
 #include "GameObjectManager.h"
 #include "MathTools.h"
+#include "PhysicsComponent.h"
 
 SceneWriter::SceneWriter(std::string directory)
 {
@@ -21,7 +22,7 @@ void SceneWriter::WriteToFile()
 	writer.StartObject();
 	for (int i = 0; i < objectList.size(); i++)
 	{
-		std::string name = "Object " + std::to_string(i);
+		std::string name = "Object_" + std::to_string(i);
 		writer.Key(name.c_str());
 		writer.StartObject();
 		
@@ -60,6 +61,20 @@ void SceneWriter::WriteToFile()
 		writer.Key("Z");
 		writer.Double(objectList[i]->GetScale().z);
 		writer.EndObject();
+
+		if  (objectList[i]->FindComponentByName("PhysicsComponent") != nullptr)
+		{
+			PhysicsComponent* physicsComponent = (PhysicsComponent*) objectList[i]->FindComponentByName("PhysicsComponent");
+			writer.Key("Rigid Body Component");
+			writer.StartObject();
+			writer.Key("Type");
+			writer.Int((int) physicsComponent->GetBodyType());
+			writer.Key("Mass");
+			writer.Double(physicsComponent->GetMass());
+			writer.Key("Gravity Enabled: ");
+			writer.Bool(physicsComponent->IsGravityEnabled());
+			writer.EndObject();
+		}
 
 		writer.EndObject();
 	}

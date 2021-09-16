@@ -65,6 +65,12 @@ std::vector<PhysicsComponent*> PhysicsSystem::GetAllComponents()
 
 void PhysicsSystem::UpdateAllComponents()
 {
+	if (this->firstUpdate)
+	{
+		this->firstUpdate = false;
+		this->StartAllComponents();
+	}
+	
 	if (EngineTime::GetDeltaTime() > 0)
 	{
 		this->physicsWorld->update(EngineTime::GetDeltaTime());
@@ -83,4 +89,17 @@ PhysicsWorld* PhysicsSystem::GetPhysicsWorld()
 PhysicsCommon* PhysicsSystem::GetPhysicsCommon()
 {
 	return this->physicsCommon;
+}
+
+void PhysicsSystem::StartAllComponents()
+{
+	for (int i = 0; i < this->componentList.size(); i++)
+	{
+		this->componentList[i]->start();
+	}
+}
+
+void PhysicsSystem::StopUpdating()
+{
+	this->firstUpdate = true;
 }

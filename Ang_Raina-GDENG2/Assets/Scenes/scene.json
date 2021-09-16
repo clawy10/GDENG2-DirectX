@@ -1,10 +1,29 @@
 {
-    "Object 0": {
+    "Object_0": {
+        "Object Name": "plane",
+        "Object Type": 2,
+        "Position": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Rotation": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Scale": {
+            "X": 5.0,
+            "Y": 0.5,
+            "Z": 5.0
+        }
+    },
+    "Object_1": {
         "Object Name": "cube",
         "Object Type": 0,
         "Position": {
-            "X": 0.0,
-            "Y": 0.0,
+            "X": 0.20000000298023224,
+            "Y": 10.699999809265137,
             "Z": 0.0
         },
         "Rotation": {
@@ -16,25 +35,11 @@
             "X": 1.0,
             "Y": 1.0,
             "Z": 1.0
-        }
-    },
-    "Object 1": {
-        "Object Name": "cube(1)",
-        "Object Type": 0,
-        "Position": {
-            "X": 4.099999904632568,
-            "Y": 0.0,
-            "Z": 0.0
         },
-        "Rotation": {
-            "X": 2.8357818126678467,
-            "Y": 1.414170503616333,
-            "Z": -2.620682716369629
-        },
-        "Scale": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 1.0
+        "Rigid Body Component": {
+            "Type": 2,
+            "Mass": 3.0,
+            "Gravity Enabled: ": true
         }
     }
 }

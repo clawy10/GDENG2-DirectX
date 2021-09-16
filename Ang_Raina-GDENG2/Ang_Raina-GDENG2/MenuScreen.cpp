@@ -6,6 +6,7 @@
 #include "GraphicsEngine.h"
 #include "MeshManager.h"
 #include "GameObjectManager.h"
+#include "PhysicsComponent.h"
 
 MenuScreen::MenuScreen(std::string name) : AUIScreen(name)
 {
@@ -42,9 +43,24 @@ void MenuScreen::DrawUI()
 			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
 			GameObjectManager::getInstance()->AddObject(mesh);
 		}
+		
 		if (ImGui::MenuItem("Create Cylinder"))
 		{
 			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cylinder);
+			GameObjectManager::getInstance()->AddObject(mesh);
+		}
+
+		if (ImGui::MenuItem("Create Plane"))
+		{
+			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Plane);
+			GameObjectManager::getInstance()->AddObject(mesh);
+		}
+
+		if (ImGui::MenuItem("Physics Cube"))
+		{
+			Mesh* mesh = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
+			mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
+			PhysicsComponent* physicsComponent = (PhysicsComponent*)mesh->FindComponentByName("PhysicsComponent");
 			GameObjectManager::getInstance()->AddObject(mesh);
 		}
 

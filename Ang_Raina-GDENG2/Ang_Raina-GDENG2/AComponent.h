@@ -15,7 +15,7 @@ public:
 	AGameObject* GetOwner();
 	ComponentType GetType();
 	std::string GetName();
-
+	
 	virtual void perform(float deltaTime) = 0;
 
 protected:
