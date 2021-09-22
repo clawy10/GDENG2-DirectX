@@ -44,14 +44,16 @@ void SceneWriter::WriteToFile()
 		writer.Double(objectList[i]->GetPosition().z);
 		writer.EndObject();
 
+		Vector3D rotation = MathTools::QuaternionToEuler(objectList[i]->GetOrientation()); 
+		
 		writer.Key("Rotation");
 		writer.StartObject();
 		writer.Key("X");
-		writer.Double(objectList[i]->GetRotation().x);
+		writer.Double(rotation.x);
 		writer.Key("Y");
-		writer.Double(objectList[i]->GetRotation().y);
+		writer.Double(rotation.y);
 		writer.Key("Z");
-		writer.Double(objectList[i]->GetRotation().z);
+		writer.Double(rotation.z);
 		writer.EndObject();
 
 		writer.Key("Scale");

@@ -16,6 +16,7 @@
 #include "EngineBackend.h"
 #include "ActionHistory.h"
 #include "TextureManager.h"
+#include "PhysicsComponent.h"
 
 AppWindow* AppWindow::sharedInstance = nullptr;
 
@@ -138,7 +139,7 @@ void AppWindow::CreateGraphicsWindow()
 	GameObjectManager::initialize(shader_byte_code, sizeShader);
 	CameraManager::initialize();
 	BaseComponentSystem::initialize();
-	
+
 	// insert objects to draw here
 
 	/*Mesh* cube = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
@@ -148,6 +149,15 @@ void AppWindow::CreateGraphicsWindow()
 	Mesh* cube2 = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
 	//cube->SetTexture(GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg"));
 	GameObjectManager::getInstance()->AddObject(cube2);*/
+
+	/*for (int i = 0; i < 50; i++)
+	{
+		Mesh* cube = GraphicsEngine::getInstance()->GetMeshManager()->createPrimitiveMesh(PrimitiveType::Cube);
+		cube->AttachComponent(new PhysicsComponent("PhysicsComponent", cube));
+		cube->SetTexture(GraphicsEngine::getInstance()->GetTextureManager()->createTextureFromFile(L"..\\Assets\\Textures\\orange-texture.jpg"));
+		cube->SetPosition(Vector3D(MathTools::RandomNumber(-3, 3), 10, MathTools::RandomNumber(-3, 3)));
+		GameObjectManager::getInstance()->AddObject(cube);
+	}*/
 	
 	// end of objects to draw
 

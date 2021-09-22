@@ -65,11 +65,14 @@ void SceneReader::CreateMesh(const Value& obj)
 
 	if (obj.HasMember("RigidBodyComponent"))
 	{
-		mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
-		PhysicsComponent* physicsComponent = (PhysicsComponent*) mesh->FindComponentByName("PhysicsComponent");
-		physicsComponent->SetBodyType((BodyType) obj["RigidBodyComponent"]["Type"].GetInt());
-		physicsComponent->SetMass(obj["RigidBodyComponent"]["Mass"].GetFloat());
-		physicsComponent->EnableGravity(obj["RigidBodyComponent"]["GravityEnabled"].GetBool());
+		if (obj["RigidBodyComponent"]["Type"].GetInt() != -1)
+		{
+			mesh->AttachComponent(new PhysicsComponent("PhysicsComponent", mesh));
+			PhysicsComponent* physicsComponent = (PhysicsComponent*)mesh->FindComponentByName("PhysicsComponent");
+			physicsComponent->SetBodyType((BodyType)obj["RigidBodyComponent"]["Type"].GetInt());
+			physicsComponent->SetMass(obj["RigidBodyComponent"]["Mass"].GetFloat());
+			physicsComponent->EnableGravity(obj["RigidBodyComponent"]["GravityEnabled"].GetBool());
+		}	
 	}
 	
 	

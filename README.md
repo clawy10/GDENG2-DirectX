@@ -9,7 +9,6 @@
 ## 5. Run the program by pressing "Local Windows Debugger"
 
 
-
 # Logs:
 * 7/22/2021 - Added EngineTime class and finished slide 13 and 14 challenges in lesson ppt
 * 7/26/2021 - Added Plane primitive object and input system
@@ -27,3 +26,4 @@
 * 9/12/2021 - Added primitive spawning
 * 9/15/2021 - Added scene writer for saving
 * 9/16/2021 - Fixed physics component issues, additional primitive meshes, added scene reader for loading
+* 9/22/2021 - Final changes for final exam

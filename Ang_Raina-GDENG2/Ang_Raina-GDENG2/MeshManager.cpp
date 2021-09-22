@@ -21,12 +21,10 @@ Mesh* MeshManager::createPrimitiveMesh(PrimitiveType type)
 	{
 	case PrimitiveType::Cube:
 		mesh = new Mesh(L"..\\Assets\\Meshes\\cube.obj", "Cube", PrimitiveType::Cube);
-		mesh->SetTexture(new Texture(L"..\\Assets\\Textures\\orange-texture.jpg"));
 		break;
 
 	case PrimitiveType::Cylinder:
 		mesh = new Mesh(L"..\\Assets\\Meshes\\cylinder.obj", "Cylinder", PrimitiveType::Cylinder);
-		
 		break;
 
 	case PrimitiveType::Plane:

@@ -126,13 +126,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);NOMINMAX;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Libs\rapidjson\include;F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Libs\ReactPhysics3D\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Libs\ReactPhysics3D\include;$(ProjectDir)Libs\rapidjson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;reactphysics3d.lib;DirectXTexD.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Libs\ReactPhysics3D;F:\Cai\School stuff\Programming\GDENG-2\GDENG2 - Git\GDENG2-DirectX\Ang_Raina-GDENG2\Ang_Raina-GDENG2\Libs\ReactPhysics3D;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)Libs\ReactPhysics3D;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
